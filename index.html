@@ -574,6 +574,110 @@ section{position:relative}
   border-bottom:1px solid rgba(250,248,244,0.12);
 }
 .why-pillars-wrap{margin-top:clamp(48px, 6vw, 88px)}
+
+/* Growth chart */
+.growth-chart{
+  display:flex;
+  flex-direction:column;
+  gap:clamp(24px, 2.5vw, 36px);
+}
+.gc-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  flex-wrap:wrap;
+  gap:16px;
+}
+.gc-legend{display:flex;gap:clamp(20px, 2.5vw, 40px);flex-wrap:wrap}
+.gc-legend-item{
+  font-family:'JetBrains Mono',monospace;
+  font-size:var(--type-eyebrow);
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  font-weight:500;
+  color:rgba(250,248,244,0.7);
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+}
+.gc-legend-item::before{
+  content:"";
+  width:10px;height:10px;border-radius:50%;
+  background:currentColor;
+}
+.gc-legend-item.gold{color:var(--accent)}
+.gc-legend-item.rust{color:var(--rust)}
+.gc-legend-item.trend{color:rgba(250,248,244,0.55)}
+.gc-period{
+  font-family:'JetBrains Mono',monospace;
+  font-size:var(--type-eyebrow);
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  font-weight:500;
+  color:rgba(250,248,244,0.45);
+}
+
+.gc-svg{
+  width:100%;
+  height:auto;
+  display:block;
+}
+.gc-grid line{stroke:rgba(250,248,244,0.07);stroke-width:1}
+.gc-y-left text,
+.gc-y-right text,
+.gc-x text{
+  font-family:'JetBrains Mono',monospace;
+  font-size:14px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  font-weight:500;
+}
+.gc-y-left text{fill:var(--accent);text-anchor:end}
+.gc-y-right text{fill:var(--rust);text-anchor:start}
+.gc-x text{fill:rgba(250,248,244,0.55);text-anchor:middle}
+.gc-x .asterisk{fill:var(--rust)}
+
+.gc-line{
+  fill:none;
+  stroke-width:2.5;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.gc-line.followers{stroke:var(--accent)}
+.gc-line.views{stroke:var(--rust)}
+.gc-line.trend{
+  stroke:rgba(250,248,244,0.45);
+  stroke-width:1.5;
+  stroke-dasharray:4 6;
+}
+.gc-line.dashed{stroke-dasharray:6 6;opacity:0.55}
+
+.gc-points circle{stroke:#14120f;stroke-width:2}
+.gc-points.followers circle{fill:var(--accent)}
+.gc-points.views circle{fill:var(--rust)}
+.gc-points circle.partial{
+  fill:#14120f;
+  stroke:var(--rust);
+  stroke-width:2.5;
+}
+
+.gc-callout{
+  font-family:'Fraunces',serif;
+  font-size:22px;
+  font-weight:500;
+  letter-spacing:-0.015em;
+}
+.gc-callout.followers{fill:var(--accent)}
+.gc-callout.views{fill:var(--rust)}
+
+.gc-caption{
+  font-size:var(--type-body);
+  line-height:1.55;
+  color:rgba(250,248,244,0.65);
+  max-width:1100px;
+}
+.gc-caption strong{color:var(--paper);font-weight:500}
+.gc-asterisk{color:var(--rust);font-weight:500}
 .why-chart-grid{
   display:grid;
   grid-template-columns:repeat(3, minmax(0,1fr));
@@ -1049,33 +1153,64 @@ Top city Toronto at 10.7%.</p>
       <h2 class="title on-dark">A precisely targeted audience, growing fast.</h2>
     </div>
     <div class="why-chart">
-      <div class="why-chart-grid">
-        <div class="wc-block">
-          <p class="wc-label">Men</p>
-          <p class="wc-value">80<span class="unit">%</span></p>
-          <div class="wc-track">
-            <span class="fill" style="width:80%"></span>
-            <span class="baseline" style="left:46%"></span>
-            <span class="baseline-cap" style="left:46%">Baseline 46%</span>
+      <div class="growth-chart">
+        <div class="gc-head">
+          <div class="gc-legend">
+            <span class="gc-legend-item gold">IG followers</span>
+            <span class="gc-legend-item rust">IG monthly views</span>
           </div>
-          <p class="wc-note"><strong>+34 pts</strong> above the Canadian Meta gender baseline.</p>
+          <p class="gc-period">Dec 2025 &nbsp;→&nbsp; May 2026</p>
         </div>
-        <div class="wc-block">
-          <p class="wc-label">Age 25–54</p>
-          <p class="wc-value">86<span class="unit">%</span></p>
-          <div class="wc-track">
-            <span class="fill" style="width:86%"></span>
-          </div>
-          <p class="wc-note">In the gear-buying age window. Peaks at 35–44.</p>
-        </div>
-        <div class="wc-block">
-          <p class="wc-label">Canadian</p>
-          <p class="wc-value">72<span class="unit">%</span></p>
-          <div class="wc-track">
-            <span class="fill" style="width:72%"></span>
-          </div>
-          <p class="wc-note">Plus <strong>15%</strong> in the US. Toronto leads at 10.7%.</p>
-        </div>
+        <svg class="gc-svg" viewBox="0 0 1200 420" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Growth trajectory chart: IG followers and monthly views, December 2025 to May 2026">
+          <g class="gc-grid">
+            <line x1="80" y1="40" x2="1120" y2="40"/>
+            <line x1="80" y1="115" x2="1120" y2="115"/>
+            <line x1="80" y1="190" x2="1120" y2="190"/>
+            <line x1="80" y1="265" x2="1120" y2="265"/>
+            <line x1="80" y1="340" x2="1120" y2="340"/>
+          </g>
+          <g class="gc-y-left">
+            <text x="70" y="46">1.5k</text>
+            <text x="70" y="346">0</text>
+          </g>
+          <g class="gc-y-right">
+            <text x="1130" y="46">100k</text>
+            <text x="1130" y="346">0</text>
+          </g>
+          <g class="gc-x">
+            <text x="80" y="378">Dec</text>
+            <text x="288" y="378">Jan</text>
+            <text x="496" y="378">Feb</text>
+            <text x="704" y="378">Mar</text>
+            <text x="912" y="378">Apr</text>
+            <text x="1120" y="378">May<tspan class="asterisk">*</tspan></text>
+          </g>
+          <path class="gc-line views" d="M 80 250 L 288 250 L 496 244 L 704 97 L 912 145"/>
+          <path class="gc-line views dashed" d="M 912 145 L 1120 301"/>
+          <path class="gc-line followers" d="M 80 215 L 288 192 L 496 170 L 704 120 L 912 60 L 1120 44"/>
+          <g class="gc-points views">
+            <circle cx="80" cy="250" r="5"/>
+            <circle cx="288" cy="250" r="5"/>
+            <circle cx="496" cy="244" r="5"/>
+            <circle cx="704" cy="97" r="7"/>
+            <circle cx="912" cy="145" r="5"/>
+            <circle cx="1120" cy="301" r="5" class="partial"/>
+          </g>
+          <g class="gc-points followers">
+            <circle cx="80" cy="215" r="5"/>
+            <circle cx="288" cy="192" r="5"/>
+            <circle cx="496" cy="170" r="5"/>
+            <circle cx="704" cy="120" r="5"/>
+            <circle cx="912" cy="60" r="5"/>
+            <circle cx="1120" cy="44" r="7"/>
+          </g>
+          <g class="gc-annotations">
+            <text class="gc-callout views" x="704" y="78">81k</text>
+            <text class="gc-callout followers" x="1090" y="32" text-anchor="end">1,481</text>
+            <text class="gc-callout followers" x="288" y="216" text-anchor="middle">740</text>
+          </g>
+        </svg>
+        <p class="gc-caption">IG followers <strong>doubled from 740 to 1,481</strong> since the January relaunch. IG monthly views moved <strong>2.8×</strong> in March as the multi-reel strategy went live, with the Arkells trailer driving a sustained Apr lift. <span class="gc-asterisk">*</span> May figures partial; period ends May 9, 2026.</p>
       </div>
     </div>
     <div class="why-pillars-wrap"><div class="why-pillars">
