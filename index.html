@@ -657,21 +657,17 @@ section{position:relative}
 }
 .gc-line.followers{stroke:var(--accent)}
 .gc-line.views{stroke:var(--rust)}
-.gc-line.trend{
-  stroke:rgba(250,248,244,0.45);
-  stroke-width:1.5;
-  stroke-dasharray:4 6;
-}
-.gc-line.dashed{stroke-dasharray:6 6;opacity:0.55}
+.gc-line.projected{stroke-dasharray:6 6;opacity:0.85}
 
 .gc-points circle{stroke:#14120f;stroke-width:2}
 .gc-points.followers circle{fill:var(--accent)}
 .gc-points.views circle{fill:var(--rust)}
-.gc-points circle.partial{
+.gc-points circle.projection{
   fill:#14120f;
-  stroke:var(--rust);
   stroke-width:2.5;
 }
+.gc-points.followers circle.projection{stroke:var(--accent)}
+.gc-points.views circle.projection{stroke:var(--rust)}
 
 .gc-callout{
   font-family:'Fraunces',serif;
@@ -1170,7 +1166,6 @@ Top city Toronto at 10.7%.</p>
           <div class="gc-legend">
             <span class="gc-legend-item gold">IG followers</span>
             <span class="gc-legend-item rust">IG monthly views</span>
-            <span class="gc-legend-item trend">Combined trend &amp; projection</span>
           </div>
           <p class="gc-period">Dec 2025 — Apr 2026 &nbsp;·&nbsp; May projected</p>
         </div>
@@ -1201,15 +1196,17 @@ Top city Toronto at 10.7%.</p>
             <text x="912" y="378">Apr</text>
             <text x="1120" y="378" class="projected">May</text>
           </g>
-          <path class="gc-line trend" d="M 80 249 L 1120 63"/>
           <path class="gc-line views" d="M 80 250 L 288 250 L 496 244 L 704 97 L 912 145"/>
+          <path class="gc-line views projected" d="M 912 145 L 1120 109"/>
           <path class="gc-line followers" d="M 80 215 L 288 192 L 496 170 L 704 120 L 912 60"/>
+          <path class="gc-line followers projected" d="M 912 60 L 1120 22"/>
           <g class="gc-points views">
             <circle cx="80" cy="250" r="5"/>
             <circle cx="288" cy="250" r="5"/>
             <circle cx="496" cy="244" r="5"/>
             <circle cx="704" cy="97" r="7"/>
             <circle cx="912" cy="145" r="5"/>
+            <circle cx="1120" cy="109" r="5" class="projection"/>
           </g>
           <g class="gc-points followers">
             <circle cx="80" cy="215" r="5"/>
@@ -1217,14 +1214,17 @@ Top city Toronto at 10.7%.</p>
             <circle cx="496" cy="170" r="5"/>
             <circle cx="704" cy="120" r="5"/>
             <circle cx="912" cy="60" r="7"/>
+            <circle cx="1120" cy="22" r="6" class="projection"/>
           </g>
           <g class="gc-annotations">
             <text class="gc-callout views" x="704" y="78">81k</text>
             <text class="gc-callout followers" x="900" y="48" text-anchor="end">1,400</text>
             <text class="gc-callout followers" x="288" y="216" text-anchor="middle">740</text>
+            <text class="gc-callout followers projection" x="1110" y="14" text-anchor="end">~1,580</text>
+            <text class="gc-callout views projection" x="1110" y="100" text-anchor="end">~77k</text>
           </g>
         </svg>
-        <p class="gc-caption">IG followers climbed from <strong>740 to 1,400</strong> between January and April (<strong>1,481</strong> by mid-May). IG monthly views moved <strong>2.8×</strong> in March as the multi-reel strategy went live, sustaining through April. The dashed line averages both metrics into a single growth trajectory and projects through May.</p>
+        <p class="gc-caption">IG followers climbed from <strong>740 to 1,400</strong> between January and April (<strong>1,481</strong> already by mid-May). IG monthly views moved <strong>2.8×</strong> in March as the multi-reel strategy went live, sustaining through April. Dashed segments project each metric through May based on its Dec–Apr trajectory.</p>
       </div>
     </div>
     <div class="why-pillars-wrap"><div class="why-pillars">
