@@ -404,7 +404,88 @@ section{position:relative}
 }
 .traj-side-footnote strong{color:var(--accent);font-weight:500}
 
-/* ---------- 06 · INTEGRATION ---------- */
+/* ---------- 06 · CONVERSION ---------- */
+.conversion-grid{
+  display:grid;
+  grid-template-columns:minmax(0, 1.1fr) minmax(0, 1fr);
+  gap:clamp(40px, 5.5vw, 96px);
+  align-items:start;
+}
+.conv-left{display:flex;flex-direction:column}
+.conv-stat{
+  font-family:'Fraunces',serif;
+  font-size:clamp(120px, 20vw, 340px);
+  line-height:0.88;
+  letter-spacing:-0.06em;
+  font-weight:500;
+  color:var(--ink);
+}
+.conv-stat .currency{
+  font-size:0.6em;
+  vertical-align:0.18em;
+  color:var(--rust);
+  letter-spacing:-0.04em;
+}
+.conv-sub{
+  font-family:'Fraunces',serif;
+  font-size:clamp(22px, 2.2vw, 38px);
+  line-height:1.3;
+  letter-spacing:-0.015em;
+  font-weight:400;
+  color:var(--ink);
+  margin-top:clamp(24px, 2.5vw, 40px);
+  max-width:780px;
+}
+.conv-right{padding-top:clamp(8px, 1.5vw, 24px)}
+.conv-right .eyebrow{margin-bottom:clamp(20px, 2vw, 32px);color:var(--rust)}
+.conv-benchmark{
+  display:flex;
+  align-items:baseline;
+  gap:clamp(16px, 1.5vw, 24px);
+  margin-bottom:clamp(28px, 3vw, 48px);
+}
+.conv-benchmark-val{
+  font-family:'Fraunces',serif;
+  font-size:clamp(40px, 5vw, 80px);
+  line-height:1;
+  letter-spacing:-0.03em;
+  font-weight:500;
+  color:var(--ink);
+}
+.conv-callout{
+  border-top:1px solid rgba(20,18,15,0.12);
+  padding-top:clamp(20px, 2vw, 32px);
+  font-size:var(--type-body);
+  line-height:1.55;
+  color:var(--muted);
+}
+.conv-callout strong{color:var(--ink);font-weight:500}
+.conv-callout .best{color:var(--rust);font-weight:500}
+.conv-mini{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(20px, 2vw, 32px);
+  margin-top:clamp(20px, 2vw, 32px);
+}
+.conv-mini-stat{display:flex;flex-direction:column;gap:8px}
+.conv-mini-num{
+  font-family:'Fraunces',serif;
+  font-size:clamp(32px, 3.5vw, 54px);
+  line-height:1;
+  letter-spacing:-0.025em;
+  font-weight:500;
+  color:var(--ink);
+}
+.conv-mini-label{
+  font-family:'JetBrains Mono',monospace;
+  font-size:var(--type-eyebrow);
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  font-weight:500;
+  color:var(--muted);
+}
+
+/* ---------- 07 · INTEGRATION ---------- */
 .integration-grid{
   display:grid;
   grid-template-columns:minmax(0, 1.1fr) minmax(0, 1fr);
@@ -477,7 +558,7 @@ section{position:relative}
 }
 .intg-item-text strong{color:var(--ink);font-weight:500}
 
-/* ---------- 07 · WHY THIS AUDIENCE ---------- */
+/* ---------- 08 · WHY THIS AUDIENCE ---------- */
 .why{
   background:#0e0d0b;
   color:var(--paper);
@@ -585,7 +666,7 @@ section{position:relative}
 }
 .pillar-text strong{color:var(--paper);font-weight:500}
 
-/* ---------- 08 · LET'S TALK ---------- */
+/* ---------- 09 · LET'S TALK ---------- */
 .contact{
   display:grid;
   grid-template-columns:minmax(0, 1.55fr) minmax(0, 1fr);
@@ -708,6 +789,7 @@ section{position:relative}
 
   .traj-grid{grid-template-columns:1fr;gap:clamp(48px, 8vw, 96px)}
 
+  .conversion-grid{grid-template-columns:1fr}
   .integration-grid{grid-template-columns:1fr}
 
   .why-chart-grid{grid-template-columns:1fr;gap:clamp(36px, 5vw, 56px)}
@@ -876,11 +958,45 @@ Top city Toronto at 10.7%.</p>
   </div>
 </section>
 
-<!-- 06 · PROVEN BRAND INTEGRATION -->
+<!-- 06 · THE CONVERSION -->
+<section class="section" aria-label="The conversion">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">06 &nbsp;·&nbsp; The conversion</p>
+      <h2 class="title">Cheap to reach.</h2>
+      <p class="body">Eight contest reels boosted on Instagram, $30 each. The math is the proof: a niche audience converts at the low end of industry benchmarks.</p>
+    </div>
+    <div class="conversion-grid">
+      <div class="conv-left">
+        <p class="conv-stat"><span class="currency">$</span>0.64</p>
+        <p class="conv-sub">Average cost per follow across all eight boosted contest reels — 374 follows on $240 of total spend.</p>
+      </div>
+      <div class="conv-right">
+        <p class="eyebrow" style="color:var(--rust)">Industry benchmark</p>
+        <div class="conv-benchmark">
+          <p class="conv-benchmark-val">$0.50–$2.00</p>
+        </div>
+        <p class="conv-callout">Niche Instagram follower acquisition typically costs $0.50 to $2.00 per follow. D2D sits at the <strong>low end of the range</strong>, with a single-post best of <span class="best">$0.29</span> on The Trews contest reel.</p>
+        <div class="conv-mini">
+          <div class="conv-mini-stat">
+            <p class="conv-mini-num">374</p>
+            <p class="conv-mini-label">Paid follows</p>
+          </div>
+          <div class="conv-mini-stat">
+            <p class="conv-mini-num">~10×</p>
+            <p class="conv-mini-label">Contest vs organic</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 · PROVEN BRAND INTEGRATION -->
 <section class="section" aria-label="Proven brand integration">
   <div class="container">
     <div class="section-head">
-      <p class="eyebrow">06 &nbsp;·&nbsp; Proven brand integration</p>
+      <p class="eyebrow">07 &nbsp;·&nbsp; Proven brand integration</p>
       <h2 class="title">Integration that fits.</h2>
     </div>
     <div class="integration-grid">
@@ -919,11 +1035,11 @@ Top city Toronto at 10.7%.</p>
   </div>
 </section>
 
-<!-- 07 · WHY THIS AUDIENCE -->
+<!-- 08 · WHY THIS AUDIENCE -->
 <section class="section dark why" aria-label="Why this audience">
   <div class="container">
     <div class="section-head">
-      <p class="eyebrow on-dark">07 &nbsp;·&nbsp; Why this audience</p>
+      <p class="eyebrow on-dark">08 &nbsp;·&nbsp; Why this audience</p>
       <h2 class="title on-dark">A precisely targeted audience, growing fast.</h2>
     </div>
     <div class="why-chart">
@@ -981,11 +1097,11 @@ Top city Toronto at 10.7%.</p>
   </div>
 </section>
 
-<!-- 08 · LET'S TALK -->
+<!-- 09 · LET'S TALK -->
 <section class="contact" aria-label="Let's talk">
   <div class="contact-text">
     <div>
-      <p class="eyebrow">08 &nbsp;·&nbsp; Let's talk</p>
+      <p class="eyebrow">09 &nbsp;·&nbsp; Let's talk</p>
       <h2 class="title contact-title">Let's talk.</h2>
       <p class="contact-sub">Sponsorship is open for Season 4. <span class="accent">Broken Social Scene</span> is projected to be our largest release of the year.</p>
       <p class="contact-sub">Season 5 production is underway, featuring drummers from Barenaked Ladies, Silverstein, The Constantines and more.</p>
