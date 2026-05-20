@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Drummer to Drummer — Sponsor Brief</title>
+<meta name="description" content="Sponsor brief for Drummer to Drummer, Season 4 — May 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#faf8f4;
+  --tan:#f3eee5;
+  --tan-deep:#ebe3d3;
+  --ink:#14120f;
+  --ink-soft:#1a1a1a;
+  --muted:#595851;
+  --muted-dim:#8a8a82;
+  --gold:#d4a942;
+  --rust:#c75d3c;
+  --accent:var(--gold);
+
+  --gutter:clamp(20px, 4.5vw, 96px);
+  --container:1440px;
+  --section-pad-y:clamp(96px, 14vw, 200px);
+
+  --type-display:clamp(64px, 13vw, 200px);
+  --type-title:clamp(40px, 5.6vw, 96px);
+  --type-bignum:clamp(96px, 16vw, 260px);
+  --type-stat:clamp(64px, 9vw, 140px);
+  --type-subtitle:clamp(24px, 2.6vw, 44px);
+  --type-body:clamp(17px, 1.4vw, 22px);
+  --type-small:clamp(14px, 1vw, 16px);
+  --type-eyebrow:clamp(12px, 0.95vw, 14px);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html,body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Inter',-apple-system,system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{display:block;max-width:100%}
+
+/* ---------- Type primitives ---------- */
+.eyebrow{
+  font-family:'JetBrains Mono',monospace;
+  font-size:var(--type-eyebrow);
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  font-weight:500;
+  color:var(--muted);
+}
+.eyebrow.on-dark{color:var(--accent)}
+.title{
+  font-family:'Fraunces',Georgia,serif;
+  font-weight:500;
+  font-size:var(--type-title);
+  line-height:0.98;
+  letter-spacing:-0.025em;
+  color:var(--ink);
+}
+.title.on-dark{color:var(--paper)}
+.body{
+  font-size:var(--type-body);
+  line-height:1.55;
+  color:var(--muted);
+  font-weight:400;
+}
+.body.on-dark{color:rgba(250,248,244,0.72)}
+.body strong{color:var(--ink);font-weight:500}
+.body.on-dark strong{color:var(--paper)}
+
+/* ---------- Layout containers ---------- */
+section{position:relative}
+.section{padding:var(--section-pad-y) var(--gutter)}
+.section.dark{background:var(--ink);color:var(--paper)}
+.section.dark .body{color:rgba(250,248,244,0.72)}
+.section.dark .body strong{color:var(--paper)}
+
+.container{
+  max-width:var(--container);
+  margin:0 auto;
+}
+
+.section-head{margin-bottom:clamp(48px, 6vw, 96px);max-width:1200px}
+.section-head .title{margin-top:clamp(16px,2vw,32px)}
+.section-head .body{margin-top:clamp(16px,1.8vw,28px);max-width:980px}
+
+/* ---------- 01 · COVER ---------- */
+.cover{
+  min-height:100vh;
+  padding:clamp(28px, 5vw, 64px) var(--gutter);
+  background:#0a0908;
+  background-image:
+    linear-gradient(90deg,rgba(20,18,15,0.78) 0%,rgba(20,18,15,0.45) 30%,rgba(20,18,15,0) 55%),
+    linear-gradient(180deg,rgba(20,18,15,0.55) 0%,rgba(20,18,15,0.15) 45%,rgba(20,18,15,0.92) 100%),
+    url('assets/expandedhero.jpg');
+  background-size:cover;
+  background-position:center;
+  color:var(--paper);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:clamp(80px, 14vh, 240px);
+}
+.cover-top{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap}
+.cover-eyebrow{color:var(--accent)}
+.cover-mark{
+  font-family:'JetBrains Mono',monospace;
+  font-size:var(--type-eyebrow);
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  font-weight:500;
+  color:rgba(250,248,244,0.55);
+}
+.cover-wordmark{
+  font-family:'Fraunces',Georgia,serif;
+  font-weight:500;
+  font-size:var(--type-display);
+  line-height:0.92;
+  letter-spacing:-0.045em;
+  color:var(--paper);
+  text-shadow:0 4px 32px rgba(0,0,0,0.5);
+  max-width:14ch;
+}
+.cover-foot{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:clamp(24px, 3vw, 64px);
+  align-items:flex-end;
+  border-top:1px solid rgba(250,248,244,0.22);
+  padding-top:clamp(20px, 2.5vw, 36px);
+}
+.cover-foot .meta-label{
+  font-family:'JetBrains Mono',monospace;
+  font-size:var(--type-eyebrow);
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  font-weight:500;
+  color:rgba(250,248,244,0.55);
+  margin-bottom:10px;
+}
+.cover-foot .meta-value{
+  font-family:'Fraunces',serif;
+  font-size:clamp(18px, 1.7vw, 28px);
+  line-height:1.2;
+  letter-spacing:-0.01em;
+  color:var(--paper);
+  font-weight:500;
+}
+.cover-foot .end{text-align:right}
+
+/* ---------- 02 · THE SHOW ---------- */
+.show{
+  display:grid;
+  grid-template-columns:minmax(0, 1.05fr) minmax(0, 1fr);
+  gap:0;
+  padding:0;
+}
+.show-text{
+  padding:var(--section-pad-y) clamp(40px, 4vw, 96px) var(--section-pad-y) var(--gutter);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:clamp(64px, 8vw, 120px);
+}
+.show-image{
+  background-image:url('assets/warehouse-stage.jpg');
+  background-size:cover;
+  background-position:center;
+  min-height:clamp(360px, 60vh, 880px);
+}
+.show-title{margin-top:clamp(24px, 3vw, 56px);margin-bottom:clamp(24px, 2.5vw, 36px)}
+.show-meta{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:clamp(24px, 3vw, 56px);
+}
+.show-meta .meta-label{
+  font-family:'JetBrains Mono',monospace;
+  font-size:var(--type-eyebrow);
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  font-weight:500;
+  color:var(--muted-dim);
+  margin-bottom:12px;
+}
+.show-meta .meta-value{
+  font-family:'Fraunces',serif;
+  font-size:clamp(18px, 1.5vw, 26px);
+  letter-spacing:-0.01em;
+  color:var(--ink);
+  font-weight:400;
+  line-height:1.25;
+}
+
+/* ---------- 03 · LINEUP ---------- */
+.lineup-list{display:flex;flex-direction:column}
+.lineup-row{
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:baseline;
+  gap:clamp(16px, 2.5vw, 48px);
+  padding:clamp(10px, 1.2vw, 18px) 0;
+  border-bottom:1px solid rgba(250,248,244,0.10);
+}
+.lineup-row:last-child{border-bottom:none}
+.lineup-name{
+  font-family:'Fraunces',Georgia,serif;
+  font-weight:500;
+  font-size:clamp(28px, 4.2vw, 64px);
+  line-height:1.1;
+  letter-spacing:-0.025em;
+  color:var(--paper);
+}
+.lineup-tag{
+  font-family:'JetBrains Mono',monospace;
+  font-size:var(--type-eyebrow);
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  font-weight:500;
+  white-space:nowrap;
+}
+.lineup-tag.s4{color:var(--accent)}
+.lineup-tag.past{color:rgba(250,248,244,0.4)}
+
+/* ---------- 04 · AUDIENCE ---------- */
+.audience-grid{
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0,1fr));
+  gap:0;
+  border-top:1px solid rgba(20,18,15,0.12);
+  border-bottom:1px solid rgba(20,18,15,0.12);
+}
+.aud-stat{
+  padding:clamp(28px, 3.5vw, 56px) clamp(16px, 2vw, 36px) clamp(36px, 4vw, 64px) 0;
+  border-right:1px solid rgba(20,18,15,0.08);
+}
+.aud-stat:nth-child(4n){border-right:none;padding-right:0}
+.aud-stat:nth-child(n+5){border-top:1px solid rgba(20,18,15,0.08)}
+.aud-label{
+  font-family:'JetBrains Mono',monospace;
+  font-size:var(--type-eyebrow);
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  font-weight:500;
+  color:var(--muted-dim);
+  margin-bottom:clamp(20px, 2.5vw, 32px);
+}
+.aud-value{
+  font-family:'Fraunces',serif;
+  font-size:var(--type-stat);
+  line-height:0.95;
+  letter-spacing:-0.04em;
+  font-weight:500;
+  color:var(--ink);
+  margin-bottom:clamp(12px, 1.2vw, 20px);
+}
+.aud-value .unit{
+  font-size:0.5em;
+  color:var(--muted);
+  letter-spacing:-0.02em;
+  margin-left:4px;
+}
+.aud-context{
+  font-size:clamp(14px, 1.1vw, 17px);
+  line-height:1.55;
+  color:var(--muted);
+  font-weight:400;
+  white-space:pre-line;
+}
+.aud-context strong{color:var(--ink);font-weight:500}
+.audience-foot{
+  margin-top:clamp(36px, 4vw, 64px);
+  font-family:'Fraunces',serif;
+  font-size:var(--type-subtitle);
+  line-height:1.25;
+  letter-spacing:-0.015em;
+  color:var(--ink);
+  font-weight:400;
+  max-width:1500px;
+}
+.audience-foot .accent{color:var(--rust)}
+
+/* ---------- 05 · TRAJECTORY ---------- */
+.trajectory{
+  background:#14120f;
+  color:var(--paper);
+  background-image:
+    linear-gradient(125deg,rgba(20,18,15,0.94) 0%,rgba(20,18,15,0.68) 100%),
+    url('assets/warehouse-cinematic.jpg');
+  background-size:cover;
+  background-position:center;
+}
+.traj-grid{
+  display:grid;
+  grid-template-columns:minmax(0, 1.05fr) minmax(0, 1fr);
+  gap:clamp(48px, 7vw, 120px);
+  align-items:flex-end;
+}
+.traj-headline{display:flex;flex-direction:column}
+.traj-bignum{
+  font-family:'Fraunces',serif;
+  font-size:var(--type-bignum);
+  line-height:0.88;
+  letter-spacing:-0.06em;
+  font-weight:500;
+  color:var(--accent);
+}
+.traj-bignum .sign{font-size:0.6em;vertical-align:0.18em;letter-spacing:-0.04em}
+.traj-bignum .pct{font-size:0.6em}
+.traj-headline-sub{
+  font-family:'Fraunces',serif;
+  font-size:var(--type-subtitle);
+  line-height:1.22;
+  letter-spacing:-0.015em;
+  font-weight:400;
+  color:var(--paper);
+  max-width:760px;
+  margin-top:clamp(20px, 2.5vw, 36px);
+}
+.traj-detail{
+  margin-top:clamp(20px, 2vw, 36px);
+  font-family:'JetBrains Mono',monospace;
+  font-size:var(--type-eyebrow);
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:rgba(250,248,244,0.55);
+}
+.traj-detail .arrow{color:var(--accent);margin:0 12px}
+
+.traj-side{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+.traj-side-eyebrow{
+  font-family:'JetBrains Mono',monospace;
+  font-size:var(--type-eyebrow);
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  font-weight:500;
+  color:var(--accent);
+  margin-bottom:clamp(48px, 6vw, 96px);
+}
+.traj-bars{
+  display:flex;
+  align-items:flex-end;
+  gap:clamp(12px, 1.5vw, 24px);
+  height:clamp(220px, 28vw, 360px);
+  margin-bottom:clamp(20px, 2vw, 32px);
+}
+.traj-bar{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:14px;
+  justify-content:flex-end;
+  height:100%;
+  position:relative;
+}
+.traj-bar .col{
+  width:100%;
+  background:rgba(212,169,66,0.18);
+  border-top:2px solid var(--accent);
+  position:relative;
+}
+.traj-bar.feb .col{height:30%}
+.traj-bar.mar .col{height:84%;background:rgba(212,169,66,0.42)}
+.traj-bar .col-label{
+  font-family:'JetBrains Mono',monospace;
+  font-size:var(--type-eyebrow);
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:rgba(250,248,244,0.65);
+  font-weight:500;
+}
+.traj-bar .col-val{
+  font-family:'Fraunces',serif;
+  font-size:clamp(22px, 2.4vw, 42px);
+  letter-spacing:-0.02em;
+  font-weight:500;
+  color:var(--paper);
+  position:absolute;
+  top:-1.4em;
+  left:0;
+  right:0;
+  text-align:center;
+}
+.traj-bar.feb .col-val{color:rgba(250,248,244,0.7)}
+.traj-bar.mar .col-val{color:var(--accent)}
+.traj-side-footnote{
+  font-size:var(--type-body);
+  line-height:1.5;
+  color:rgba(250,248,244,0.72);
+  font-weight:400;
+}
+.traj-side-footnote strong{color:var(--accent);font-weight:500}
+
+/* ---------- 06 · INTEGRATION ---------- */
+.integration-grid{
+  display:grid;
+  grid-template-columns:minmax(0, 1.1fr) minmax(0, 1fr);
+  gap:clamp(40px, 5.5vw, 96px);
+  align-items:start;
+}
+.intg-left{display:flex;flex-direction:column}
+.intg-stat{
+  font-family:'Fraunces',serif;
+  font-size:clamp(120px, 18vw, 300px);
+  line-height:0.88;
+  letter-spacing:-0.06em;
+  font-weight:500;
+  color:var(--ink);
+}
+.intg-stat .comma{color:var(--rust)}
+.intg-stat-cap{
+  font-family:'JetBrains Mono',monospace;
+  font-size:var(--type-eyebrow);
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  font-weight:500;
+  color:var(--rust);
+  margin-top:clamp(24px, 2.5vw, 40px);
+}
+.intg-sub{
+  font-family:'Fraunces',serif;
+  font-size:clamp(22px, 2.2vw, 36px);
+  line-height:1.3;
+  letter-spacing:-0.015em;
+  font-weight:400;
+  color:var(--ink);
+  margin-top:clamp(24px, 2.5vw, 40px);
+  max-width:780px;
+}
+.intg-sub strong{color:var(--rust);font-weight:500}
+.intg-right{padding-top:clamp(8px, 1.5vw, 24px)}
+.intg-right .eyebrow{margin-bottom:clamp(20px, 2vw, 32px);color:var(--rust)}
+.intg-list{display:flex;flex-direction:column;gap:clamp(18px, 2vw, 28px)}
+.intg-item{
+  display:grid;
+  grid-template-columns:clamp(40px, 4vw, 64px) 1fr;
+  gap:clamp(20px, 2vw, 32px);
+  align-items:start;
+  padding-top:clamp(16px, 1.5vw, 24px);
+  border-top:1px solid rgba(20,18,15,0.12);
+}
+.intg-item:first-child{border-top:none;padding-top:0}
+.intg-item-num{
+  font-family:'Fraunces',serif;
+  font-size:clamp(28px, 2.8vw, 42px);
+  line-height:1;
+  letter-spacing:-0.02em;
+  font-weight:500;
+  color:var(--rust);
+}
+.intg-item-title{
+  font-family:'Fraunces',serif;
+  font-size:clamp(22px, 2vw, 32px);
+  line-height:1.15;
+  letter-spacing:-0.015em;
+  font-weight:500;
+  color:var(--ink);
+  margin-bottom:8px;
+}
+.intg-item-text{
+  font-size:var(--type-body);
+  line-height:1.5;
+  color:var(--muted);
+}
+.intg-item-text strong{color:var(--ink);font-weight:500}
+
+/* ---------- 07 · WHY THIS AUDIENCE ---------- */
+.why{
+  background:#0e0d0b;
+  color:var(--paper);
+  background-image:
+    linear-gradient(105deg,rgba(14,13,11,0.96) 0%,rgba(14,13,11,0.7) 55%,rgba(14,13,11,0.4) 100%),
+    url('assets/drummer-blue.jpg');
+  background-size:cover;
+  background-position:center right;
+}
+.why-chart{margin:clamp(40px, 5vw, 80px) 0 clamp(56px, 6vw, 112px)}
+.why-chart-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:clamp(28px, 3.5vw, 56px);
+  align-items:start;
+}
+.wc-block{display:flex;flex-direction:column;gap:clamp(12px, 1.4vw, 20px)}
+.wc-label{
+  font-family:'JetBrains Mono',monospace;
+  font-size:var(--type-eyebrow);
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  font-weight:500;
+  color:rgba(250,248,244,0.55);
+}
+.wc-value{
+  font-family:'Fraunces',serif;
+  font-size:clamp(56px, 7.5vw, 112px);
+  line-height:0.95;
+  letter-spacing:-0.03em;
+  font-weight:500;
+  color:var(--paper);
+}
+.wc-value .unit{
+  font-size:0.5em;
+  color:rgba(250,248,244,0.5);
+  letter-spacing:-0.01em;
+  margin-left:2px;
+}
+.wc-track{
+  position:relative;
+  height:12px;
+  background:rgba(250,248,244,0.08);
+  border-radius:6px;
+  margin-top:clamp(20px, 2vw, 32px);
+}
+.wc-track .fill{
+  position:absolute;
+  left:0;top:0;bottom:0;
+  border-radius:6px;
+  background:var(--accent);
+}
+.wc-track .baseline{
+  position:absolute;
+  top:-6px;bottom:-6px;
+  width:2px;
+  background:rgba(250,248,244,0.55);
+}
+.wc-track .baseline-cap{
+  position:absolute;
+  top:-30px;
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  font-weight:500;
+  color:rgba(250,248,244,0.55);
+  transform:translateX(-50%);
+  white-space:nowrap;
+}
+.wc-note{
+  font-size:var(--type-body);
+  line-height:1.5;
+  color:rgba(250,248,244,0.72);
+  margin-top:clamp(4px, 0.6vw, 8px);
+}
+.wc-note strong{color:var(--accent);font-weight:500}
+
+.why-pillars{
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0,1fr));
+  gap:clamp(24px, 3vw, 48px);
+}
+.pillar{display:flex;flex-direction:column;gap:clamp(14px, 1.6vw, 24px)}
+.pillar-num{
+  font-family:'Fraunces',serif;
+  font-size:clamp(40px, 4.5vw, 64px);
+  line-height:1;
+  letter-spacing:-0.03em;
+  font-weight:500;
+  color:var(--accent);
+}
+.pillar-title{
+  font-family:'Fraunces',serif;
+  font-size:clamp(22px, 2.4vw, 36px);
+  line-height:1.15;
+  letter-spacing:-0.015em;
+  font-weight:500;
+  color:var(--paper);
+}
+.pillar-text{
+  font-size:var(--type-body);
+  line-height:1.55;
+  color:rgba(250,248,244,0.72);
+}
+.pillar-text strong{color:var(--paper);font-weight:500}
+
+/* ---------- 08 · LET'S TALK ---------- */
+.contact{
+  display:grid;
+  grid-template-columns:minmax(0, 1.55fr) minmax(0, 1fr);
+  gap:0;
+  padding:0;
+}
+.contact-text{
+  padding:var(--section-pad-y) clamp(40px, 4vw, 96px) var(--section-pad-y) var(--gutter);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:clamp(64px, 8vw, 120px);
+}
+.contact-image{
+  background-image:url('assets/drummer-green.jpg');
+  background-size:cover;
+  background-position:center;
+  min-height:clamp(360px, 60vh, 880px);
+}
+.contact-title{
+  margin-top:clamp(24px, 3vw, 56px);
+  font-size:clamp(56px, 8vw, 132px);
+  line-height:0.95;
+  letter-spacing:-0.035em;
+}
+.contact-sub{
+  font-family:'Fraunces',serif;
+  font-size:clamp(20px, 2vw, 34px);
+  line-height:1.3;
+  letter-spacing:-0.01em;
+  font-weight:400;
+  color:var(--muted);
+  margin-top:clamp(20px, 2.5vw, 40px);
+  max-width:880px;
+}
+.contact-sub .accent{color:var(--rust)}
+.contact-card{
+  border-top:1px solid rgba(20,18,15,0.14);
+  padding-top:clamp(24px, 3vw, 44px);
+  display:flex;
+  flex-direction:column;
+  gap:clamp(24px, 3vw, 40px);
+}
+.contact-name{
+  font-family:'Fraunces',serif;
+  font-size:clamp(32px, 3.5vw, 52px);
+  letter-spacing:-0.02em;
+  font-weight:500;
+  color:var(--ink);
+  line-height:1.05;
+}
+.contact-role{
+  font-family:'JetBrains Mono',monospace;
+  font-size:var(--type-eyebrow);
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  font-weight:500;
+  color:var(--muted-dim);
+  margin-top:10px;
+  min-height:1.2em;
+}
+.contact-list{display:flex;flex-direction:column;gap:clamp(8px, 1vw, 14px)}
+.contact-line{
+  display:grid;
+  grid-template-columns:clamp(96px, 11vw, 160px) 1fr;
+  gap:clamp(16px, 2vw, 32px);
+  align-items:baseline;
+  font-size:var(--type-body);
+  color:var(--ink);
+}
+.contact-line .key{
+  font-family:'JetBrains Mono',monospace;
+  font-size:var(--type-eyebrow);
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  font-weight:500;
+  color:var(--muted-dim);
+}
+.contact-line .val{
+  font-weight:400;
+  color:var(--ink);
+  font-size:clamp(15px, 1.1vw, 18px);
+  word-break:break-word;
+  overflow-wrap:anywhere;
+}
+.contact-line .val a{
+  color:inherit;
+  text-decoration:none;
+  border-bottom:1px solid rgba(20,18,15,0.18);
+  transition:border-color .2s ease;
+}
+.contact-line .val a:hover{border-bottom-color:var(--rust)}
+
+/* ---------- Colophon ---------- */
+.colophon{
+  background:var(--ink);
+  color:rgba(250,248,244,0.55);
+  padding:clamp(28px, 3vw, 48px) var(--gutter);
+  font-family:'JetBrains Mono',monospace;
+  font-size:var(--type-eyebrow);
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  display:flex;
+  justify-content:space-between;
+  gap:24px;
+  flex-wrap:wrap;
+}
+
+/* ---------- Responsive collapses ---------- */
+@media (max-width:960px){
+  .show{grid-template-columns:1fr}
+  .show-text{padding:var(--section-pad-y) var(--gutter)}
+  .show-image{order:-1;min-height:60vw}
+  .show-meta{grid-template-columns:1fr}
+
+  .audience-grid{grid-template-columns:1fr 1fr}
+  .aud-stat:nth-child(2n){border-right:none;padding-right:0}
+  .aud-stat:nth-child(2n+1){border-right:1px solid rgba(20,18,15,0.08)}
+  .aud-stat:nth-child(n+3){border-top:1px solid rgba(20,18,15,0.08)}
+
+  .traj-grid{grid-template-columns:1fr;gap:clamp(48px, 8vw, 96px)}
+
+  .integration-grid{grid-template-columns:1fr}
+
+  .why-chart-grid{grid-template-columns:1fr;gap:clamp(36px, 5vw, 56px)}
+  .why-pillars{grid-template-columns:1fr 1fr}
+
+  .contact{grid-template-columns:1fr}
+  .contact-text{padding:var(--section-pad-y) var(--gutter)}
+  .contact-image{order:-1;min-height:60vw}
+}
+@media (max-width:560px){
+  .cover-foot{grid-template-columns:1fr;gap:24px}
+  .cover-foot .end{text-align:left}
+  .audience-grid{grid-template-columns:1fr}
+  .aud-stat{border-right:none !important;padding-right:0}
+  .aud-stat:nth-child(n+2){border-top:1px solid rgba(20,18,15,0.08)}
+  .why-pillars{grid-template-columns:1fr}
+  .contact-line{grid-template-columns:1fr;gap:6px}
+}
+
+@media print{
+  html,body{background:var(--paper)}
+  .section{padding:48px var(--gutter);page-break-inside:avoid}
+  .cover{min-height:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- 01 · COVER -->
+<section class="cover" aria-label="Cover">
+  <div class="cover-top">
+    <p class="eyebrow cover-eyebrow">Sponsor brief &nbsp;·&nbsp; Season 4 &nbsp;·&nbsp; May 2026</p>
+    <p class="cover-mark">D2D &nbsp;/&nbsp; Sponsor brief</p>
+  </div>
+  <h1 class="cover-wordmark">Drummer to<br>Drummer.</h1>
+  <div class="cover-foot">
+    <div>
+      <p class="meta-label">The show</p>
+      <p class="meta-value">Talking to (and playing with) unsung heroes of the beat</p>
+    </div>
+    <div>
+      <p class="meta-label">Prepared for</p>
+      <p class="meta-value">Prospective sponsors</p>
+    </div>
+    <div class="end">
+      <p class="meta-label">Hosted by</p>
+      <p class="meta-value">Adam Nimmo</p>
+    </div>
+  </div>
+</section>
+
+<!-- 02 · THE SHOW -->
+<section class="show" aria-label="The show">
+  <div class="show-text">
+    <div>
+      <p class="eyebrow">02 &nbsp;·&nbsp; The show</p>
+      <h2 class="title show-title">Two drummers.<br>One conversation.</h2>
+      <p class="body" style="max-width:640px">
+        Each episode features an unscripted interview followed by a double-jam session with the most under appreciated (and often most interesting) member of the band.
+      </p>
+      <p class="body" style="max-width:640px;margin-top:1.2em">
+        Filmed across Toronto, Hamilton, and Halifax (so far), episodes run on a biweekly release schedule centreing on the main episode, a 360° interactive video of the jam session, a contest/giveaway, and supplementary social reels redirecting to the main episode.
+      </p>
+    </div>
+    <div class="show-meta">
+      <div>
+        <p class="meta-label">Platforms</p>
+        <p class="meta-value">YouTube, Spotify, Instagram, Facebook, TikTok</p>
+      </div>
+      <div>
+        <p class="meta-label">Reach</p>
+        <p class="meta-value">~423k cross-platform views since January.</p>
+      </div>
+    </div>
+  </div>
+  <div class="show-image" role="img" aria-label="Warehouse stage"></div>
+</section>
+
+<!-- 03 · HEARD ON THE SHOW -->
+<section class="section dark" aria-label="Heard on the show">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow on-dark">03 &nbsp;·&nbsp; Heard on the show</p>
+      <h2 class="title on-dark">A roster with reach.</h2>
+    </div>
+    <div class="lineup-list">
+      <div class="lineup-row"><p class="lineup-name">Broken Social Scene</p><p class="lineup-tag s4">Season 4</p></div>
+      <div class="lineup-row"><p class="lineup-name">Our Lady Peace</p><p class="lineup-tag s4">Season 4</p></div>
+      <div class="lineup-row"><p class="lineup-name">Tegan and Sara</p><p class="lineup-tag past">Past seasons</p></div>
+      <div class="lineup-row"><p class="lineup-name">The Arkells</p><p class="lineup-tag s4">Season 4</p></div>
+      <div class="lineup-row"><p class="lineup-name">Sam Roberts Band</p><p class="lineup-tag s4">Season 4</p></div>
+      <div class="lineup-row"><p class="lineup-name">American Football</p><p class="lineup-tag past">Past seasons</p></div>
+      <div class="lineup-row"><p class="lineup-name">July Talk</p><p class="lineup-tag past">Past seasons</p></div>
+      <div class="lineup-row"><p class="lineup-name">The Trews</p><p class="lineup-tag s4">Season 4</p></div>
+      <div class="lineup-row"><p class="lineup-name">Wintersleep</p><p class="lineup-tag past">Past seasons</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 · THE AUDIENCE -->
+<section class="section" aria-label="The audience">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">04 &nbsp;·&nbsp; The audience</p>
+      <h2 class="title">Who is actually watching.</h2>
+      <p class="body">The headline is the over-index: D2D's audience is exactly the demographic that many drum and cymbal brands spend their marketing dollars trying to reach.</p>
+    </div>
+    <div class="audience-grid">
+      <div class="aud-stat">
+        <p class="aud-label">Men</p>
+        <p class="aud-value">80%</p>
+        <p class="aud-context">Of Instagram followers.
+Facebook skews further at 89.4%.</p>
+      </div>
+      <div class="aud-stat">
+        <p class="aud-label">Age 25–54</p>
+        <p class="aud-value">86%</p>
+        <p class="aud-context">The gear-buying window.
+Peaked in the 35–44 bracket.</p>
+      </div>
+      <div class="aud-stat">
+        <p class="aud-label">Canadian</p>
+        <p class="aud-value">72%</p>
+        <p class="aud-context">Plus 14.6% in the US.
+Top city Toronto at 10.7%.</p>
+      </div>
+      <div class="aud-stat">
+        <p class="aud-label">Over baseline</p>
+        <p class="aud-value">+34<span class="unit">pts</span></p>
+        <p class="aud-context">Above the Canadian Meta gender baseline of <strong>46% men</strong>.</p>
+      </div>
+    </div>
+    <p class="audience-foot">80% men, 86% in the gear-buying age window, primarily Canadian.</p>
+  </div>
+</section>
+
+<!-- 05 · THE TRAJECTORY -->
+<section class="section dark trajectory" aria-label="The trajectory">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow on-dark">05 &nbsp;·&nbsp; The trajectory</p>
+      <h2 class="title on-dark">Doubled since reactivation.</h2>
+    </div>
+    <div class="traj-grid">
+      <div class="traj-headline">
+        <p class="traj-bignum"><span class="sign">+</span>100<span class="pct">%</span></p>
+        <p class="traj-headline-sub">Instagram followers since Drummer to Drummer returned from hiatus in January 2026.</p>
+        <p class="traj-detail">740 <span class="arrow">→</span> 1,481 &nbsp;·&nbsp; Jan to May</p>
+      </div>
+      <div class="traj-side">
+        <p class="traj-side-eyebrow">March was the turning point</p>
+        <div class="traj-bars">
+          <div class="traj-bar feb">
+            <div class="col"><span class="col-val">28.8k</span></div>
+            <p class="col-label">Feb</p>
+          </div>
+          <div class="traj-bar mar">
+            <div class="col"><span class="col-val">81.5k</span></div>
+            <p class="col-label">Mar</p>
+          </div>
+        </div>
+        <p class="traj-side-footnote"><strong>2.8×</strong> Instagram views month-over-month. YouTube engaged views moved <strong>5×</strong> in the same window.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 · PROVEN BRAND INTEGRATION -->
+<section class="section" aria-label="Proven brand integration">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">06 &nbsp;·&nbsp; Proven brand integration</p>
+      <h2 class="title">Integration that fits.</h2>
+    </div>
+    <div class="integration-grid">
+      <div class="intg-left">
+        <p class="intg-stat">5<span class="comma">,</span>037</p>
+        <p class="intg-stat-cap">Organic views &nbsp;·&nbsp; single post</p>
+        <p class="intg-sub">An experimental gear post for local sponsor YC Drum Company pulled over 5,000 organic views on Instagram — a sponsor placement performing like an editorial feature.</p>
+      </div>
+      <div class="intg-right">
+        <p class="eyebrow" style="color:var(--rust)">Sponsored content ideas</p>
+        <div class="intg-list" style="margin-top:clamp(20px,2vw,32px)">
+          <div class="intg-item">
+            <p class="intg-item-num">01</p>
+            <div>
+              <h3 class="intg-item-title">Tactical drum content.</h3>
+              <p class="intg-item-text">Gear specs, technique breakdowns, and production stories.</p>
+            </div>
+          </div>
+          <div class="intg-item">
+            <p class="intg-item-num">02</p>
+            <div>
+              <h3 class="intg-item-title">On-camera placement.</h3>
+              <p class="intg-item-text">Host-worn apparel, branded sticks in the contest prize pack, and other placements that fit within the show.</p>
+            </div>
+          </div>
+          <div class="intg-item">
+            <p class="intg-item-num">03</p>
+            <div>
+              <h3 class="intg-item-title">Sponsored contests.</h3>
+              <p class="intg-item-text">The contest mechanic already drives the show's best follow conversion. A sponsor-prize variant compounds reach with brand association.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 · WHY THIS AUDIENCE -->
+<section class="section dark why" aria-label="Why this audience">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow on-dark">07 &nbsp;·&nbsp; Why this audience</p>
+      <h2 class="title on-dark">A precisely targeted audience, growing fast.</h2>
+    </div>
+    <div class="why-chart">
+      <div class="why-chart-grid">
+        <div class="wc-block">
+          <p class="wc-label">Men</p>
+          <p class="wc-value">80<span class="unit">%</span></p>
+          <div class="wc-track">
+            <span class="fill" style="width:80%"></span>
+            <span class="baseline" style="left:46%"></span>
+            <span class="baseline-cap" style="left:46%">Baseline 46%</span>
+          </div>
+          <p class="wc-note"><strong>+34 pts</strong> above the Canadian Meta gender baseline.</p>
+        </div>
+        <div class="wc-block">
+          <p class="wc-label">Age 25–54</p>
+          <p class="wc-value">86<span class="unit">%</span></p>
+          <div class="wc-track">
+            <span class="fill" style="width:86%"></span>
+          </div>
+          <p class="wc-note">In the gear-buying age window. Peaks at 35–44.</p>
+        </div>
+        <div class="wc-block">
+          <p class="wc-label">Canadian</p>
+          <p class="wc-value">72<span class="unit">%</span></p>
+          <div class="wc-track">
+            <span class="fill" style="width:72%"></span>
+          </div>
+          <p class="wc-note">Plus <strong>15%</strong> in the US. Toronto leads at 10.7%.</p>
+        </div>
+      </div>
+    </div>
+    <div class="why-pillars">
+      <div class="pillar">
+        <p class="pillar-num">01</p>
+        <h3 class="pillar-title">Precisely targeted.</h3>
+        <p class="pillar-text"><strong>80% men, 86% age 25–54.</strong> The demographic many drum and cymbal brands spend marketing dollars trying to reach.</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-num">02</p>
+        <h3 class="pillar-title">Growing fast.</h3>
+        <p class="pillar-text"><strong>+100% Instagram followers</strong> since January. March drove 2.8× the IG views of February and 5× the YouTube engaged views.</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-num">03</p>
+        <h3 class="pillar-title">Cross-grid multiplier.</h3>
+        <p class="pillar-text"><strong>38,694 views on the Arkells trailer.</strong> Band collabs multiply reach; this dynamic compounds well across an 11-band season.</p>
+      </div>
+      <div class="pillar">
+        <p class="pillar-num">04</p>
+        <h3 class="pillar-title">Brand-safe.</h3>
+        <p class="pillar-text"><strong>97.58% positive sentiment on YouTube.</strong> Tactical drum content drives saves. Sponsor integrations fit naturally here.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 · LET'S TALK -->
+<section class="contact" aria-label="Let's talk">
+  <div class="contact-text">
+    <div>
+      <p class="eyebrow">08 &nbsp;·&nbsp; Let's talk</p>
+      <h2 class="title contact-title">Let's talk.</h2>
+      <p class="contact-sub">Sponsorship is open for Season 4. <span class="accent">Broken Social Scene</span> is projected to be our largest release of the year. Season 5 production is underway, featuring drummers from Barenaked Ladies, Silverstein, The Constantines and more.</p>
+    </div>
+    <div class="contact-card">
+      <div>
+        <p class="contact-name">Adam Nimmo</p>
+        <p class="contact-role">Host &nbsp;·&nbsp; Drummer to Drummer</p>
+      </div>
+      <div class="contact-list">
+        <div class="contact-line">
+          <span class="key">Email</span>
+          <span class="val"><a href="mailto:hello@drummertodrummer.com">hello@drummertodrummer.com</a></span>
+        </div>
+        <div class="contact-line">
+          <span class="key">Instagram</span>
+          <span class="val"><a href="https://instagram.com/drummertodrummer">instagram.com/drummertodrummer</a></span>
+        </div>
+        <div class="contact-line">
+          <span class="key">Facebook</span>
+          <span class="val"><a href="https://facebook.com/drummertodrummer">facebook.com/drummertodrummer</a></span>
+        </div>
+        <div class="contact-line">
+          <span class="key">YouTube</span>
+          <span class="val"><a href="https://youtube.com/drummertodrummer">youtube.com/drummertodrummer</a></span>
+        </div>
+        <div class="contact-line">
+          <span class="key">Spotify</span>
+          <span class="val"><a href="https://creators.spotify.com/pod/profile/drummertodrummer">creators.spotify.com/pod/profile/drummertodrummer</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="contact-image" role="img" aria-label="Drummer in green light"></div>
+</section>
+
+<!-- Colophon -->
+<footer class="colophon">
+  <span>D2D &nbsp;/&nbsp; Sponsor brief &nbsp;·&nbsp; Season 4 &nbsp;·&nbsp; May 2026</span>
+  <span>hello@drummertodrummer.com</span>
+</footer>
+
+</body>
+</html>
