@@ -568,7 +568,12 @@ section{position:relative}
   background-size:cover;
   background-position:center right;
 }
-.why-chart{margin:clamp(40px, 5vw, 80px) 0 clamp(56px, 6vw, 112px)}
+.why-chart{
+  margin:clamp(40px, 5vw, 80px) 0;
+  padding-bottom:clamp(48px, 6vw, 88px);
+  border-bottom:1px solid rgba(250,248,244,0.12);
+}
+.why-pillars-wrap{margin-top:clamp(48px, 6vw, 88px)}
 .why-chart-grid{
   display:grid;
   grid-template-columns:repeat(3, minmax(0,1fr));
@@ -1072,7 +1077,7 @@ Top city Toronto at 10.7%.</p>
         </div>
       </div>
     </div>
-    <div class="why-pillars">
+    <div class="why-pillars-wrap"><div class="why-pillars">
       <div class="pillar">
         <p class="pillar-num">01</p>
         <h3 class="pillar-title">Precisely targeted.</h3>
@@ -1093,7 +1098,7 @@ Top city Toronto at 10.7%.</p>
         <h3 class="pillar-title">Brand-safe.</h3>
         <p class="pillar-text"><strong>97.58% positive sentiment on YouTube.</strong> Tactical drum content drives saves. Sponsor integrations fit naturally here.</p>
       </div>
-    </div>
+    </div></div>
   </div>
 </section>
 
