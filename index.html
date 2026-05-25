@@ -81,6 +81,7 @@ section{position:relative}
 .section.dark{background:var(--ink);color:var(--paper)}
 .section.dark .body{color:rgba(250,248,244,0.72)}
 .section.dark .body strong{color:var(--paper)}
+.section-divided{border-top:1px solid rgba(20,18,15,0.12)}
 
 .container{
   max-width:var(--container);
@@ -131,11 +132,13 @@ section{position:relative}
 .cover-foot{
   display:grid;
   grid-template-columns:repeat(4, minmax(0,1fr));
-  gap:clamp(24px, 3vw, 56px);
-  align-items:flex-end;
+  gap:clamp(16px, 3vw, 56px);
+  align-items:flex-start;
   border-top:1px solid rgba(250,248,244,0.22);
   padding-top:clamp(20px, 2.5vw, 36px);
 }
+.cover-foot > div{min-width:0}
+.cover-foot .nowrap{white-space:nowrap}
 .cover-foot .meta-label{
   font-family:'JetBrains Mono',monospace;
   font-size:var(--type-eyebrow);
@@ -170,7 +173,7 @@ section{position:relative}
   gap:clamp(64px, 8vw, 120px);
 }
 .show-image{
-  background-image:url('assets/tim-oxford.jpg');
+  background-image:url('assets/IMG_5290%202.jpg');
   background-size:cover;
   background-position:center;
   min-height:clamp(360px, 60vh, 880px);
@@ -219,9 +222,8 @@ section{position:relative}
   gap:clamp(10px, 1vw, 14px);
 }
 .deliv-card.anchor{
-  background:var(--ink);
-  color:var(--paper);
-  border-color:var(--ink);
+  background:var(--tan-deep);
+  border-color:rgba(20,18,15,0.10);
 }
 .deliv-tag{
   font-family:'JetBrains Mono',monospace;
@@ -235,9 +237,7 @@ section{position:relative}
   gap:10px;
 }
 .deliv-tag .num{color:var(--rust);font-weight:500}
-.deliv-card.anchor .deliv-tag{color:rgba(250,248,244,0.55)}
-.deliv-card.anchor .deliv-tag .num{color:var(--accent)}
-.deliv-tag.boost .num{color:var(--accent)}
+.deliv-tag.boost .num{color:var(--rust)}
 .deliv-name{
   font-family:'Fraunces',serif;
   font-size:clamp(20px, 2.1vw, 30px);
@@ -246,13 +246,11 @@ section{position:relative}
   font-weight:500;
   color:var(--ink);
 }
-.deliv-card.anchor .deliv-name{color:var(--paper)}
 .deliv-desc{
   font-size:clamp(13px, 1vw, 15px);
   line-height:1.55;
   color:var(--muted);
 }
-.deliv-card.anchor .deliv-desc{color:rgba(250,248,244,0.7)}
 .deliv-plat{
   margin-top:auto;
   padding-top:clamp(10px, 1.2vw, 16px);
@@ -264,9 +262,8 @@ section{position:relative}
   font-weight:500;
   color:var(--muted-dim);
 }
-.deliv-card.anchor .deliv-plat{border-top-color:rgba(250,248,244,0.14);color:rgba(250,248,244,0.55)}
+.deliv-card.anchor .deliv-plat{border-top-color:rgba(20,18,15,0.12)}
 .deliv-plat .badge{color:var(--rust)}
-.deliv-card.anchor .deliv-plat .badge{color:var(--accent)}
 @media (max-width:900px){
   .deliv-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
 }
@@ -597,6 +594,13 @@ section{position:relative}
   max-width:780px;
 }
 .intg-sub strong{color:var(--rust);font-weight:500}
+.intg-link{
+  color:inherit;
+  text-decoration:none;
+  border-bottom:1px solid rgba(199,93,60,0.5);
+  transition:border-color .2s ease,color .2s ease;
+}
+.intg-link:hover{color:var(--rust);border-bottom-color:var(--rust)}
 .intg-right{padding-top:clamp(8px, 1.5vw, 24px)}
 .intg-right .eyebrow{margin-bottom:clamp(20px, 2vw, 32px);color:var(--rust)}
 .intg-list{display:flex;flex-direction:column;gap:clamp(18px, 2vw, 28px)}
@@ -714,12 +718,13 @@ section{position:relative}
 .gc-y-right text,
 .gc-x text{
   font-family:'JetBrains Mono',monospace;
-  font-size:14px;
-  letter-spacing:0.14em;
+  font-size:18px;
+  letter-spacing:0.1em;
   text-transform:uppercase;
   font-weight:500;
 }
 .gc-y-left text{fill:var(--accent);text-anchor:end}
+.gc-y-left.views text{fill:var(--rust)}
 .gc-y-right text{fill:var(--rust);text-anchor:start}
 .gc-x text{fill:rgba(250,248,244,0.55);text-anchor:middle}
 .gc-x .asterisk{fill:var(--rust)}
@@ -877,7 +882,7 @@ section{position:relative}
   gap:clamp(64px, 8vw, 120px);
 }
 .contact-image{
-  background-image:url('assets/drummer-green.jpg');
+  background-image:url('assets/IMG_5167.jpeg');
   background-size:cover;
   background-position:center;
   min-height:clamp(360px, 60vh, 880px);
@@ -1011,10 +1016,19 @@ section{position:relative}
     font-size:56px;
     max-width:100%;
   }
-  .cover-foot{grid-template-columns:1fr;gap:24px}
+  .cover-foot{
+    grid-template-columns:repeat(4, minmax(0,1fr));
+    gap:10px;
+    padding-top:18px;
+  }
   .cover-foot .end{text-align:left}
-  .cover-foot .meta-value{font-size:17px;overflow-wrap:break-word;min-width:0}
-  .cover-foot > div{min-width:0}
+  .cover-foot .meta-label{font-size:9px;letter-spacing:0.12em;margin-bottom:6px}
+  .cover-foot .meta-value{
+    font-size:12px;
+    line-height:1.25;
+    overflow-wrap:break-word;
+    min-width:0;
+  }
   .audience-grid{grid-template-columns:1fr}
   .aud-stat{border-right:none !important;padding-right:0}
   .aud-stat:nth-child(n+2){border-top:1px solid rgba(20,18,15,0.08)}
@@ -1068,7 +1082,7 @@ section{position:relative}
     </div>
     <div class="end">
       <p class="meta-label">Produced by</p>
-      <p class="meta-value">Adam Nimmo and Jon Lucas</p>
+      <p class="meta-value"><span class="nowrap">Adam Nimmo &amp;</span> <span class="nowrap">Jon Lucas</span></p>
     </div>
   </div>
 </section>
@@ -1097,7 +1111,7 @@ section{position:relative}
       </div>
     </div>
   </div>
-  <div class="show-image" role="img" aria-label="Tim Oxford (Arkells) on kit"></div>
+  <div class="show-image" role="img" aria-label="Adam interviewing a guest drummer on set"></div>
 </section>
 
 <!-- 02b · BIWEEKLY DELIVERABLES -->
@@ -1106,7 +1120,7 @@ section{position:relative}
     <div class="deliverables-head">
       <p class="eyebrow">02b &nbsp;·&nbsp; The biweekly cycle</p>
       <h2 class="title">What ships every two&nbsp;weeks.</h2>
-      <p class="body">Nine distinct deliverables built around each episode, deployed across Instagram, YouTube, TikTok, and Spotify. Anchor pieces in dark; supporting reels and amplifiers in light.</p>
+      <p class="body">10–12 deliverables deployed across Instagram, Facebook, YouTube, TikTok, Threads, Spotify (and Apple Podcasts, Amazon Music, etc.).</p>
     </div>
     <div class="deliv-grid">
       <div class="deliv-card">
@@ -1263,7 +1277,7 @@ Top city Toronto at 10.7%.</p>
     <div class="section-head">
       <p class="eyebrow">06 &nbsp;·&nbsp; The conversion</p>
       <h2 class="title">Cheap to reach.</h2>
-      <p class="body">Eight contest reels boosted on Instagram, $30 each. The math is the proof: a niche audience converts at the low end of industry benchmarks.</p>
+      <p class="body">Eight contest reels boosted on Instagram reveal a niche audience that converts at the low end of cost benchmarks.</p>
     </div>
     <div class="conversion-grid">
       <div class="conv-left">
@@ -1292,7 +1306,7 @@ Top city Toronto at 10.7%.</p>
 </section>
 
 <!-- 07 · PROVEN BRAND INTEGRATION -->
-<section class="section" aria-label="Proven brand integration">
+<section class="section section-divided" aria-label="Proven brand integration">
   <div class="container">
     <div class="section-head">
       <p class="eyebrow">07 &nbsp;·&nbsp; Proven brand integration</p>
@@ -1302,7 +1316,7 @@ Top city Toronto at 10.7%.</p>
       <div class="intg-left">
         <p class="intg-stat">5<span class="comma">,</span>037</p>
         <p class="intg-stat-cap">Organic views &nbsp;·&nbsp; single post</p>
-        <p class="intg-sub">An experimental gear post for local sponsor YC Drum Company pulled over 5,000 organic views on Instagram — a sponsor placement performing like an editorial feature.</p>
+        <p class="intg-sub">An experimental <a class="intg-link" href="https://www.instagram.com/p/DSkteERjqyz/?igsh=MWVkemlnZG93cmtudA==" target="_blank" rel="noopener">gear post</a> for local sponsor YC Drum Company pulled over 5,000 organic views on Instagram — a sponsor placement performing like an editorial feature.</p>
       </div>
       <div class="intg-right">
         <p class="eyebrow" style="color:var(--rust)">Sponsored content ideas</p>
@@ -1357,6 +1371,11 @@ Top city Toronto at 10.7%.</p>
             <line x1="80" y1="255" x2="1120" y2="255"/>
             <line x1="80" y1="320" x2="1120" y2="320"/>
           </g>
+          <g class="gc-y-left">
+            <text x="72" y="64">1,481</text>
+            <text x="72" y="194">1,053</text>
+            <text x="72" y="324">625</text>
+          </g>
           <g class="gc-x">
             <text x="80" y="358">Dec</text>
             <text x="288" y="358">Jan</text>
@@ -1374,10 +1393,6 @@ Top city Toronto at 10.7%.</p>
             <circle cx="704" cy="176" r="5"/>
             <circle cx="912" cy="85" r="6"/>
             <circle cx="1120" cy="60" r="7"/>
-          </g>
-          <g class="gc-annotations">
-            <text class="gc-callout followers" x="80" y="304" text-anchor="start">625</text>
-            <text class="gc-callout followers" x="1120" y="44" text-anchor="end">1,481</text>
           </g>
         </svg>
         <p class="gc-caption">Instagram followers climbed from <strong>625 to 1,481</strong> between December and mid-May — <strong>+137%</strong> in six months, with the steepest acceleration after the multi-reel strategy went live in early March.</p>
@@ -1397,6 +1412,11 @@ Top city Toronto at 10.7%.</p>
             <line x1="80" y1="255" x2="1120" y2="255"/>
             <line x1="80" y1="320" x2="1120" y2="320"/>
           </g>
+          <g class="gc-y-left views">
+            <text x="72" y="64">1,918</text>
+            <text x="72" y="194">1,840</text>
+            <text x="72" y="324">1,761</text>
+          </g>
           <g class="gc-x">
             <text x="80" y="358">Dec</text>
             <text x="288" y="358">Jan</text>
@@ -1415,12 +1435,8 @@ Top city Toronto at 10.7%.</p>
             <circle cx="912" cy="88" r="6"/>
             <circle cx="1120" cy="60" r="7"/>
           </g>
-          <g class="gc-annotations">
-            <text class="gc-callout views" x="80" y="304" text-anchor="start">1,761</text>
-            <text class="gc-callout views" x="1120" y="44" text-anchor="end">1,918</text>
-          </g>
         </svg>
-        <p class="gc-caption">YouTube subscribers grew from <strong>1,761 to 1,918</strong> in the same window — long-tail compounding alongside the IG growth curve, with the March step-change visible on both surfaces.</p>
+        <p class="gc-caption">YouTube subscribers grew from <strong>1,761 to 1,918</strong> in the same window — a steady <strong>+8.9%</strong> climb, with the same March step-change visible on both surfaces. Each chart is scaled to its own data range; absolute values labelled on the y-axis.</p>
       </div>
     </div>
     <div class="why-pillars-wrap"><div class="why-pillars">
@@ -1486,7 +1502,7 @@ Top city Toronto at 10.7%.</p>
       </div>
     </div>
   </div>
-  <div class="contact-image" role="img" aria-label="Drummer in green light"></div>
+  <div class="contact-image" role="img" aria-label="Adam at the kit, live"></div>
 </section>
 
 <!-- Colophon -->
