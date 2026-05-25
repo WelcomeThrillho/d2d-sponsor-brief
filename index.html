@@ -130,8 +130,8 @@ section{position:relative}
 }
 .cover-foot{
   display:grid;
-  grid-template-columns:repeat(3, minmax(0,1fr));
-  gap:clamp(24px, 3vw, 64px);
+  grid-template-columns:repeat(4, minmax(0,1fr));
+  gap:clamp(24px, 3vw, 56px);
   align-items:flex-end;
   border-top:1px solid rgba(250,248,244,0.22);
   padding-top:clamp(20px, 2.5vw, 36px);
@@ -170,7 +170,7 @@ section{position:relative}
   gap:clamp(64px, 8vw, 120px);
 }
 .show-image{
-  background-image:url('assets/warehouse-stage.jpg');
+  background-image:url('assets/tim-oxford.jpg');
   background-size:cover;
   background-position:center;
   min-height:clamp(360px, 60vh, 880px);
@@ -199,6 +199,81 @@ section{position:relative}
   line-height:1.25;
 }
 
+/* ---------- 02b · BIWEEKLY DELIVERABLES ---------- */
+.deliverables{background:var(--tan)}
+.deliverables-head{margin-bottom:clamp(40px, 5vw, 72px);max-width:1100px}
+.deliverables-head .title{margin-top:clamp(16px, 2vw, 28px);font-size:clamp(32px, 4.4vw, 64px)}
+.deliverables-head .body{margin-top:clamp(14px, 1.6vw, 24px);max-width:780px}
+.deliv-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:clamp(14px, 1.6vw, 22px);
+}
+.deliv-card{
+  background:var(--paper);
+  border:1px solid rgba(20,18,15,0.10);
+  border-radius:10px;
+  padding:clamp(22px, 2.2vw, 32px);
+  display:flex;
+  flex-direction:column;
+  gap:clamp(10px, 1vw, 14px);
+}
+.deliv-card.anchor{
+  background:var(--ink);
+  color:var(--paper);
+  border-color:var(--ink);
+}
+.deliv-tag{
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  font-weight:500;
+  color:var(--muted-dim);
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.deliv-tag .num{color:var(--rust);font-weight:500}
+.deliv-card.anchor .deliv-tag{color:rgba(250,248,244,0.55)}
+.deliv-card.anchor .deliv-tag .num{color:var(--accent)}
+.deliv-tag.boost .num{color:var(--accent)}
+.deliv-name{
+  font-family:'Fraunces',serif;
+  font-size:clamp(20px, 2.1vw, 30px);
+  line-height:1.15;
+  letter-spacing:-0.015em;
+  font-weight:500;
+  color:var(--ink);
+}
+.deliv-card.anchor .deliv-name{color:var(--paper)}
+.deliv-desc{
+  font-size:clamp(13px, 1vw, 15px);
+  line-height:1.55;
+  color:var(--muted);
+}
+.deliv-card.anchor .deliv-desc{color:rgba(250,248,244,0.7)}
+.deliv-plat{
+  margin-top:auto;
+  padding-top:clamp(10px, 1.2vw, 16px);
+  border-top:1px solid rgba(20,18,15,0.08);
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  font-weight:500;
+  color:var(--muted-dim);
+}
+.deliv-card.anchor .deliv-plat{border-top-color:rgba(250,248,244,0.14);color:rgba(250,248,244,0.55)}
+.deliv-plat .badge{color:var(--rust)}
+.deliv-card.anchor .deliv-plat .badge{color:var(--accent)}
+@media (max-width:900px){
+  .deliv-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
+}
+@media (max-width:560px){
+  .deliv-grid{grid-template-columns:1fr}
+}
+
 /* ---------- 03 · LINEUP ---------- */
 .lineup-list{display:flex;flex-direction:column}
 .lineup-row{
@@ -213,7 +288,7 @@ section{position:relative}
 .lineup-name{
   font-family:'Fraunces',Georgia,serif;
   font-weight:500;
-  font-size:clamp(28px, 4.2vw, 64px);
+  font-size:clamp(22px, 3.4vw, 52px);
   line-height:1.1;
   letter-spacing:-0.025em;
   color:var(--paper);
@@ -659,6 +734,10 @@ section{position:relative}
 .gc-line.views{stroke:var(--rust)}
 .gc-line.projected{stroke-dasharray:6 6;opacity:0.85}
 
+.gc-area{stroke:none}
+.gc-area.followers{fill:rgba(212,169,66,0.12)}
+.gc-area.views{fill:rgba(199,93,60,0.12)}
+
 .gc-points circle{stroke:#14120f;stroke-width:2}
 .gc-points.followers circle{fill:var(--accent)}
 .gc-points.views circle{fill:var(--rust)}
@@ -892,6 +971,7 @@ section{position:relative}
   gap:24px;
   flex-wrap:wrap;
 }
+.colophon span{white-space:nowrap}
 
 /* ---------- Responsive collapses ---------- */
 @media (max-width:960px){
@@ -918,13 +998,43 @@ section{position:relative}
   .contact-image{order:-1;min-height:60vw}
 }
 @media (max-width:560px){
+  html,body{overflow-x:hidden}
+  .cover{
+    background-position:72% center;
+  }
+  .cover-eyebrow,.cover-mark{
+    font-size:10px;
+    letter-spacing:0.14em;
+  }
+  .cover-top{gap:14px}
+  .cover-wordmark{
+    font-size:56px;
+    max-width:100%;
+  }
   .cover-foot{grid-template-columns:1fr;gap:24px}
   .cover-foot .end{text-align:left}
+  .cover-foot .meta-value{font-size:17px;overflow-wrap:break-word;min-width:0}
+  .cover-foot > div{min-width:0}
   .audience-grid{grid-template-columns:1fr}
   .aud-stat{border-right:none !important;padding-right:0}
   .aud-stat:nth-child(n+2){border-top:1px solid rgba(20,18,15,0.08)}
   .why-pillars{grid-template-columns:1fr}
   .contact-line{grid-template-columns:1fr;gap:6px}
+  .contact-line .val{
+    white-space:nowrap;
+    overflow-wrap:normal;
+    word-break:keep-all;
+    font-size:clamp(11px, 3.4vw, 15px);
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .colophon{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+    font-size:10px;
+    letter-spacing:0.16em;
+  }
 }
 
 @media print{
@@ -939,22 +1049,26 @@ section{position:relative}
 <!-- 01 · COVER -->
 <section class="cover" aria-label="Cover">
   <div class="cover-top">
-    <p class="eyebrow cover-eyebrow">Sponsor brief &nbsp;·&nbsp; Season 4 &nbsp;·&nbsp; May 2026</p>
+    <p class="eyebrow cover-eyebrow">Sponsor&nbsp;brief &nbsp;·&nbsp; Season&nbsp;4 &nbsp;·&nbsp; May&nbsp;2026</p>
     <p class="cover-mark">D2D &nbsp;/&nbsp; Sponsor brief</p>
   </div>
   <h1 class="cover-wordmark">Drummer to<br>Drummer.</h1>
   <div class="cover-foot">
     <div>
       <p class="meta-label">The show</p>
-      <p class="meta-value">Talking to (and playing with) unsung heroes of the beat</p>
+      <p class="meta-value">Talking to (and playing with) the unsung heroes of the beat</p>
     </div>
     <div>
       <p class="meta-label">Prepared for</p>
       <p class="meta-value">Prospective sponsors</p>
     </div>
-    <div class="end">
+    <div>
       <p class="meta-label">Hosted by</p>
       <p class="meta-value">Adam Nimmo</p>
+    </div>
+    <div class="end">
+      <p class="meta-label">Produced by</p>
+      <p class="meta-value">Adam Nimmo and Jon Lucas</p>
     </div>
   </div>
 </section>
@@ -966,10 +1080,10 @@ section{position:relative}
       <p class="eyebrow">02 &nbsp;·&nbsp; The show</p>
       <h2 class="title show-title">Two drummers.<br>One conversation.</h2>
       <p class="body" style="max-width:640px">
-        Each episode features an unscripted interview followed by a double-jam session with the most under appreciated (and often most interesting) member of the band.
+        Each episode features an unscripted interview followed by a double-jam session with the most under appreciated (and often the most interesting) member of the band.
       </p>
       <p class="body" style="max-width:640px;margin-top:1.2em">
-        Filmed across Toronto, Hamilton, and Halifax (so far), episodes run on a biweekly release schedule centring on the main episode, a 360° interactive video of the jam session, a contest/giveaway, and supplementary social reels redirecting to the main episode.
+        Filmed across Toronto, Hamilton, and Halifax (so far), episodes run on a biweekly cadence centering around the main episode, a 360° video of the jam session, and a contest giveaway.
       </p>
     </div>
     <div class="show-meta">
@@ -983,7 +1097,74 @@ section{position:relative}
       </div>
     </div>
   </div>
-  <div class="show-image" role="img" aria-label="Warehouse stage"></div>
+  <div class="show-image" role="img" aria-label="Tim Oxford (Arkells) on kit"></div>
+</section>
+
+<!-- 02b · BIWEEKLY DELIVERABLES -->
+<section class="section deliverables" aria-label="The biweekly cycle">
+  <div class="container">
+    <div class="deliverables-head">
+      <p class="eyebrow">02b &nbsp;·&nbsp; The biweekly cycle</p>
+      <h2 class="title">What ships every two&nbsp;weeks.</h2>
+      <p class="body">Nine distinct deliverables built around each episode, deployed across Instagram, YouTube, TikTok, and Spotify. Anchor pieces in dark; supporting reels and amplifiers in light.</p>
+    </div>
+    <div class="deliv-grid">
+      <div class="deliv-card">
+        <p class="deliv-tag"><span class="num">01</span> Episode teaser</p>
+        <h3 class="deliv-name">Pre-launch BTS</h3>
+        <p class="deliv-desc">Quick BTS clip or photo 1–2 days before launch. The cycle's first touchpoint.</p>
+        <p class="deliv-plat">IG &middot; YT &middot; TT</p>
+      </div>
+      <div class="deliv-card anchor">
+        <p class="deliv-tag"><span class="num">02</span> Episode trailer</p>
+        <h3 class="deliv-name">Launch-day anchor</h3>
+        <p class="deliv-desc">Polished launch-day reel previewing the full episode. The cycle's anchor post.</p>
+        <p class="deliv-plat"><span class="badge">Anchor</span> &middot; IG &middot; YT &middot; TT</p>
+      </div>
+      <div class="deliv-card anchor">
+        <p class="deliv-tag"><span class="num">03</span> Main episode</p>
+        <h3 class="deliv-name">Long-form interview</h3>
+        <p class="deliv-desc">6–10 minute interview in 1080p. The flagship deliverable.</p>
+        <p class="deliv-plat"><span class="badge">Flagship</span> &middot; YT &middot; Spotify</p>
+      </div>
+      <div class="deliv-card">
+        <p class="deliv-tag"><span class="num">04</span> Reels</p>
+        <h3 class="deliv-name">Episode moments</h3>
+        <p class="deliv-desc">15–30 second high-energy clips, 2–4 per cycle. Reused as Shorts and TikToks.</p>
+        <p class="deliv-plat">IG &middot; YT &middot; TT</p>
+      </div>
+      <div class="deliv-card anchor">
+        <p class="deliv-tag"><span class="num">05</span> 360° main video</p>
+        <h3 class="deliv-name">Interactive jam</h3>
+        <p class="deliv-desc">Interactive 360° video of the full double-jam session. A format that doesn't exist anywhere else.</p>
+        <p class="deliv-plat"><span class="badge">Unique</span> &middot; YT only</p>
+      </div>
+      <div class="deliv-card">
+        <p class="deliv-tag"><span class="num">06</span> 360° promo</p>
+        <h3 class="deliv-name">Drive-to-YT reel</h3>
+        <p class="deliv-desc">Short reel previewing the 360° main, pushing viewers to YouTube for the full version.</p>
+        <p class="deliv-plat">IG &middot; YT &middot; TT</p>
+      </div>
+      <div class="deliv-card anchor">
+        <p class="deliv-tag boost"><span class="num">07</span> Contest invite</p>
+        <h3 class="deliv-name">Sub-and-like to enter</h3>
+        <p class="deliv-desc">Signed sticks and T-shirt prize. The only paid-boosted post in the cycle.</p>
+        <p class="deliv-plat"><span class="badge">IG-boosted</span> &middot; IG &middot; YT &middot; TT</p>
+      </div>
+      <div class="deliv-card">
+        <p class="deliv-tag"><span class="num">08</span> BTS / thank-you</p>
+        <h3 class="deliv-name">Carousel close-out</h3>
+        <p class="deliv-desc">Carousel of posed shots with Adam plus behind-the-scenes from the shoot.</p>
+        <p class="deliv-plat">IG carousel</p>
+      </div>
+      <div class="deliv-card">
+        <p class="deliv-tag"><span class="num">09</span> Contest winner</p>
+        <h3 class="deliv-name">Wheel-spin reveal</h3>
+        <p class="deliv-desc">Wheel-spin reveal video pinned in the next launch trailer's comments. Closes the loop.</p>
+        <p class="deliv-plat">IG &middot; YT &middot; TT</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- 03 · HEARD ON THE SHOW -->
@@ -1003,7 +1184,7 @@ section{position:relative}
       <div class="lineup-row"><p class="lineup-name">July Talk</p><p class="lineup-tag past">Past seasons</p></div>
       <div class="lineup-row"><p class="lineup-name">The Trews</p><p class="lineup-tag s4">Season 4</p></div>
       <div class="lineup-row"><p class="lineup-name">Wintersleep</p><p class="lineup-tag past">Past seasons</p></div>
-      <div class="lineup-row"><p class="lineup-name">Barenaked Ladies</p><p class="lineup-tag upcoming">Next</p></div>
+      <div class="lineup-row"><p class="lineup-name">Barenaked Ladies</p><p class="lineup-tag upcoming">Next&nbsp;Season</p></div>
     </div>
   </div>
 </section>
@@ -1014,7 +1195,7 @@ section{position:relative}
     <div class="section-head">
       <p class="eyebrow">04 &nbsp;·&nbsp; The audience</p>
       <h2 class="title">Who is actually watching.</h2>
-      <p class="body">The headline is the over-index: D2D's audience is exactly the demographic that many drum and cymbal brands spend their marketing dollars trying to reach.</p>
+      <p class="body">The headline is the over-index: D2D's audience is exactly the demographic that many drum, cymbal, and audio/visual brands are eager to reach.</p>
     </div>
     <div class="audience-grid">
       <div class="aud-stat">
@@ -1027,7 +1208,7 @@ Facebook skews further at 89.4%.</p>
         <p class="aud-label">Age 25–54</p>
         <p class="aud-value">86%</p>
         <p class="aud-context">The gear-buying window.
-Peaked in the 35–44 bracket.</p>
+Peaking around the 35-44 bracket.</p>
       </div>
       <div class="aud-stat">
         <p class="aud-label">Canadian</p>
@@ -1038,7 +1219,7 @@ Top city Toronto at 10.7%.</p>
       <div class="aud-stat">
         <p class="aud-label">Over baseline</p>
         <p class="aud-value">+34<span class="unit">pts</span></p>
-        <p class="aud-context">Above the Canadian Meta gender baseline of <strong>46% men</strong>.</p>
+        <p class="aud-context">Above the Canadian Meta gender baseline.</p>
       </div>
     </div>
     <p class="audience-foot">80% men, 86% in the gear-buying age window, primarily Canadian.</p>
@@ -1164,56 +1345,82 @@ Top city Toronto at 10.7%.</p>
       <div class="growth-chart">
         <div class="gc-head">
           <div class="gc-legend">
-            <span class="gc-legend-item gold">IG followers</span>
-            <span class="gc-legend-item rust">IG monthly views</span>
+            <span class="gc-legend-item gold">Instagram followers</span>
           </div>
-          <p class="gc-period">Dec 2025 — Apr 2026 &nbsp;·&nbsp; May projected</p>
+          <p class="gc-period">Dec 2025 — May 2026</p>
         </div>
-        <svg class="gc-svg" viewBox="0 0 1200 420" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Growth trajectory chart: IG followers and monthly views, December 2025 through April 2026, with combined-trend projection through May">
+        <svg class="gc-svg" viewBox="0 0 1200 420" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Instagram follower growth, December 2025 through May 2026: 625 to 1,481 followers.">
           <g class="gc-grid">
-            <line x1="80" y1="40" x2="1120" y2="40"/>
-            <line x1="80" y1="115" x2="1120" y2="115"/>
+            <line x1="80" y1="60" x2="1120" y2="60"/>
+            <line x1="80" y1="125" x2="1120" y2="125"/>
             <line x1="80" y1="190" x2="1120" y2="190"/>
-            <line x1="80" y1="265" x2="1120" y2="265"/>
-            <line x1="80" y1="340" x2="1120" y2="340"/>
+            <line x1="80" y1="255" x2="1120" y2="255"/>
+            <line x1="80" y1="320" x2="1120" y2="320"/>
           </g>
-          <rect class="gc-projection-zone" x="912" y="40" width="208" height="300"/>
-          <line class="gc-divider" x1="912" y1="40" x2="912" y2="340"/>
           <g class="gc-x">
-            <text x="80" y="378">Dec</text>
-            <text x="288" y="378">Jan</text>
-            <text x="496" y="378">Feb</text>
-            <text x="704" y="378">Mar</text>
-            <text x="912" y="378">Apr</text>
-            <text x="1120" y="378" class="projected">May</text>
+            <text x="80" y="358">Dec</text>
+            <text x="288" y="358">Jan</text>
+            <text x="496" y="358">Feb</text>
+            <text x="704" y="358">Mar</text>
+            <text x="912" y="358">Apr</text>
+            <text x="1120" y="358">May</text>
           </g>
-          <path class="gc-line views" d="M 80 250 L 288 250 L 496 244 L 704 97 L 912 145"/>
-          <path class="gc-line views projected" d="M 912 145 L 1120 109"/>
-          <path class="gc-line followers" d="M 80 215 L 288 192 L 496 170 L 704 120 L 912 60"/>
-          <path class="gc-line followers projected" d="M 912 60 L 1120 22"/>
-          <g class="gc-points views">
-            <circle cx="80" cy="250" r="5"/>
-            <circle cx="288" cy="250" r="5"/>
-            <circle cx="496" cy="244" r="5"/>
-            <circle cx="704" cy="97" r="7"/>
-            <circle cx="912" cy="145" r="5"/>
-            <circle cx="1120" cy="109" r="5" class="projection"/>
-          </g>
+          <path class="gc-area followers" d="M 80 320 L 288 285 L 496 252 L 704 176 L 912 85 L 1120 60 L 1120 320 L 80 320 Z"/>
+          <path class="gc-line followers" d="M 80 320 L 288 285 L 496 252 L 704 176 L 912 85 L 1120 60"/>
           <g class="gc-points followers">
-            <circle cx="80" cy="215" r="5"/>
-            <circle cx="288" cy="192" r="5"/>
-            <circle cx="496" cy="170" r="5"/>
-            <circle cx="704" cy="120" r="5"/>
-            <circle cx="912" cy="60" r="7"/>
-            <circle cx="1120" cy="22" r="6" class="projection"/>
+            <circle cx="80" cy="320" r="5"/>
+            <circle cx="288" cy="285" r="5"/>
+            <circle cx="496" cy="252" r="5"/>
+            <circle cx="704" cy="176" r="5"/>
+            <circle cx="912" cy="85" r="6"/>
+            <circle cx="1120" cy="60" r="7"/>
           </g>
           <g class="gc-annotations">
-            <text class="gc-callout views" x="704" y="78">81k</text>
-            <text class="gc-callout followers" x="900" y="48" text-anchor="end">1,400</text>
-            <text class="gc-callout followers" x="288" y="216" text-anchor="middle">740</text>
+            <text class="gc-callout followers" x="80" y="304" text-anchor="start">625</text>
+            <text class="gc-callout followers" x="1120" y="44" text-anchor="end">1,481</text>
           </g>
         </svg>
-        <p class="gc-caption">IG followers climbed from <strong>740 to 1,400</strong> between January and April (<strong>1,481</strong> already by mid-May). IG monthly views moved <strong>2.8×</strong> in March as the multi-reel strategy went live, sustaining through April. Dashed segments project each metric through May based on its Dec–Apr trajectory.</p>
+        <p class="gc-caption">Instagram followers climbed from <strong>625 to 1,481</strong> between December and mid-May — <strong>+137%</strong> in six months, with the steepest acceleration after the multi-reel strategy went live in early March.</p>
+      </div>
+      <div class="growth-chart" style="margin-top:clamp(40px, 5vw, 72px)">
+        <div class="gc-head">
+          <div class="gc-legend">
+            <span class="gc-legend-item rust">YouTube subscribers</span>
+          </div>
+          <p class="gc-period">Dec 2025 — May 2026</p>
+        </div>
+        <svg class="gc-svg" viewBox="0 0 1200 420" preserveAspectRatio="xMidYMid meet" role="img" aria-label="YouTube subscriber growth, December 2025 through May 2026: 1,761 to 1,918 subscribers.">
+          <g class="gc-grid">
+            <line x1="80" y1="60" x2="1120" y2="60"/>
+            <line x1="80" y1="125" x2="1120" y2="125"/>
+            <line x1="80" y1="190" x2="1120" y2="190"/>
+            <line x1="80" y1="255" x2="1120" y2="255"/>
+            <line x1="80" y1="320" x2="1120" y2="320"/>
+          </g>
+          <g class="gc-x">
+            <text x="80" y="358">Dec</text>
+            <text x="288" y="358">Jan</text>
+            <text x="496" y="358">Feb</text>
+            <text x="704" y="358">Mar</text>
+            <text x="912" y="358">Apr</text>
+            <text x="1120" y="358">May</text>
+          </g>
+          <path class="gc-area views" d="M 80 320 L 288 295 L 496 279 L 704 146 L 912 88 L 1120 60 L 1120 320 L 80 320 Z"/>
+          <path class="gc-line views" d="M 80 320 L 288 295 L 496 279 L 704 146 L 912 88 L 1120 60"/>
+          <g class="gc-points views">
+            <circle cx="80" cy="320" r="5"/>
+            <circle cx="288" cy="295" r="5"/>
+            <circle cx="496" cy="279" r="5"/>
+            <circle cx="704" cy="146" r="5"/>
+            <circle cx="912" cy="88" r="6"/>
+            <circle cx="1120" cy="60" r="7"/>
+          </g>
+          <g class="gc-annotations">
+            <text class="gc-callout views" x="80" y="304" text-anchor="start">1,761</text>
+            <text class="gc-callout views" x="1120" y="44" text-anchor="end">1,918</text>
+          </g>
+        </svg>
+        <p class="gc-caption">YouTube subscribers grew from <strong>1,761 to 1,918</strong> in the same window — long-tail compounding alongside the IG growth curve, with the March step-change visible on both surfaces.</p>
       </div>
     </div>
     <div class="why-pillars-wrap"><div class="why-pillars">
