@@ -173,10 +173,88 @@ section{position:relative}
   gap:clamp(64px, 8vw, 120px);
 }
 .show-image{
+  appearance:none;
+  border:none;
+  padding:0;
+  margin:0;
+  font:inherit;
+  color:inherit;
+  display:block;
+  width:100%;
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
   background-image:url('assets/IMG_5290%202.jpg');
   background-size:cover;
   background-position:center;
   min-height:clamp(360px, 60vh, 880px);
+}
+.show-image::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(14,12,10,0);
+  transition:background .3s ease;
+  pointer-events:none;
+}
+.show-play-icon{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:clamp(64px, 8vw, 96px);
+  height:clamp(64px, 8vw, 96px);
+  transform:translate(-50%,-50%) scale(0.9);
+  opacity:0;
+  transition:opacity .3s ease, transform .3s ease;
+  pointer-events:none;
+  filter:drop-shadow(0 4px 18px rgba(0,0,0,0.55));
+}
+.show-play-icon svg{width:100%;height:100%;display:block}
+.show-image:hover::before,
+.show-image:focus-visible::before{background:rgba(14,12,10,0.42)}
+.show-image:hover .show-play-icon,
+.show-image:focus-visible .show-play-icon{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.show-image:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+
+/* ---------- Video lightbox ---------- */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(8,7,6,0.94);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:1000;
+  padding:clamp(20px, 4vw, 60px);
+}
+.lightbox.open{display:flex}
+.lightbox-frame{
+  position:relative;
+  width:min(1280px, 100%);
+  aspect-ratio:16/9;
+  background:#000;
+  box-shadow:0 30px 80px rgba(0,0,0,0.6);
+}
+.lightbox-frame iframe{width:100%;height:100%;border:0;display:block}
+.lightbox-close{
+  position:absolute;
+  top:-44px;
+  right:-4px;
+  width:36px;
+  height:36px;
+  background:transparent;
+  border:none;
+  color:rgba(250,248,244,0.85);
+  font-size:30px;
+  line-height:1;
+  cursor:pointer;
+  padding:0;
+  transition:color .2s ease;
+}
+.lightbox-close:hover{color:var(--paper)}
+@media (max-width:560px){
+  .lightbox{padding:16px}
+  .lightbox-close{top:-36px;right:0;font-size:26px}
 }
 .show-title{margin-top:clamp(24px, 3vw, 56px);margin-bottom:clamp(24px, 2.5vw, 36px)}
 .show-meta{
@@ -1114,7 +1192,14 @@ section{position:relative}
       </div>
     </div>
   </div>
-  <div class="show-image" role="img" aria-label="Adam interviewing a guest drummer on set"></div>
+  <button class="show-image" type="button" data-video="_HuZouu6SV8" aria-label="Play episode video">
+    <span class="show-play-icon" aria-hidden="true">
+      <svg viewBox="0 0 80 80">
+        <circle cx="40" cy="40" r="38" fill="none" stroke="white" stroke-width="2.5"/>
+        <polygon points="33,26 58,40 33,54" fill="white"/>
+      </svg>
+    </span>
+  </button>
 </section>
 
 <!-- 02b · BIWEEKLY DELIVERABLES -->
@@ -1508,11 +1593,52 @@ Top city Toronto at 10.7%.</p>
   <div class="contact-image" role="img" aria-label="Adam at the kit, live"></div>
 </section>
 
+<!-- Video lightbox -->
+<div class="lightbox" id="videoLightbox" role="dialog" aria-modal="true" aria-label="Video player" hidden>
+  <button class="lightbox-close" type="button" aria-label="Close video">&times;</button>
+  <div class="lightbox-frame">
+    <iframe id="videoFrame" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
 <!-- Colophon -->
 <footer class="colophon">
   <span>D2D &nbsp;/&nbsp; Partnerships &nbsp;·&nbsp; Season 4 &nbsp;·&nbsp; May 2026</span>
   <span>hello@drummertodrummer.com</span>
 </footer>
 
+<script>
+(function(){
+  const trigger = document.querySelector('.show-image[data-video]');
+  const lightbox = document.getElementById('videoLightbox');
+  const iframe = document.getElementById('videoFrame');
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+  if(!trigger || !lightbox || !iframe) return;
+
+  function open(){
+    const id = trigger.getAttribute('data-video');
+    iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1';
+    lightbox.hidden = false;
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+  function close(){
+    iframe.src = '';
+    lightbox.classList.remove('open');
+    lightbox.hidden = true;
+    document.body.style.overflow = '';
+    trigger.focus();
+  }
+  trigger.addEventListener('click', open);
+  closeBtn.addEventListener('click', close);
+  lightbox.addEventListener('click', function(e){
+    if(e.target === lightbox) close();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && lightbox.classList.contains('open')) close();
+  });
+})();
+</script>
 </body>
 </html>
