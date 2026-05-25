@@ -595,12 +595,15 @@ section{position:relative}
 }
 .intg-sub strong{color:var(--rust);font-weight:500}
 .intg-link{
-  color:inherit;
+  color:var(--rust);
   text-decoration:none;
-  border-bottom:1px solid rgba(199,93,60,0.5);
-  transition:border-color .2s ease,color .2s ease;
+  border-bottom:2px solid rgba(199,93,60,0.45);
+  transition:border-color .2s ease,border-bottom-width .2s ease;
 }
-.intg-link:hover{color:var(--rust);border-bottom-color:var(--rust)}
+.intg-link:hover{
+  border-bottom-color:var(--rust);
+  border-bottom-width:2px;
+}
 .intg-right{padding-top:clamp(8px, 1.5vw, 24px)}
 .intg-right .eyebrow{margin-bottom:clamp(20px, 2vw, 32px);color:var(--rust)}
 .intg-list{display:flex;flex-direction:column;gap:clamp(18px, 2vw, 28px)}
@@ -1103,7 +1106,7 @@ section{position:relative}
     <div class="show-meta">
       <div>
         <p class="meta-label">Platforms</p>
-        <p class="meta-value">YouTube, Spotify, Instagram, Facebook, TikTok</p>
+        <p class="meta-value">YouTube, Spotify, Instagram, Facebook, TikTok, Threads</p>
       </div>
       <div>
         <p class="meta-label">Reach</p>
@@ -1125,20 +1128,20 @@ section{position:relative}
     <div class="deliv-grid">
       <div class="deliv-card">
         <p class="deliv-tag"><span class="num">01</span> Episode teaser</p>
-        <h3 class="deliv-name">Pre-launch BTS</h3>
+        <h3 class="deliv-name">Episode Teaser</h3>
         <p class="deliv-desc">Quick BTS clip or photo 1–2 days before launch. The cycle's first touchpoint.</p>
         <p class="deliv-plat">IG &middot; YT &middot; TT</p>
       </div>
       <div class="deliv-card anchor">
         <p class="deliv-tag"><span class="num">02</span> Episode trailer</p>
-        <h3 class="deliv-name">Launch-day anchor</h3>
+        <h3 class="deliv-name">Launch Trailer</h3>
         <p class="deliv-desc">Polished launch-day reel previewing the full episode. The cycle's anchor post.</p>
         <p class="deliv-plat"><span class="badge">Anchor</span> &middot; IG &middot; YT &middot; TT</p>
       </div>
       <div class="deliv-card anchor">
         <p class="deliv-tag"><span class="num">03</span> Main episode</p>
-        <h3 class="deliv-name">Long-form interview</h3>
-        <p class="deliv-desc">6–10 minute interview in 1080p. The flagship deliverable.</p>
+        <h3 class="deliv-name">Full Episode</h3>
+        <p class="deliv-desc">6–10 minute interview followed by a double drum session with Host Adam and guest.</p>
         <p class="deliv-plat"><span class="badge">Flagship</span> &middot; YT &middot; Spotify</p>
       </div>
       <div class="deliv-card">
@@ -1149,32 +1152,32 @@ section{position:relative}
       </div>
       <div class="deliv-card anchor">
         <p class="deliv-tag"><span class="num">05</span> 360° main video</p>
-        <h3 class="deliv-name">Interactive jam</h3>
+        <h3 class="deliv-name">360° Jam</h3>
         <p class="deliv-desc">Interactive 360° video of the full double-jam session. A format that doesn't exist anywhere else.</p>
         <p class="deliv-plat"><span class="badge">Unique</span> &middot; YT only</p>
       </div>
       <div class="deliv-card">
         <p class="deliv-tag"><span class="num">06</span> 360° promo</p>
-        <h3 class="deliv-name">Drive-to-YT reel</h3>
+        <h3 class="deliv-name">360° Promo</h3>
         <p class="deliv-desc">Short reel previewing the 360° main, pushing viewers to YouTube for the full version.</p>
         <p class="deliv-plat">IG &middot; YT &middot; TT</p>
       </div>
       <div class="deliv-card anchor">
         <p class="deliv-tag boost"><span class="num">07</span> Contest invite</p>
-        <h3 class="deliv-name">Sub-and-like to enter</h3>
+        <h3 class="deliv-name">Contest Reel</h3>
         <p class="deliv-desc">Signed sticks and T-shirt prize. The only paid-boosted post in the cycle.</p>
         <p class="deliv-plat"><span class="badge">IG-boosted</span> &middot; IG &middot; YT &middot; TT</p>
       </div>
       <div class="deliv-card">
         <p class="deliv-tag"><span class="num">08</span> BTS / thank-you</p>
-        <h3 class="deliv-name">Carousel close-out</h3>
-        <p class="deliv-desc">Carousel of posed shots with Adam plus behind-the-scenes from the shoot.</p>
+        <h3 class="deliv-name">Guest Gratitude</h3>
+        <p class="deliv-desc">Instagram post of Adam and guest with a brief thank-you caption.</p>
         <p class="deliv-plat">IG carousel</p>
       </div>
       <div class="deliv-card">
         <p class="deliv-tag"><span class="num">09</span> Contest winner</p>
         <h3 class="deliv-name">Wheel-spin reveal</h3>
-        <p class="deliv-desc">Wheel-spin reveal video pinned in the next launch trailer's comments. Closes the loop.</p>
+        <p class="deliv-desc">Wheel-spin reveal video announcing this week's signed stick and T-shirt winner. Closes the loop on Contest Reel.</p>
         <p class="deliv-plat">IG &middot; YT &middot; TT</p>
       </div>
     </div>
