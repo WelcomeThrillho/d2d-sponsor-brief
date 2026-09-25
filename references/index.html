@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drummer to Drummer — Performance Report (May 2026)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,system-ui,sans-serif;color:#1a1a1a;background:#faf8f4;line-height:1.65;font-weight:400;-webkit-font-smoothing:antialiased}
+.container{max-width:1100px;margin:0 auto;padding:0 40px}
+.hero{padding:120px 40px 80px;background-color:#14120f;background-image:linear-gradient(180deg,rgba(20,18,15,0.78) 0%,rgba(20,18,15,0.45) 55%,rgba(20,18,15,0.85) 100%),url('./hero.jpg');background-size:cover;background-position:center;background-repeat:no-repeat;color:#faf8f4;min-height:560px;display:flex;align-items:center}
+.hero .container{padding:0;width:100%}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:0.16em;font-weight:500}
+.hero-eyebrow{color:#d4a942;margin-bottom:32px}
+.hero-title{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:104px;line-height:0.95;letter-spacing:-0.04em;margin-bottom:28px;text-shadow:0 2px 24px rgba(0,0,0,0.4)}
+.hero-subtitle{font-size:22px;font-weight:300;color:rgba(250,248,244,0.85);max-width:640px;margin-bottom:18px;line-height:1.45}
+.hero-subtitle.second{color:rgba(250,248,244,0.7);margin-bottom:48px;font-size:16px}
+.hero-meta{display:flex;gap:72px;flex-wrap:wrap;padding-top:36px;border-top:1px solid rgba(250,248,244,0.25)}
+.meta-label{font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:rgba(250,248,244,0.65);margin-bottom:6px}
+.meta-value{font-size:15px;color:#faf8f4;font-weight:400}
+section{padding:100px 0;border-bottom:1px solid rgba(0,0,0,0.06)}
+section:last-of-type{border-bottom:none}
+.section-eyebrow{color:#c75d3c;margin-bottom:16px}
+.section-title{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:56px;line-height:1;letter-spacing:-0.025em;margin-bottom:20px}
+.section-lede{font-size:20px;color:#595851;max-width:720px;line-height:1.55;margin-bottom:56px;font-weight:400}
+.section-lede.tight{margin-bottom:36px}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:12px;overflow:hidden}
+.stat{padding:40px 32px;border-right:1px solid rgba(0,0,0,0.06)}
+.stat:last-child{border-right:none}
+.stat-label{font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:#8a8a82;margin-bottom:18px;font-weight:500}
+.stat-value{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:60px;line-height:1;letter-spacing:-0.035em;margin-bottom:12px}
+.stat-context{font-size:13px;color:#595851;line-height:1.4}
+.stat-context strong{color:#1a1a1a;font-weight:500}
+.pullquote{margin:72px 0 0;padding:56px 64px;background:#1a1a1a;color:#faf8f4;border-radius:12px;font-family:'Fraunces',Georgia,serif;font-size:32px;font-weight:400;line-height:1.3;letter-spacing:-0.015em}
+.pullquote .accent{color:#d4a942}
+.chart-card{background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:12px;padding:36px;margin-bottom:24px}
+.chart-title{font-size:20px;font-weight:500;margin-bottom:6px;letter-spacing:-0.01em}
+.chart-sub{font-size:14px;color:#595851;margin-bottom:28px}
+.chart-wrap{position:relative;width:100%}
+.aside{margin:12px 12px 32px;padding:8px 0 8px 20px}
+.aside-label{font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:#c75d3c;margin-bottom:10px;font-weight:500}
+.aside-text{font-size:16px;color:#444;line-height:1.7;max-width:680px}
+.aside-text strong{color:#1a1a1a;font-weight:500}
+.audience-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:20px;margin-bottom:24px}
+.audience-grid .chart-card{margin-bottom:0}
+.demo-row{display:grid;grid-template-columns:120px 1fr 60px;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid rgba(0,0,0,0.05)}
+.demo-row:last-child{border-bottom:none}
+.demo-label{font-size:13px;color:#444;font-weight:500}
+.demo-bar{height:8px;background:#f3eee5;border-radius:4px;overflow:hidden;position:relative}
+.demo-bar-fill{height:100%;background:#6b5db8;border-radius:4px}
+.demo-val{font-family:'Fraunces',serif;font-size:14px;font-weight:500;color:#1a1a1a;text-align:right}
+.compare-card{background:#1a1a1a;color:#faf8f4;padding:36px;border-radius:12px;margin-bottom:24px;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.compare-half{padding:0}
+.compare-eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:#d4a942;margin-bottom:16px;font-weight:500}
+.compare-stat{font-family:'Fraunces',serif;font-size:48px;line-height:1;font-weight:500;letter-spacing:-0.03em;margin-bottom:10px}
+.compare-desc{font-size:14px;color:rgba(250,248,244,0.7);line-height:1.5}
+.cpf-table{background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:12px;overflow:hidden;margin-bottom:24px}
+.cpf-row{display:grid;grid-template-columns:1.4fr 80px 80px 110px 1fr;gap:20px;padding:18px 28px;border-bottom:1px solid rgba(0,0,0,0.06);align-items:center}
+.cpf-row:last-child{border-bottom:none}
+.cpf-row-header{background:#f3eee5;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#595851;font-weight:500;padding:14px 28px}
+.cpf-row-header .num-h{text-align:right}
+.cpf-row.totals{background:#1a1a1a;color:#faf8f4;border-bottom:none}
+.cpf-row.totals .num-val{color:#d4a942}
+.cpf-row.totals .cpf-name{color:#faf8f4;font-weight:500}
+.cpf-name{font-size:14px;font-weight:500}
+.cpf-bar-cell{display:flex;align-items:center;gap:10px}
+.cpf-bar{height:8px;background:#f3eee5;border-radius:4px;flex:1;overflow:hidden}
+.cpf-bar-fill{height:100%;background:#2d7a5f;border-radius:4px}
+.split-table{background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:12px;overflow:hidden;margin-bottom:24px}
+.split-row{display:grid;grid-template-columns:1.6fr 90px 90px 100px 1fr;gap:20px;padding:18px 28px;border-bottom:1px solid rgba(0,0,0,0.06);align-items:center}
+.split-row:last-child{border-bottom:none}
+.split-row.totals{background:#1a1a1a;color:#faf8f4;border-bottom:none}
+.split-row.totals .num-val{color:#d4a942}
+.split-row.totals .split-name{color:#faf8f4;font-weight:500}
+.split-row-header{background:#f3eee5;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#595851;font-weight:500;padding:14px 28px}
+.split-row-header .num-h{text-align:right}
+.split-name{font-size:14px;font-weight:500}
+.split-bar-cell{display:flex;align-items:center;gap:10px}
+.split-bar{height:8px;background:#f3eee5;border-radius:4px;flex:1;overflow:hidden}
+.split-bar-fill{height:100%;border-radius:4px}
+.split-bar-fill.paid{background:#c75d3c}
+.split-bar-fill.organic{background:#2d7a5f}
+.split-bar-fill.passive{background:#8a8a82}
+.benchmark{background:#fff;border:1px dashed rgba(199,93,60,0.4);border-radius:12px;padding:28px;margin-bottom:24px}
+.benchmark-label{font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:#c75d3c;margin-bottom:10px;font-weight:500}
+.benchmark-text{font-size:15px;color:#444;line-height:1.6}
+.benchmark-text strong{color:#1a1a1a}
+.platform{background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:12px;padding:36px;margin-bottom:20px}
+.platform-head{display:flex;align-items:center;gap:18px;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid rgba(0,0,0,0.06);flex-wrap:wrap}
+.platform-icon{width:54px;height:54px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:24px;letter-spacing:-0.02em;color:#fff;flex-shrink:0}
+.platform-icon.ig{background:#6b5db8}
+.platform-icon.yt{background:#c75d3c}
+.platform-icon.tt{background:#2d7a5f}
+.platform-icon.fb{background:#3266ad}
+.platform-info{flex:1;min-width:140px}
+.platform-title{font-family:'Fraunces',Georgia,serif;font-size:28px;font-weight:500;letter-spacing:-0.015em;margin-bottom:4px}
+.platform-tag{font-size:11px;text-transform:uppercase;letter-spacing:0.14em;font-weight:500}
+.platform-tag.primary{color:#c75d3c}
+.platform-tag.steady{color:#2d7a5f}
+.platform-tag.maintenance{color:#8a8a82}
+.platform-tag.passive{color:#8a8a82}
+.platform-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
+.platform-stat{background:#f8f5ee;padding:16px 18px;border-radius:8px}
+.platform-stat-label{font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:#8a8a82;margin-bottom:6px;font-weight:500}
+.platform-stat-val{font-family:'Fraunces',Georgia,serif;font-size:28px;font-weight:500;line-height:1;letter-spacing:-0.025em}
+.platform-stat-val.gap{color:#a8a39b;font-style:italic;font-size:18px}
+.platform-stat-sub{font-size:11px;color:#8a8a82;margin-top:4px;font-weight:500}
+.platform-stat-sub.pos{color:#1f5740}
+.platform-text{font-size:15px;color:#444;line-height:1.7;margin-top:20px}
+.platform-charts{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:8px}
+.platform-charts .chart-wrap{height:240px}
+.mini-chart-title{font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:#8a8a82;margin-bottom:14px;font-weight:500}
+.pillar{background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:12px;padding:48px;margin-bottom:20px;display:grid;grid-template-columns:96px 1fr;gap:36px;align-items:start}
+.pillar-num{font-family:'Fraunces',Georgia,serif;font-size:72px;font-weight:500;line-height:1;letter-spacing:-0.04em;color:#c75d3c}
+.pillar-title{font-size:28px;font-weight:500;margin-bottom:16px;letter-spacing:-0.015em;font-family:'Fraunces',serif}
+.pillar-text{font-size:16px;color:#444;line-height:1.7}
+.pillar-text strong{color:#1a1a1a;font-weight:500}
+.recs{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.rec{background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:12px;padding:36px}
+.rec-num{display:inline-block;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#c75d3c;font-weight:500;margin-bottom:16px}
+.rec-title{font-size:20px;font-weight:500;margin-bottom:14px;letter-spacing:-0.015em;line-height:1.3;font-family:'Fraunces',serif}
+.rec-text{font-size:14px;color:#444;line-height:1.6}
+.episode-table{background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:12px;overflow:hidden}
+.ep-row{display:grid;grid-template-columns:80px 1.6fr 100px 90px 90px 110px;gap:20px;padding:20px 32px;border-bottom:1px solid rgba(0,0,0,0.06);align-items:center}
+.ep-row:last-child{border-bottom:none}
+.ep-row-header{background:#f3eee5;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:#595851;font-weight:500;padding:16px 32px}
+.ep-row-header .num-h{text-align:right}
+.ep-num{font-family:'Fraunces',serif;font-size:20px;font-weight:500;color:#8a8a82}
+.ep-title{font-weight:500;font-size:15px;margin-bottom:2px}
+.ep-meta{font-size:13px;color:#595851;line-height:1.4}
+.num-cell{text-align:right;font-variant-numeric:tabular-nums}
+.num-val{font-family:'Fraunces',Georgia,serif;font-size:18px;font-weight:500;color:#1a1a1a}
+.num-val.dim{color:#8a8a82}
+.num-val.neg{color:#a14620}
+.ep-tag{display:inline-block;font-size:10px;padding:5px 12px;border-radius:100px;text-transform:uppercase;letter-spacing:0.1em;font-weight:500}
+.ep-tag.fire{background:#fae0d4;color:#a14620}
+.ep-tag.strong{background:#d8e8df;color:#1f5740}
+.ep-tag.steady{background:#f3eee5;color:#595851}
+.ep-tag.standout{background:#1a1a1a;color:#d4a942}
+.legend{display:flex;flex-wrap:wrap;gap:20px;margin-bottom:20px;font-size:13px;color:#595851;justify-content:center}
+.legend-item{display:flex;align-items:center;gap:8px}
+.legend-sw{width:12px;height:12px;border-radius:3px}
+.findings-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:24px}
+.finding-card{background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:12px;padding:32px}
+.finding-num{display:inline-block;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#c75d3c;font-weight:500;margin-bottom:14px}
+.finding-title{font-size:18px;font-weight:500;margin-bottom:12px;letter-spacing:-0.01em;line-height:1.3;font-family:'Fraunces',serif}
+.finding-text{font-size:14px;color:#444;line-height:1.6}
+.finding-text strong{color:#1a1a1a;font-weight:500}
+.types-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px}
+.type-card{background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:10px;padding:24px}
+.type-tag{display:inline-block;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;font-weight:500;color:#c75d3c;margin-bottom:10px}
+.type-tag.yt-only{color:#2d7a5f}
+.type-tag.boosted{color:#a14620}
+.type-name{font-family:'Fraunces',Georgia,serif;font-size:18px;font-weight:500;letter-spacing:-0.015em;margin-bottom:10px;line-height:1.2}
+.type-desc{font-size:13px;color:#444;line-height:1.55;margin-bottom:14px}
+.type-perf{font-size:12px;color:#595851;padding-top:12px;border-top:1px solid rgba(0,0,0,0.05);font-weight:500}
+.type-perf .perf-val{font-family:'Fraunces',serif;color:#1a1a1a;font-weight:500;font-size:14px}
+.merch-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-bottom:24px}
+.merch-card{background:#fff;border:1px solid rgba(0,0,0,0.08);border-radius:12px;padding:28px}
+.merch-num{display:inline-block;font-family:'Fraunces',serif;font-size:32px;font-weight:500;color:#c75d3c;line-height:1;margin-bottom:14px}
+.merch-title{font-size:17px;font-weight:500;margin-bottom:10px;letter-spacing:-0.01em;line-height:1.3;font-family:'Fraunces',serif}
+.merch-text{font-size:13px;color:#444;line-height:1.6}
+.merch-text strong{color:#1a1a1a}
+.footer{background:#1a1a1a;color:rgba(250,248,244,0.7);padding:100px 40px}
+.footer-text{font-family:'Fraunces',serif;font-size:32px;color:#faf8f4;font-weight:400;line-height:1.35;max-width:680px;margin:0 auto 40px;text-align:center;letter-spacing:-0.015em}
+.footer-meta{text-align:center;font-size:12px;color:rgba(250,248,244,0.5);text-transform:uppercase;letter-spacing:0.14em}
+.tinted{background:#f3eee5}
+.data-note{font-size:13px;color:#8a8a82;font-style:italic;margin-top:16px;max-width:680px}
+.data-gap{background:#fff;border:1px dashed rgba(138,138,130,0.4);border-radius:8px;padding:18px 22px;margin-top:16px;font-size:13px;color:#595851;line-height:1.6;font-style:italic}
+.data-gap strong{font-style:normal;color:#1a1a1a;font-weight:500}
+/* Tablet and below */
+@media (max-width:900px){
+.container{padding:0 28px}
+.hero{min-height:480px;padding:96px 28px 64px}
+.hero-title{font-size:80px;margin-bottom:24px}
+.hero-subtitle{font-size:20px;max-width:none}
+.hero-meta{gap:32px 48px;padding-top:28px}
+section{padding:72px 0}
+.section-title{font-size:44px}
+.section-lede{font-size:18px;margin-bottom:40px}
+.stat-grid{grid-template-columns:repeat(2,1fr)}
+.stat{padding:32px 24px}
+.stat-value{font-size:48px}
+.pullquote{margin-top:48px;padding:40px 36px;font-size:24px;line-height:1.35}
+.compare-card{grid-template-columns:1fr;gap:24px;padding:32px}
+.compare-stat{font-size:40px}
+.audience-grid{grid-template-columns:1fr;gap:16px}
+.platform{padding:32px}
+.platform-charts{grid-template-columns:1fr;gap:24px}
+.pillar{padding:36px;grid-template-columns:1fr;gap:20px}
+.pillar-num{font-size:56px}
+.recs,.findings-grid,.types-grid,.merch-grid{grid-template-columns:1fr}
+.footer{padding:80px 28px}
+.footer-text{font-size:26px}
+}
+
+/* Phone */
+@media (max-width:600px){
+.container{padding:0 20px}
+.hero{min-height:440px;padding:72px 20px 48px}
+.hero-eyebrow{margin-bottom:24px}
+.hero-title{font-size:56px;margin-bottom:20px;line-height:0.98}
+.hero-subtitle{font-size:17px;margin-bottom:14px}
+.hero-subtitle.second{font-size:14px;margin-bottom:32px}
+.hero-meta{gap:18px 32px;padding-top:24px}
+.meta-label{font-size:10px}
+.meta-value{font-size:13px}
+section{padding:56px 0}
+.section-eyebrow{margin-bottom:12px}
+.section-title{font-size:34px;margin-bottom:14px;line-height:1.05}
+.section-lede{font-size:16px;margin-bottom:32px;line-height:1.5}
+
+.stat-grid{grid-template-columns:repeat(2,1fr);border-radius:10px}
+.stat{padding:22px 18px}
+.stat-label{font-size:10px;margin-bottom:12px}
+.stat-value{font-size:34px;margin-bottom:8px;letter-spacing:-0.025em}
+.stat-context{font-size:12px;line-height:1.35}
+
+.pullquote{margin-top:36px;padding:28px 24px;font-size:18px;border-radius:10px;line-height:1.4}
+.chart-card{padding:22px 18px;border-radius:10px}
+.chart-title{font-size:17px}
+.chart-sub{font-size:13px;margin-bottom:20px;line-height:1.5}
+
+.compare-card{padding:24px;border-radius:10px;gap:20px}
+.compare-eyebrow{margin-bottom:12px}
+.compare-stat{font-size:32px;margin-bottom:8px}
+.compare-desc{font-size:13px}
+
+.aside{margin:8px 0 24px;padding:6px 0 6px 16px}
+.aside-text{font-size:14px;line-height:1.6}
+.data-gap{padding:16px 18px;font-size:12px;line-height:1.55}
+.data-note{font-size:12px}
+.benchmark{padding:22px 20px}
+.benchmark-text{font-size:14px}
+
+.demo-row{grid-template-columns:96px 1fr 46px;gap:10px;padding:10px 0}
+.demo-label{font-size:12px}
+.demo-val{font-size:13px}
+
+/* CPF table — convert to card layout with injected labels */
+.cpf-row-header{display:none}
+.cpf-row{display:block;padding:18px 20px}
+.cpf-row .cpf-name{font-size:15px;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid rgba(0,0,0,0.06)}
+.cpf-row .num-cell{display:flex;justify-content:space-between;align-items:center;padding:6px 0;text-align:left}
+.cpf-row .num-cell::before{font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:#8a8a82;font-weight:500}
+.cpf-row .num-cell:nth-child(2)::before{content:'Follows'}
+.cpf-row .num-cell:nth-child(3)::before{content:'Spend'}
+.cpf-row .num-cell:nth-child(4)::before{content:'Cost / follow'}
+.cpf-row .num-val{font-size:16px}
+.cpf-row .cpf-bar-cell{margin-top:12px;padding-top:12px;border-top:1px solid rgba(0,0,0,0.05)}
+.cpf-row.totals .cpf-name{border-bottom-color:rgba(255,255,255,0.15)}
+.cpf-row.totals .num-cell::before{color:rgba(250,248,244,0.5)}
+.cpf-row.totals .cpf-bar-cell{display:none}
+
+/* Split table — same card pattern */
+.split-row-header{display:none}
+.split-row{display:block;padding:18px 20px}
+.split-row .split-name{font-size:15px;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid rgba(0,0,0,0.06)}
+.split-row .num-cell{display:flex;justify-content:space-between;align-items:center;padding:6px 0;text-align:left}
+.split-row .num-cell::before{font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:#8a8a82;font-weight:500}
+.split-row .num-cell:nth-child(2)::before{content:'Posts'}
+.split-row .num-cell:nth-child(3)::before{content:'Spend'}
+.split-row .num-cell:nth-child(4)::before{content:'Follows'}
+.split-row .num-val{font-size:16px}
+.split-row .split-bar-cell{margin-top:12px;padding-top:12px;border-top:1px solid rgba(0,0,0,0.05)}
+.split-row.totals .split-name{border-bottom-color:rgba(255,255,255,0.15)}
+.split-row.totals .num-cell::before{color:rgba(250,248,244,0.5)}
+.split-row.totals .split-bar-cell{display:none}
+
+/* Episode table — same card pattern */
+.ep-row-header{display:none}
+.ep-row{display:block;padding:20px}
+.ep-row .ep-num{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#8a8a82;margin-bottom:8px;display:block;font-family:'Inter',sans-serif;font-weight:500}
+.ep-row > div:nth-child(2){margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid rgba(0,0,0,0.06)}
+.ep-row .ep-title{font-size:16px;margin-bottom:3px}
+.ep-row .ep-meta{font-size:12px}
+.ep-row .num-cell{display:flex;justify-content:space-between;align-items:center;padding:5px 0;text-align:left}
+.ep-row .num-cell::before{font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:#8a8a82;font-weight:500}
+.ep-row .num-cell:nth-child(3)::before{content:'IG views'}
+.ep-row .num-cell:nth-child(4)::before{content:'YT subs'}
+.ep-row .num-cell:nth-child(5)::before{content:'Follows'}
+.ep-row .num-val{font-size:16px}
+.ep-row > div:nth-child(6){margin-top:12px;padding-top:12px;border-top:1px solid rgba(0,0,0,0.05)}
+
+/* Pillars */
+.pillar{padding:28px 22px;border-radius:10px;gap:16px}
+.pillar-num{font-size:44px}
+.pillar-title{font-size:22px;margin-bottom:12px}
+.pillar-text{font-size:15px;line-height:1.6}
+
+/* Cards (recs, findings, types, merch) */
+.rec,.finding-card,.type-card,.merch-card{padding:24px 22px;border-radius:10px}
+.rec-title{font-size:17px;margin-bottom:12px}
+.rec-text{font-size:13px}
+.finding-title{font-size:16px;margin-bottom:10px}
+.finding-text{font-size:13px}
+.type-name{font-size:16px}
+.type-desc{font-size:12px}
+.merch-title{font-size:15px}
+.merch-text{font-size:12px}
+.merch-num{font-size:26px;margin-bottom:10px}
+
+/* Platform blocks */
+.platform{padding:24px 20px;border-radius:10px}
+.platform-head{gap:14px;margin-bottom:20px;padding-bottom:18px}
+.platform-icon{width:46px;height:46px;font-size:20px}
+.platform-title{font-size:24px}
+.platform-tag{font-size:10px}
+.platform-stats{grid-template-columns:1fr;gap:8px;margin-bottom:20px}
+.platform-stat{padding:14px 16px;display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap}
+.platform-stat-label{margin-bottom:0;flex:0 0 auto}
+.platform-stat-val{font-size:22px}
+.platform-stat-val.gap{font-size:13px}
+.platform-stat-sub{margin-top:0;margin-left:10px}
+.platform-text{font-size:14px;line-height:1.6;margin-top:18px}
+
+/* Footer + misc */
+.footer{padding:56px 24px}
+.footer-text{font-size:20px;line-height:1.4;margin-bottom:32px}
+.footer-meta{font-size:11px}
+.legend{gap:12px;font-size:12px;margin-bottom:16px}
+}
+
+/* Small phone */
+@media (max-width:380px){
+.container{padding:0 16px}
+.hero{padding:60px 16px 40px;min-height:420px}
+.hero-title{font-size:46px}
+.hero-meta{gap:14px 24px}
+.stat-grid{grid-template-columns:1fr}
+.stat{padding:20px 18px}
+.stat-value{font-size:38px}
+.section-title{font-size:30px}
+.pullquote{font-size:17px;padding:24px 20px}
+.compare-stat{font-size:28px}
+.pillar-num{font-size:40px}
+.pillar-title{font-size:20px}
+.footer{padding:48px 20px}
+.footer-text{font-size:18px}
+.demo-row{grid-template-columns:88px 1fr 40px;gap:8px}
+}
+@media print{body{background:#fff}.hero{background:#fff;color:#1a1a1a;min-height:auto;padding:48px 0}.hero-title{color:#1a1a1a;text-shadow:none}.hero-subtitle,.meta-value{color:#1a1a1a}.footer{background:#fff;color:#1a1a1a}.footer-text{color:#1a1a1a}.pullquote,.compare-card{background:#f3eee5;color:#1a1a1a}.pullquote .accent{color:#c75d3c}section{page-break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <p class="eyebrow hero-eyebrow">Performance report &middot; Internal</p>
+    <h1 class="hero-title">Drummer to<br>Drummer.</h1>
+    <p class="hero-subtitle">A performance and sponsor-strategy review covering Season 4 to date &mdash; what is working, what is converting, and where the show goes next.</p>
+    <p class="hero-subtitle second">Built from five months of cross-platform analytics, demographic data, paid-spend results, and post-level cross-promotion mechanics.</p>
+    <div class="hero-meta">
+      <div><p class="meta-label">Period</p><p class="meta-value">Dec 1, 2025 &mdash; May 9, 2026</p></div>
+      <div><p class="meta-label">Prepared</p><p class="meta-value">May 10, 2026</p></div>
+      <div><p class="meta-label">For</p><p class="meta-value">Adam Nimmo &middot; Producers</p></div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <p class="eyebrow section-eyebrow">At a glance</p>
+    <h2 class="section-title">Where the show stands.</h2>
+    <p class="section-lede">Five months of biweekly releases, eight episodes, an eleven-band guest roster, and a clear inflection in growth and engagement quality. The audience has more than doubled since January, and the demographic data confirms it is exactly the audience drum and cymbal sponsors are looking for.</p>
+    <div class="stat-grid">
+      <div class="stat"><p class="stat-label">IG followers</p><p class="stat-value">1,481</p><p class="stat-context"><strong>+100%</strong> since January</p></div>
+      <div class="stat"><p class="stat-label">YT subscribers</p><p class="stat-value">1,918</p><p class="stat-context"><strong>+10.7%</strong> in period</p></div>
+      <div class="stat"><p class="stat-label">Reach</p><p class="stat-value">288k</p><p class="stat-context">Cross-platform views</p></div>
+      <div class="stat"><p class="stat-label">Top post</p><p class="stat-value">38,694</p><p class="stat-context">Arkells trailer (combined uploads)</p></div>
+    </div>
+    <div class="pullquote">The biggest signal in the data: <span class="accent">the audience is 80 percent men aged 25 to 54, primarily Canadian</span> &mdash; the precise demographic drum and cymbal brands spend their marketing dollars trying to reach.</div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <p class="eyebrow section-eyebrow">Audience</p>
+    <h2 class="section-title">Who is actually watching.</h2>
+    <p class="section-lede">The demographic data sponsors will ask for first. Pulled directly from Meta Business Suite for both Instagram and Facebook current followers.</p>
+
+    <div class="stat-grid">
+      <div class="stat"><p class="stat-label">Men</p><p class="stat-value">79.7%</p><p class="stat-context">Instagram followers</p></div>
+      <div class="stat"><p class="stat-label">Age 25&ndash;54</p><p class="stat-value">86.2%</p><p class="stat-context">Of total IG audience</p></div>
+      <div class="stat"><p class="stat-label">Canadian</p><p class="stat-value">72.2%</p><p class="stat-context">14.6% additional in US</p></div>
+      <div class="stat"><p class="stat-label">Top city</p><p class="stat-value">Toronto</p><p class="stat-context">10.7% of all followers</p></div>
+    </div>
+
+    <div class="compare-card">
+      <div class="compare-half">
+        <p class="compare-eyebrow">D2D Instagram audience</p>
+        <p class="compare-stat">79.7% men</p>
+        <p class="compare-desc">Heavy male skew, peaked in the 35&ndash;44 bracket. Drummers buying gear.</p>
+      </div>
+      <div class="compare-half">
+        <p class="compare-eyebrow">Canadian Meta baseline</p>
+        <p class="compare-stat">46% men</p>
+        <p class="compare-desc">The general Meta-using population in Canada is roughly balanced. D2D over-indexes by 34 percentage points.</p>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <p class="chart-title">Age and gender breakdown &mdash; Instagram</p>
+      <p class="chart-sub">Each bracket as a percentage of total followers. Male in purple, female in lavender.</p>
+      <div class="chart-wrap" style="height:280px"><canvas id="ageChart"></canvas></div>
+    </div>
+
+    <div class="audience-grid">
+      <div class="chart-card">
+        <p class="chart-title">Top countries &mdash; Instagram</p>
+        <p class="chart-sub">Percentage of total followers by country</p>
+        <div id="countryList" style="margin-top:8px"></div>
+      </div>
+      <div class="chart-card">
+        <p class="chart-title">Top cities &mdash; Instagram</p>
+        <p class="chart-sub">Percentage of total followers by city</p>
+        <div id="cityList" style="margin-top:8px"></div>
+      </div>
+    </div>
+
+    <div class="aside">
+      <p class="aside-label">Why this matters for sponsorship</p>
+      <p class="aside-text">Drum and cymbal brands target men 25&ndash;54 who care about drums. D2D over-indexes on every dimension that matters: 80 percent male versus a 46 percent Canadian baseline, 86 percent in the gear-buying age window, primarily domestic for Canadian brands like Sabian and Yamaha Canada with meaningful US spillover. Facebook follows the same pattern even more strongly: 89.4 percent men, 87.5 percent aged 25&ndash;54.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <p class="eyebrow section-eyebrow">Trajectory</p>
+    <h2 class="section-title">Engagement is climbing.</h2>
+    <p class="section-lede">Weekly Instagram views show clear inflection points at episode launches, with a step-change in early March when the multi-reel strategy went live. YouTube engagement follows the same pattern at smaller scale.</p>
+
+    <div class="chart-card">
+      <p class="chart-title">Weekly Instagram views</p>
+      <p class="chart-sub">Sum of views from posts published each week, across the period. Includes external accounts who uploaded D2D-related content (e.g., @arkellsmusic).</p>
+      <div class="chart-wrap" style="height:340px"><canvas id="igTrajChart"></canvas></div>
+    </div>
+
+    <div class="chart-card">
+      <p class="chart-title">Monthly YouTube views &mdash; total and engaged</p>
+      <p class="chart-sub">Engaged views (line, real data) versus total views (bar, derived). Monthly total views derived by applying the period-wide views/engaged ratio of 2.16 to monthly engaged views; daily total views not in current export.</p>
+      <div class="legend"><span class="legend-item"><span class="legend-sw" style="background:#c75d3c"></span>Total views (derived)</span><span class="legend-item"><span class="legend-sw" style="background:#1a1a1a"></span>Engaged views (real)</span></div>
+      <div class="chart-wrap" style="height:340px"><canvas id="ytTrajChart"></canvas></div>
+    </div>
+
+    <div class="aside">
+      <p class="aside-label">What this tells us</p>
+      <p class="aside-text">The early-March step-change was strategy-driven, not audience-driven. Going from one supporting reel per episode to two-to-four created a clip-cluster effect that compounds across each launch &mdash; <strong>March drove 2.8x the Instagram views of February</strong> and <strong>5x the YouTube engaged views</strong>, as the new content cadence took hold. April sustained the higher baseline; May is tracking ahead of April&apos;s pace.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <p class="eyebrow section-eyebrow">Top performers</p>
+    <h2 class="section-title">What is resonating.</h2>
+    <p class="section-lede">Ten highest-viewed Instagram posts on the Drummer to Drummer account during the period.</p>
+    <div class="chart-card">
+      <p class="chart-title">Top 10 Instagram posts by views</p>
+	<p class="chart-sub">The Arkells trailer combined leads on cross-platform reach; contest reels and episode previews dominate the rest</p>      
+	<div class="chart-wrap" style="height:520px"><canvas id="topChart"></canvas></div>
+    </div>
+    <div class="aside">
+      <p class="aside-label">Pattern in the data</p>
+      <p class="aside-text">Eight of the top ten posts feature band-name guests in the title. Reach scales with band recognition. But the more useful pattern is post-type: contest reels and tactical drum content (Bob Rock, Fat Wreck) consistently punch above their weight against pure preview reels.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <p class="eyebrow section-eyebrow">What converts</p>
+    <h2 class="section-title">The two signals that matter.</h2>
+    <p class="section-lede">Follows tell sponsors the audience is growing. Saves tell them the audience is taking the content seriously. Both metrics outperform on specific content types.</p>
+    <div class="chart-card">
+      <p class="chart-title">Follows per single post</p>
+      <p class="chart-sub">Contest reels are the most reliable follow-conversion mechanic</p>
+      <div class="chart-wrap" style="height:340px"><canvas id="followsChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <p class="chart-title">Saves per single post</p>
+      <p class="chart-sub">Tactical drum content is being treated as reference material</p>
+      <div class="chart-wrap" style="height:340px"><canvas id="savesChart"></canvas></div>
+    </div>
+    <div class="aside">
+      <p class="aside-label">Why both metrics matter</p>
+      <p class="aside-text">Follows describe an audience growing in absolute size. Saves describe an audience treating the content seriously enough to bookmark for later. Together they form a complete sponsor pitch: a niche audience that is both expanding and engaged at depth.</p>
+    </div>
+    <div class="data-gap"><strong>Data gap:</strong> Instagram analytics export contains a single &ldquo;Shares&rdquo; column that does not distinguish between feed reshares and story shares. A more detailed IG Insights export would reveal which mechanic is doing the heavier lifting.</div>
+  </div>
+</section>
+
+<section class="tinted">
+  <div class="container">
+    <p class="eyebrow section-eyebrow">Paid amplification</p>
+    <h2 class="section-title">What the ad spend actually buys.</h2>
+    <p class="section-lede">Eight contest reels boosted on Instagram, $30 each (10 dollars per day for 3 days). The cost-per-follow numbers tell a clear story about whether to continue, scale, or pull back.</p>
+
+    <div class="cpf-table">
+      <div class="cpf-row cpf-row-header">
+        <div>Contest reel</div>
+        <div class="num-h">Follows</div>
+        <div class="num-h">Spend</div>
+        <div class="num-h">Cost / follow</div>
+        <div>Performance</div>
+      </div>
+      <div class="cpf-row">
+        <div class="cpf-name">Trews stick contest</div>
+        <div class="num-cell"><span class="num-val">103</span></div>
+        <div class="num-cell"><span class="num-val dim">$30</span></div>
+        <div class="num-cell"><span class="num-val">$0.29</span></div>
+        <div class="cpf-bar-cell"><div class="cpf-bar"><div class="cpf-bar-fill" style="width:100%"></div></div></div>
+      </div>
+      <div class="cpf-row">
+        <div class="cpf-name">Taggart contest</div>
+        <div class="num-cell"><span class="num-val">57</span></div>
+        <div class="num-cell"><span class="num-val dim">$30</span></div>
+        <div class="num-cell"><span class="num-val">$0.53</span></div>
+        <div class="cpf-bar-cell"><div class="cpf-bar"><div class="cpf-bar-fill" style="width:55%"></div></div></div>
+      </div>
+      <div class="cpf-row">
+        <div class="cpf-name">Arkells comment-the-song</div>
+        <div class="num-cell"><span class="num-val">46</span></div>
+        <div class="num-cell"><span class="num-val dim">$30</span></div>
+        <div class="num-cell"><span class="num-val">$0.65</span></div>
+        <div class="cpf-bar-cell"><div class="cpf-bar"><div class="cpf-bar-fill" style="width:45%"></div></div></div>
+      </div>
+      <div class="cpf-row">
+        <div class="cpf-name">Reklaws contest</div>
+        <div class="num-cell"><span class="num-val">40</span></div>
+        <div class="num-cell"><span class="num-val dim">$30</span></div>
+        <div class="num-cell"><span class="num-val">$0.75</span></div>
+        <div class="cpf-bar-cell"><div class="cpf-bar"><div class="cpf-bar-fill" style="width:39%"></div></div></div>
+      </div>
+      <div class="cpf-row">
+        <div class="cpf-name">Dwayne Gretzky contest</div>
+        <div class="num-cell"><span class="num-val">39</span></div>
+        <div class="num-cell"><span class="num-val dim">$30</span></div>
+        <div class="num-cell"><span class="num-val">$0.77</span></div>
+        <div class="cpf-bar-cell"><div class="cpf-bar"><div class="cpf-bar-fill" style="width:38%"></div></div></div>
+      </div>
+      <div class="cpf-row">
+        <div class="cpf-name">Sam Roberts contest</div>
+        <div class="num-cell"><span class="num-val">34</span></div>
+        <div class="num-cell"><span class="num-val dim">$30</span></div>
+        <div class="num-cell"><span class="num-val">$0.88</span></div>
+        <div class="cpf-bar-cell"><div class="cpf-bar"><div class="cpf-bar-fill" style="width:33%"></div></div></div>
+      </div>
+      <div class="cpf-row">
+        <div class="cpf-name">Flatliners contest</div>
+        <div class="num-cell"><span class="num-val">31</span></div>
+        <div class="num-cell"><span class="num-val dim">$30</span></div>
+        <div class="num-cell"><span class="num-val">$0.97</span></div>
+        <div class="cpf-bar-cell"><div class="cpf-bar"><div class="cpf-bar-fill" style="width:30%"></div></div></div>
+      </div>
+      <div class="cpf-row">
+        <div class="cpf-name">Crimson Shadows contest</div>
+        <div class="num-cell"><span class="num-val">24</span></div>
+        <div class="num-cell"><span class="num-val dim">$30</span></div>
+        <div class="num-cell"><span class="num-val">$1.25</span></div>
+        <div class="cpf-bar-cell"><div class="cpf-bar"><div class="cpf-bar-fill" style="width:23%"></div></div></div>
+      </div>
+      <div class="cpf-row totals">
+        <div class="cpf-name">Total / average</div>
+        <div class="num-cell"><span class="num-val">374</span></div>
+        <div class="num-cell"><span class="num-val">$240</span></div>
+        <div class="num-cell"><span class="num-val">$0.64</span></div>
+        <div></div>
+      </div>
+    </div>
+
+    <div class="benchmark">
+      <p class="benchmark-label">Industry benchmark</p>
+      <p class="benchmark-text">Niche-relevant Instagram follower acquisition typically costs <strong>$0.50 to $2.00 per follow</strong>. D2D&apos;s average sits at <strong>$0.64</strong> &mdash; at the low end of the benchmark. The Trews number ($0.29) is genuinely exceptional and confirms the niche-audience thesis: smaller, more enthusiastic fan bases are cheaper to reach because targeting is tighter. Crimson Shadows ($1.25) is the worst performer but still within benchmark.</p>
+    </div>
+
+    <h3 style="font-family:'Fraunces',serif;font-size:28px;font-weight:500;letter-spacing:-0.015em;margin:48px 0 8px">Boosted vs organic follower acquisition.</h3>
+    <p class="section-lede tight" style="margin-bottom:24px">Where the period&apos;s ~741 new Instagram followers actually came from. The contest mechanic is doing about half the lifting on a tiny share of the post output.</p>
+
+    <div class="split-table">
+      <div class="split-row split-row-header">
+        <div>Source</div>
+        <div class="num-h">Posts</div>
+        <div class="num-h">Spend</div>
+        <div class="num-h">Follows</div>
+        <div>Share of period gain</div>
+      </div>
+      <div class="split-row">
+        <div class="split-name">Boosted contest reels</div>
+        <div class="num-cell"><span class="num-val">8</span></div>
+        <div class="num-cell"><span class="num-val">$240</span></div>
+        <div class="num-cell"><span class="num-val">374</span></div>
+        <div class="split-bar-cell"><div class="split-bar"><div class="split-bar-fill paid" style="width:50.5%"></div></div><span style="font-size:13px;font-weight:500;color:#1a1a1a;min-width:36px;text-align:right">~50%</span></div>
+      </div>
+      <div class="split-row">
+        <div class="split-name">Other organic posts</div>
+        <div class="num-cell"><span class="num-val">~58</span></div>
+        <div class="num-cell"><span class="num-val">$0</span></div>
+        <div class="num-cell"><span class="num-val">265</span></div>
+        <div class="split-bar-cell"><div class="split-bar"><div class="split-bar-fill organic" style="width:35.8%"></div></div><span style="font-size:13px;font-weight:500;color:#1a1a1a;min-width:36px;text-align:right">~36%</span></div>
+      </div>
+      <div class="split-row">
+        <div class="split-name">Passive (profile, search, hashtag)</div>
+        <div class="num-cell"><span class="num-val dim">&mdash;</span></div>
+        <div class="num-cell"><span class="num-val">$0</span></div>
+        <div class="num-cell"><span class="num-val">~102</span></div>
+        <div class="split-bar-cell"><div class="split-bar"><div class="split-bar-fill passive" style="width:13.7%"></div></div><span style="font-size:13px;font-weight:500;color:#1a1a1a;min-width:36px;text-align:right">~14%</span></div>
+      </div>
+      <div class="split-row totals">
+        <div class="split-name">Total period gain</div>
+        <div class="num-cell"><span class="num-val">~66</span></div>
+        <div class="num-cell"><span class="num-val">$240</span></div>
+        <div class="num-cell"><span class="num-val">~741</span></div>
+        <div></div>
+      </div>
+    </div>
+
+    <div class="aside">
+      <p class="aside-label">Per-post efficiency</p>
+      <p class="aside-text">Boosted contest reels averaged <strong>47 follows per post</strong>; non-contest organic posts averaged <strong>4.6 follows per post</strong>. The contest mechanic is roughly <strong>10x more efficient</strong> at follower acquisition than regular posting, before paid amplification. Boosting then doubles that efficiency. The strategic implication: the biggest lever isn&apos;t the boost itself, it&apos;s the contest format. Run contests more often; boost the ones that matter most.</p>
+    </div>
+
+    <div class="findings-grid">
+      <div class="finding-card">
+        <p class="finding-num">Recommendation</p>
+        <h3 class="finding-title">Continue and selectively scale.</h3>
+        <p class="finding-text">The math works. Test a scaled spend on the Broken Social Scene episode &mdash; <strong>$50 over 5 days instead of $30 over 3</strong> &mdash; to see if performance scales linearly or hits diminishing returns. Bigger band, broader fan base, worth the experiment.</p>
+      </div>
+      <div class="finding-card">
+        <p class="finding-num">Worth testing</p>
+        <h3 class="finding-title">Boosted spend on tactical reels.</h3>
+        <p class="finding-text">Contest invites are the only post type currently boosted. <strong>Tactical reels</strong> (Bob Rock, Fat Wreck) drive the highest save rates organically and may benefit from a small ad-spend test &mdash; the demographic that saves these is the demographic sponsors care about. Try $20 over 2 days on the next one.</p>
+      </div>
+    </div>
+
+    <p class="data-note">Note: Arkells contest received an additional small TikTok boost (~$15) which is excluded from the cost-per-follow calculation since it was experimental. The 46 follows attributed are Instagram-only.</p>
+
+    <div class="data-gap"><strong>Data gap:</strong> 30-day retention of contest-acquired followers is not in current exports. Pull from IG Insights &rarr; Audience &rarr; Followers timeline, segmented to the days following each contest reel. If retention is above 70 percent, scale aggressively. If below, the cheap CPF is illusory and the strategy needs a rethink.</div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <p class="eyebrow section-eyebrow">Cross-promotion mechanics</p>
+    <h2 class="section-title">Who gets onto the band&apos;s grid.</h2>
+    <p class="section-lede">A manual audit of every post in the period, focused on cross-grid exposure: which posts ended up on the band&apos;s grid versus which stayed only on D2D&apos;s. <strong>Important framing:</strong> collab acceptances and band re-uploads function identically. Both put a post on the band&apos;s grid; both expose it to the band&apos;s followers. They are treated as one mechanic throughout.</p>
+
+    <div class="chart-card">
+      <p class="chart-title">Cross-grid posts per episode</p>
+      <p class="chart-sub">Number of D2D posts about each episode that landed on the band&apos;s grid &mdash; via collab acceptance or fresh upload from the band&apos;s account. Both count equally.</p>
+      <div class="chart-wrap" style="height:340px"><canvas id="crossgridChart"></canvas></div>
+    </div>
+
+    <div class="findings-grid">
+      <div class="finding-card">
+        <p class="finding-num">Finding 01</p>
+        <h3 class="finding-title">Cross-grid exposure varies 9x across episodes.</h3>
+        <p class="finding-text">From Reklaws (1 post on the band&apos;s grid across the entire episode cycle) to Limblifter via Jeremy Taggart (9 posts) &mdash; a nine-fold range. <strong>Drummers themselves accept at much higher rates than band-official accounts.</strong> Taggart accepted everything; Limblifter (the band account) accepted about half. Same pattern with Theodore McKibbon vs The Trews account, Adam Hindle vs Dwayne Gretzky.</p>
+      </div>
+      <div class="finding-card">
+        <p class="finding-num">Finding 02</p>
+        <h3 class="finding-title">Bands accept the headline post but decline supporting reels.</h3>
+        <p class="finding-text">The pattern: most bands accept cross-grid exposure on the season anchor and one or two supporting reels, but decline contest reels, behind-the-scenes content, and thank-you posts. This is not a problem to solve &mdash; it reflects how band social teams allocate scarce grid space. <strong>The strategic move is to lock in the right posts, not all of them.</strong></p>
+      </div>
+      <div class="finding-card">
+        <p class="finding-num">Finding 03</p>
+        <h3 class="finding-title">For boosted contests, cross-grid isn&apos;t needed.</h3>
+        <p class="finding-text">The Trews stick contest reel &mdash; 103 follows, the highest follow conversion in the dataset &mdash; had <strong>zero cross-grid exposure</strong>. For boosted reels, ad targeting handles reach. Cross-grid is an organic-reach mechanic; the contest mechanic is paid amplification. Different levers, both work.</p>
+      </div>
+      <div class="finding-card">
+        <p class="finding-num">Finding 04</p>
+        <h3 class="finding-title">Hashtag count is decorative.</h3>
+        <p class="finding-text">Posts with three hashtags and posts with eight perform within the same range. <strong>#drummertodrummer, #doubledrums, and #drummersofinstagram</strong> appear on most posts and are worth keeping. Beyond five tags, returns flatten. Caption length follows the same rule.</p>
+      </div>
+    </div>
+
+    <div class="aside">
+      <p class="aside-label">The actionable takeaway</p>
+      <p class="aside-text">Make cross-grid exposure part of the booking conversation. When you ask a drummer to come on the show, include the social ask in the same message: a request to share or accept collab tags on the launch post and one supporting reel. Reach out to band managers ahead of posting if you have their contact, but <strong>route through the drummer when possible</strong> &mdash; they accept at meaningfully higher rates than band-official social teams. Taggart hit 100 percent across nine posts; that is the model.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <p class="eyebrow section-eyebrow">Content types</p>
+    <h2 class="section-title">The biweekly cycle, decoded.</h2>
+    <p class="section-lede">Each episode runs through nine distinct content types across Instagram, YouTube, and Spotify. Below: what each type is for, how each performs, and which deserve a closer look on ad spend.</p>
+
+    <div class="types-grid">
+      <div class="type-card">
+        <p class="type-tag">01 &middot; IG / YT / TT</p>
+        <h3 class="type-name">Episode teaser</h3>
+        <p class="type-desc">Quick BTS clip or photo, posted 1&ndash;2 days before launch on Instagram Reels, YouTube Shorts, and TikTok. First touchpoint of the cycle.</p>
+        <p class="type-perf">Avg IG views: <span class="perf-val">~1,500</span></p>
+      </div>
+      <div class="type-card">
+        <p class="type-tag">02 &middot; IG / YT / TT</p>
+        <h3 class="type-name">Episode trailer</h3>
+        <p class="type-desc">Polished launch-day reel previewing the full episode, deployed across Instagram Reels, YouTube Shorts, and TikTok. The cycle&apos;s anchor post.</p>
+        <p class="type-perf">Avg IG views: <span class="perf-val">~5,700</span></p>
+      </div>
+      <div class="type-card">
+        <p class="type-tag yt-only">03 &middot; YT + Spotify</p>
+        <h3 class="type-name">Main episode</h3>
+        <p class="type-desc">6&ndash;10 minute long-form interview, 1920x1080. The flagship deliverable.</p>
+        <p class="type-perf">Performance varies by guest; YT engagement detail in the YouTube section.</p>
+      </div>
+      <div class="type-card">
+        <p class="type-tag">04 &middot; IG / YT / TT</p>
+        <h3 class="type-name">Reels (episode moments)</h3>
+        <p class="type-desc">15&ndash;30 second high-energy clips, 2&ndash;4 per cycle. Reused as Shorts and TikToks. Started Theo McKibbon (Trews) episode.</p>
+        <p class="type-perf">Avg IG views: <span class="perf-val">~5,500</span> &middot; tactical drum content tops 7,500+</p>
+      </div>
+      <div class="type-card">
+        <p class="type-tag yt-only">05 &middot; YT only</p>
+        <h3 class="type-name">360 main video</h3>
+        <p class="type-desc">Interactive 360 video on YouTube of the full double-jam session. The format that doesn&apos;t exist anywhere else.</p>
+        <p class="type-perf">Unique to YouTube; engagement folds into the YT trajectory line.</p>
+      </div>
+      <div class="type-card">
+        <p class="type-tag">06 &middot; IG / YT / TT</p>
+        <h3 class="type-name">360 promo</h3>
+        <p class="type-desc">Reel/short previewing the 360 main, pushing viewers to YouTube to experience the full version.</p>
+        <p class="type-perf">Avg IG views: <span class="perf-val">~3,300</span> &middot; underperforms on IG; better on YT</p>
+      </div>
+      <div class="type-card">
+        <p class="type-tag boosted">07 &middot; IG / YT / TT &middot; IG-boosted</p>
+        <h3 class="type-name">Contest invite</h3>
+        <p class="type-desc">Sub-and-like to enter mechanic. Signed sticks plus T-shirt prize. Posted across Instagram Reels, YouTube Shorts, and TikTok &mdash; only the IG version is paid-boosted ($30 over 3 days).</p>
+        <p class="type-perf">Avg IG views: <span class="perf-val">~6,200</span> &middot; 24&ndash;103 follows per post</p>
+      </div>
+      <div class="type-card">
+        <p class="type-tag">08 &middot; IG primary</p>
+        <h3 class="type-name">BTS / thank-you carousel</h3>
+        <p class="type-desc">Posed photo with Adam plus BTS shots, posted in the days following the episode. IG carousel format.</p>
+        <p class="type-perf">Avg IG views: <span class="perf-val">~2,500</span> &middot; the Theo McKibbon carousel was an outlier hit at 7,676</p>
+      </div>
+      <div class="type-card">
+        <p class="type-tag">09 &middot; IG / YT / TT</p>
+        <h3 class="type-name">Contest winner</h3>
+        <p class="type-desc">Wheel-spin reveal video on Instagram Reels, YouTube Shorts, and TikTok. Pinned-comment announcement on the next launch trailer. Closes the contest loop.</p>
+        <p class="type-perf">Avg IG views: <span class="perf-val">~700</span> &middot; administrative; not a reach driver</p>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <p class="chart-title">Average IG views by content type</p>
+      <p class="chart-sub">Ranked across the seven IG-applicable types. Contest invite includes paid amplification; all others are organic.</p>
+      <div class="chart-wrap" style="height:340px"><canvas id="typesChart"></canvas></div>
+    </div>
+
+    <div class="aside">
+      <p class="aside-label">What this opens up for ad-spend testing</p>
+      <p class="aside-text">Right now contest invites are the only boosted type, averaging $0.64 per follow. Two more types are worth testing on a small budget: <strong>tactical reels</strong> (Bob Rock, Fat Wreck-style content with high save rates &mdash; sponsors care about saves) and <strong>episode trailers for high-recognition guests</strong> (where boost could amplify launch-day peak views). Skip teasers, winners, and 360 promos for paid spend &mdash; their organic performance suggests ad dollars would be wasted there.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <p class="eyebrow section-eyebrow">Channel performance</p>
+    <h2 class="section-title">How each platform is doing.</h2>
+    <p class="section-lede">Four platforms, four very different stories. Instagram is doing the heavy lifting; YouTube is the long-tail anchor; TikTok is in maintenance mode; Facebook is effectively passive.</p>
+
+    <div class="chart-card">
+      <p class="chart-title">Cross-platform reach mix</p>
+      <p class="chart-sub">Aggregate views by platform across the full period</p>
+      <div class="legend" id="platformLegend"></div>
+      <div class="chart-wrap" style="height:240px"><canvas id="platformChart"></canvas></div>
+    </div>
+
+    <div class="platform">
+      <div class="platform-head">
+        <div class="platform-icon ig">IG</div>
+        <div class="platform-info">
+          <p class="platform-title">Instagram</p>
+          <p class="platform-tag primary">Primary platform &middot; Growth engine</p>
+        </div>
+      </div>
+      <div class="platform-stats">
+        <div class="platform-stat"><p class="platform-stat-label">Current followers</p><p class="platform-stat-val">1,481</p></div>
+        <div class="platform-stat"><p class="platform-stat-label">January start</p><p class="platform-stat-val">~740</p></div>
+        <div class="platform-stat"><p class="platform-stat-label">Period gain</p><p class="platform-stat-val">+741</p><p class="platform-stat-sub pos">+100% growth</p></div>
+      </div>
+      <div class="platform-charts">
+        <div>
+          <p class="mini-chart-title">Cumulative followers over time</p>
+          <div class="chart-wrap"><canvas id="igGrowthChart"></canvas></div>
+        </div>
+        <div>
+          <p class="mini-chart-title">Monthly views</p>
+          <div class="chart-wrap"><canvas id="igChart"></canvas></div>
+        </div>
+      </div>
+      <p class="platform-text">Primary platform and the show&apos;s clear growth engine. Doubled in followers since January (+100%), driven by contest reels and band cross-promotion. The March view jump (2.8x over February) coincides with the multi-reel strategy going live in late February. Period reach approximately 250k views, top-performing post 11,854 views (Arkells comment-the-song contest). January-anchored start point used as the period&apos;s precise December follower count is approximate.</p>
+    </div>
+
+    <div class="platform">
+      <div class="platform-head">
+        <div class="platform-icon yt">YT</div>
+        <div class="platform-info">
+          <p class="platform-title">YouTube</p>
+          <p class="platform-tag steady">Long-tail anchor &middot; Steady growth</p>
+        </div>
+      </div>
+      <div class="platform-stats">
+        <div class="platform-stat"><p class="platform-stat-label">Current subs</p><p class="platform-stat-val">1,918</p></div>
+        <div class="platform-stat"><p class="platform-stat-label">Period start</p><p class="platform-stat-val">1,733</p></div>
+        <div class="platform-stat"><p class="platform-stat-label">Period gain</p><p class="platform-stat-val">+185</p><p class="platform-stat-sub pos">+10.7% growth</p></div>
+      </div>
+      <div class="platform-charts">
+        <div>
+          <p class="mini-chart-title">Cumulative subscribers over time</p>
+          <div class="chart-wrap"><canvas id="ytGrowthChart"></canvas></div>
+        </div>
+        <div>
+          <p class="mini-chart-title">Monthly engaged views</p>
+          <div class="chart-wrap"><canvas id="ytChart"></canvas></div>
+        </div>
+      </div>
+      <p class="platform-text">Long-tail value and increasingly the channel&apos;s growth driver in its own right. March saw a 5x jump over February as Season 4 episodes drove sustained traffic. 23,400 engaged views in period (50,584 total views including all Shorts impressions), 340 watch hours, 3.59 percent CTR. Arkells alone added 32 net subscribers, outpacing the evergreen American Football episode (+18) for the first time.</p>
+    </div>
+
+    <div class="platform">
+      <div class="platform-head">
+        <div class="platform-icon tt">TT</div>
+        <div class="platform-info">
+          <p class="platform-title">TikTok</p>
+          <p class="platform-tag maintenance">Maintenance mode &middot; Modest activity</p>
+        </div>
+      </div>
+      <div class="platform-stats">
+        <div class="platform-stat"><p class="platform-stat-label">Current followers</p><p class="platform-stat-val gap">Not in export</p></div>
+        <div class="platform-stat"><p class="platform-stat-label">Period start</p><p class="platform-stat-val gap">Not in export</p></div>
+        <div class="platform-stat"><p class="platform-stat-label">Period gain</p><p class="platform-stat-val">Single digits / wk</p></div>
+      </div>
+      <div class="chart-wrap" style="height:240px"><canvas id="ttChart"></canvas></div>
+      <p class="platform-text">Maintenance mode. Followers grow in single digits per week and views are modest (~20k in period, top video 2,402). Best ROI is auto-syndicating Reels and 360 content rather than custom-tuning for the platform.</p>
+    </div>
+
+    <div class="platform">
+      <div class="platform-head">
+        <div class="platform-icon fb">FB</div>
+        <div class="platform-info">
+          <p class="platform-title">Facebook</p>
+          <p class="platform-tag passive">Passive &middot; Maintain only</p>
+        </div>
+      </div>
+      <div class="platform-stats">
+        <div class="platform-stat"><p class="platform-stat-label">Current followers</p><p class="platform-stat-val gap">Not in export</p></div>
+        <div class="platform-stat"><p class="platform-stat-label">Period start</p><p class="platform-stat-val gap">Not in export</p></div>
+        <div class="platform-stat"><p class="platform-stat-label">Period gain</p><p class="platform-stat-val">Flat</p></div>
+      </div>
+      <p class="platform-text">Effectively dormant in activity, but the Facebook follower base is even more male-skewed (89.4 percent) and slightly more US-weighted (22 percent) than Instagram. Daily reach 0&ndash;30. Worth maintaining presence via cross-posts but no active investment. The audience composition could matter for US-based sponsors.</p>
+    </div>
+
+    <div class="data-gap"><strong>Data gap:</strong> Total follower history for TikTok and Facebook isn&apos;t in current exports. Cumulative subscriber line charts also depend on this. To complete the table for these platforms, pull total-follower snapshots from TikTok Studio and Meta Business Suite.</div>
+  </div>
+</section>
+
+<section class="tinted">
+  <div class="container">
+    <p class="eyebrow section-eyebrow">Sponsor narrative</p>
+    <h2 class="section-title">Four pillars for the media kit.</h2>
+    <p class="section-lede">These four findings convert directly into a sponsor case. Each pillar answers a specific question drum or cymbal brands will ask before signing on.</p>
+    <div class="pillar">
+      <div class="pillar-num">01</div>
+      <div>
+        <h3 class="pillar-title">A precisely targeted demographic.</h3>
+        <p class="pillar-text"><strong>80 percent men, 86 percent aged 25 to 54, 72 percent Canadian.</strong> The audience over-indexes by 34 percentage points on the male skew versus the Canadian Meta baseline. This is the exact demographic drum and cymbal brands target with their marketing dollars &mdash; D2D delivers it without the wastage of broader-interest programming.</p>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">02</div>
+      <div>
+        <h3 class="pillar-title">Niche audience that converts cheaply.</h3>
+        <p class="pillar-text">1,481 Instagram followers (<strong>+100 percent since January</strong>) and 1,918 YouTube subscribers (<strong>+10.7 percent in period</strong>). Eight contest reels boosted at $30 each pulled <strong>374 follows for $240 spend</strong> &mdash; a $0.64 average cost per follow, at the low end of the $0.50&ndash;$2.00 industry benchmark. The Trews stick contest converted 103 follows at <strong>$0.29 each</strong>, proof that smaller, more enthusiastic fan bases convert at higher rates than broader audiences.</p>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">03</div>
+      <div>
+        <h3 class="pillar-title">Proven brand integration.</h3>
+        <p class="pillar-text">YC Drum Company spec post pulled <strong>5,037 organic views</strong>, direct proof that drum-brand-specific content performs. Bob Rock production story drove 33 saves; Fat Wreck story drove 18. 97.58 percent positive sentiment on YouTube &mdash; brand-safe environment.</p>
+      </div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">04</div>
+      <div>
+        <h3 class="pillar-title">Cross-grid distribution multiplier.</h3>
+        <p class="pillar-text">When D2D content lands on a band&apos;s grid &mdash; whether via accepted collab tag or fresh upload from their account &mdash; reach multiplies. The Arkells trailer drove <strong>38,694 cross-platform views</strong> across two coordinated uploads &mdash; 3,720 from D2D, plus 34,974 from @arkellsmusic (21,920 IG + 13,054 Facebook). Limblifter&apos;s Jeremy Taggart engaged with <strong>9 posts</strong> on his grid across the episode cycle. The mechanic compounds across a season and an 11-band roster.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <p class="eyebrow section-eyebrow">Merch launch</p>
+    <h2 class="section-title">Shopify, smartly.</h2>
+    <p class="section-lede">The Shopify Lite store is live with Instagram integration but hasn&apos;t been promoted yet. Below: a launch sequence calibrated to the audience, the platform, and the show&apos;s tone.</p>
+
+    <div class="findings-grid">
+      <div class="finding-card">
+        <p class="finding-num">Audience read</p>
+        <h3 class="finding-title">The buyer is already in the data.</h3>
+        <p class="finding-text">80 percent men, 86 percent aged 25&ndash;54, 72 percent Canadian, Toronto-Hamilton-Halifax concentration. Established budget for niche music gear and clear emotional engagement with the show via contest entries. <strong>Prioritize Canadian and US fulfillment</strong>; the international tail is small enough to deprioritize at launch.</p>
+      </div>
+      <div class="finding-card">
+        <p class="finding-num">Platform read</p>
+        <h3 class="finding-title">Instagram is the only store-relevant channel.</h3>
+        <p class="finding-text">Shopify Lite&apos;s IG integration unlocks shoppable posts, product tags in Reels, and an in-app Shop tab. <strong>Enable all three before any promotional content goes live</strong>, and back-tag products into 3&ndash;5 existing posts where merch is already visible. YouTube descriptions and Spotify show notes should also link the store URL.</p>
+      </div>
+    </div>
+
+    <div class="merch-grid">
+      <div class="merch-card">
+        <p class="merch-num">01</p>
+        <h3 class="merch-title">Hero drop carousel.</h3>
+        <p class="merch-text">A single, focused launch post: Adam wearing the shirt, close-up shots of the print, and a simple caption. <strong>One post, one product, one clear ask.</strong> Don&apos;t bury the launch in a multi-product announcement &mdash; the IG algorithm rewards focused intent.</p>
+      </div>
+      <div class="merch-card">
+        <p class="merch-num">02</p>
+        <h3 class="merch-title">Discount code for past contest entrants.</h3>
+        <p class="merch-text">Hundreds of people enter each contest; only one wins. DM every non-winning entrant a small discount code (e.g., 15 percent off) once the winner is announced. <strong>Converts losers into customers</strong>, leverages the contest CRM you&apos;ve already built, and costs nothing to run. Free dollar driver attached to a system already in motion.</p>
+      </div>
+      <div class="merch-card">
+        <p class="merch-num">03</p>
+        <h3 class="merch-title">Shirt the drummer guests.</h3>
+        <p class="merch-text">Give every drummer guest a free shirt at the end of the interview. Some will wear it for the closing pose-with-Adam shot &mdash; that photo lives in the BTS / thank-you carousel and lands in front of their followers. <strong>Free distribution to the highest-leverage influencer in each episode.</strong> Some shirts get worn beyond the shoot; that&apos;s a bonus.</p>
+      </div>
+      <div class="merch-card">
+        <p class="merch-num">04</p>
+        <h3 class="merch-title">Adam wears the shirt.</h3>
+        <p class="merch-text">Adam wearing the merch during interviews and double-drum sessions turns every reel and trailer into passive product placement. <strong>Legitimately tag the product</strong> in the post (the IG Shop integration recognizes products on-camera) and the algorithm treats every clip as a shoppable surface. No separate product post needed; the show&apos;s existing content does the work.</p>
+      </div>
+    </div>
+
+    <div class="aside">
+      <p class="aside-label">Pitfalls to avoid</p>
+      <p class="aside-text">Don&apos;t hard-sell &mdash; the audience is here for the show, not the storefront, and a heavy push will alienate them. Don&apos;t launch with too many SKUs at once; one or two hero items first, expand based on data. Don&apos;t ignore product tagging in Reels &mdash; that&apos;s where the most-engaged audience lives, and a Reel without a product tag is a missed sale. Don&apos;t skip the IG Shop tab on the profile &mdash; it&apos;s free real estate that signals the store exists.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <p class="eyebrow section-eyebrow">Next moves</p>
+    <h2 class="section-title">Four concrete actions.</h2>
+    <p class="section-lede">These moves are sequenced for impact. The first two are repeatable for every episode going forward. Moves three and four set up the sponsor pitch directly &mdash; Broken Social Scene is the upcoming inflection point and the right episode to apply every learning at full strength.</p>
+    <div class="recs">
+      <div class="rec"><p class="rec-num">Move 01</p><h3 class="rec-title">Build cross-grid exposure into the booking conversation.</h3><p class="rec-text">When you ask a drummer to come on the show, include the social ask in the same message: &ldquo;happy to feature you, and we&apos;d ask that you share or accept collab tags on the launch post and one supporting reel.&rdquo; If you have band manager contact, loop them in ahead of posting. <strong>Route through the drummer when possible</strong> &mdash; acceptance rates are meaningfully higher than band-official accounts. Taggart hit 100 percent over 9 posts.</p></div>
+      <div class="rec"><p class="rec-num">Move 02</p><h3 class="rec-title">Pre-confirm collab acceptance before publish.</h3><p class="rec-text">When inviting collabs, send a quick check-in to the drummer&apos;s social manager (or the drummer directly) before the post goes live. About one in three invitations currently go unaccepted &mdash; a pre-publish ping closes that gap.</p></div>
+      <div class="rec"><p class="rec-num">Move 03</p><h3 class="rec-title">Test scaled contest spend on Broken Social Scene.</h3><p class="rec-text">Contest CPF averages $0.64. For BSS, try <strong>$50 over 5 days</strong> instead of $30 over 3 to see if performance scales. Pull 30-day retention on Trews and Taggart contest cohorts first to validate that contest follows actually stick.</p></div>
+      <div class="rec"><p class="rec-num">Move 04</p><h3 class="rec-title">Test small ad spend on tactical reels.</h3><p class="rec-text">Bob Rock and Fat Wreck reels saved at high rates organically. Try <strong>$20 over 2 days</strong> on the next tactical reel to see if paid amplification compounds the save behavior. Same audience targeting as contest invites; very different conversion mechanic.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <p class="eyebrow section-eyebrow">Episode by episode</p>
+    <h2 class="section-title">Season 4, so far.</h2>
+    <p class="section-lede tight">Eight episodes, three performance tiers. The metric columns make episode-to-episode comparison straightforward.</p>
+    <div class="episode-table">
+      <div class="ep-row ep-row-header">
+        <div>Ep</div><div>Guest &middot; Band</div>
+        <div class="num-h">IG views</div><div class="num-h">YT subs</div><div class="num-h">Follows</div><div>Tier</div>
+      </div>
+      <div class="ep-row">
+        <div class="ep-num">S4&middot;01</div>
+        <div><div class="ep-title">Tim Oxford</div><div class="ep-meta">Arkells &middot; Dec 18</div></div>
+        <div class="num-cell"><span class="num-val">11,854</span></div>
+        <div class="num-cell"><span class="num-val">+32</span></div>
+        <div class="num-cell"><span class="num-val">61</span></div>
+        <div><span class="ep-tag strong">Strong</span></div>
+      </div>
+      <div class="ep-row">
+        <div class="ep-num">S4&middot;02</div>
+        <div><div class="ep-title">Josh Trager</div><div class="ep-meta">Sam Roberts Band &middot; Jan 15</div></div>
+        <div class="num-cell"><span class="num-val">4,399</span></div>
+        <div class="num-cell"><span class="num-val dim">+5</span></div>
+        <div class="num-cell"><span class="num-val">34</span></div>
+        <div><span class="ep-tag steady">Steady</span></div>
+      </div>
+      <div class="ep-row">
+        <div class="ep-num">S4&middot;03</div>
+        <div><div class="ep-title">Jeremy Kleynhans</div><div class="ep-meta">The Reklaws &middot; Feb 13</div></div>
+        <div class="num-cell"><span class="num-val">6,692</span></div>
+        <div class="num-cell"><span class="num-val dim">+2</span></div>
+        <div class="num-cell"><span class="num-val">40</span></div>
+        <div><span class="ep-tag strong">Strong</span></div>
+      </div>
+      <div class="ep-row">
+        <div class="ep-num">S4&middot;04</div>
+        <div><div class="ep-title">Theo McKibbon</div><div class="ep-meta">The Trews &middot; Feb 26</div></div>
+        <div class="num-cell"><span class="num-val">7,676</span></div>
+        <div class="num-cell"><span class="num-val dim">+5</span></div>
+        <div class="num-cell"><span class="num-val">103</span></div>
+        <div><span class="ep-tag standout">Standout</span></div>
+      </div>
+      <div class="ep-row">
+        <div class="ep-num">S4&middot;05</div>
+        <div><div class="ep-title">Paul Ramirez</div><div class="ep-meta">The Flatliners &middot; Mar 13</div></div>
+        <div class="num-cell"><span class="num-val">10,950</span></div>
+        <div class="num-cell"><span class="num-val">+21</span></div>
+        <div class="num-cell"><span class="num-val">31</span></div>
+        <div><span class="ep-tag fire">Top tier</span></div>
+      </div>
+      <div class="ep-row">
+        <div class="ep-num">S4&middot;06</div>
+        <div><div class="ep-title">Adam Hindle</div><div class="ep-meta">Dwayne Gretzky &middot; Mar 27</div></div>
+        <div class="num-cell"><span class="num-val">4,499</span></div>
+        <div class="num-cell"><span class="num-val neg">&minus;1</span></div>
+        <div class="num-cell"><span class="num-val">39</span></div>
+        <div><span class="ep-tag steady">Steady</span></div>
+      </div>
+      <div class="ep-row">
+        <div class="ep-num">S4&middot;07</div>
+        <div><div class="ep-title">Jeremy Taggart</div><div class="ep-meta">Limblifter &middot; Apr 9</div></div>
+        <div class="num-cell"><span class="num-val">8,132</span></div>
+        <div class="num-cell"><span class="num-val">+16</span></div>
+        <div class="num-cell"><span class="num-val">57</span></div>
+        <div><span class="ep-tag fire">Top tier</span></div>
+      </div>
+      <div class="ep-row">
+        <div class="ep-num">S4&middot;08</div>
+        <div><div class="ep-title">Cory Hofing</div><div class="ep-meta">Crimson Shadows &middot; Apr 24</div></div>
+        <div class="num-cell"><span class="num-val">3,334</span></div>
+        <div class="num-cell"><span class="num-val dim">+2</span></div>
+        <div class="num-cell"><span class="num-val">24</span></div>
+        <div><span class="ep-tag strong">Strong</span></div>
+      </div>
+    </div>
+    <div class="aside">
+      <p class="aside-label">Reading the table</p>
+      <p class="aside-text">Three of the four highest-engagement episodes (Trews, Flatliners, Taggart) landed after the multi-reel strategy went live in late February. The Trews entry stands out: lower band recognition, lower YouTube traction, but the highest single-post follow conversion in the dataset.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p class="footer-text">A precisely targeted audience, exceptional ad-spend efficiency, proven brand integration, and a cross-grid distribution mechanic that compounds.</p>
+  <p class="footer-meta">Drummer to Drummer &middot; Internal performance report &middot; May 10, 2026</p>
+</footer>
+
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  if (typeof Chart === 'undefined') { console.error('Chart.js failed to load'); return; }
+  var palette = { blue: '#3266ad', red: '#c75d3c', teal: '#2d7a5f', amber: '#d4a942', purple: '#6b5db8', lavender: '#b3a8e0' };
+  Chart.defaults.font.family = 'Inter, sans-serif';
+  Chart.defaults.color = '#595851';
+  Chart.defaults.borderColor = 'rgba(0,0,0,0.06)';
+  var monthLabels = ['Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May'];
+
+  // Wrap long horizontal-bar labels onto multiple lines when chart is narrow
+  function wrapLabel(str, maxChars) {
+    if (!str || typeof str !== 'string') return str;
+    if (str.length <= maxChars) return str;
+    var words = str.split(' ');
+    var lines = [], current = '';
+    for (var i = 0; i < words.length; i++) {
+      var test = current ? current + ' ' + words[i] : words[i];
+      if (test.length > maxChars && current) {
+        lines.push(current);
+        current = words[i];
+      } else {
+        current = test;
+      }
+    }
+    if (current) lines.push(current);
+    return lines;
+  }
+  function tickWrap(v) {
+    var label = this.getLabelForValue(v);
+    return this.chart.width < 500 ? wrapLabel(label, 18) : label;
+  }
+
+  new Chart(document.getElementById('ageChart'), {
+    type: 'bar',
+    data: { labels: ['18-24','25-34','35-44','45-54','55-64','65+'], datasets: [
+      { label: 'Men', data: [1.7,16.1,32.7,20.8,6.2,2.2], backgroundColor: palette.purple, borderRadius: 4 },
+      { label: 'Women', data: [0.4,2.3,8.8,5.5,2.4,0.9], backgroundColor: palette.lavender, borderRadius: 4 }
+    ] },
+    options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'bottom', labels: { padding: 16, boxWidth: 12 } }, tooltip: { callbacks: { label: function(c) { return c.dataset.label + ': ' + c.parsed.x + '%'; } } } },
+      scales: { x: { stacked: true, beginAtZero: true, ticks: { callback: function(v) { return v + '%'; } }, grid: { color: 'rgba(0,0,0,0.05)' } }, y: { stacked: true, ticks: { font: { size: 12 } }, grid: { display: false } } }
+    }
+  });
+
+  var countries = [['Canada',72.2],['United States',14.6],['United Kingdom',1.2],['Australia',0.6],['Mexico',0.6],['Germany',0.5]];
+  var countryEl = document.getElementById('countryList');
+  countries.forEach(function(c) {
+    var pct = (c[1] / countries[0][1]) * 100;
+    var row = document.createElement('div');
+    row.className = 'demo-row';
+    row.innerHTML = '<span class="demo-label">' + c[0] + '</span><div class="demo-bar"><div class="demo-bar-fill" style="width:' + pct + '%"></div></div><span class="demo-val">' + c[1] + '%</span>';
+    countryEl.appendChild(row);
+  });
+
+  var cities = [['Toronto, ON',10.7],['Hamilton, ON',4.8],['Halifax, NS',3.6],['Kitchener, ON',1.9],['Mississauga, ON',1.7],['Ottawa, ON',1.6]];
+  var cityEl = document.getElementById('cityList');
+  cities.forEach(function(c) {
+    var pct = (c[1] / cities[0][1]) * 100;
+    var row = document.createElement('div');
+    row.className = 'demo-row';
+    row.innerHTML = '<span class="demo-label">' + c[0] + '</span><div class="demo-bar"><div class="demo-bar-fill" style="width:' + pct + '%"></div></div><span class="demo-val">' + c[1] + '%</span>';
+    cityEl.appendChild(row);
+  });
+
+  var igWeekly = [
+    ['Dec 1',0],['Dec 8',0],['Dec 15',41700],['Dec 22',5037],['Dec 29',0],
+    ['Jan 5',11854],['Jan 12',9356],['Jan 19',8434],['Jan 26',0],
+    ['Feb 2',831],['Feb 9',10957],['Feb 16',9456],['Feb 23',7551],
+    ['Mar 2',21633],['Mar 9',23479],['Mar 16',22936],['Mar 23',13447],['Mar 30',5754],
+    ['Apr 6',14607],['Apr 13',10740],['Apr 20',33213],['Apr 27',5146],['May 4',8070]
+  ];
+  new Chart(document.getElementById('igTrajChart'), {
+    type: 'line',
+    data: { labels: igWeekly.map(function(d) { return d[0]; }), datasets: [{
+      data: igWeekly.map(function(d) { return d[1]; }),
+      borderColor: palette.purple,
+      backgroundColor: 'rgba(107,93,184,0.1)',
+      fill: true, tension: 0.3, pointRadius: 3, pointBackgroundColor: palette.purple, borderWidth: 2.5
+    }] },
+    options: { responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(c) { return Math.round(c.parsed.y).toLocaleString() + ' views (week of ' + c.label + ')'; } } } },
+      scales: { y: { beginAtZero: true, ticks: { callback: function(v) { return Math.round(v / 1000) + 'k'; } }, grid: { color: 'rgba(0,0,0,0.05)' } }, x: { grid: { display: false }, ticks: { maxRotation: 45, minRotation: 45 } } }
+    }
+  });
+
+  var ytEngaged = [3568, 1927, 1932, 10070, 4115, 1974];
+  var ytTotal = ytEngaged.map(function(v) { return Math.round(v * 2.16); });
+  new Chart(document.getElementById('ytTrajChart'), {
+    type: 'bar',
+    data: { labels: monthLabels, datasets: [
+      { type: 'bar', label: 'Total views', data: ytTotal, backgroundColor: palette.red, borderRadius: 4, order: 2 },
+      { type: 'line', label: 'Engaged views', data: ytEngaged, borderColor: '#1a1a1a', backgroundColor: '#1a1a1a', fill: false, tension: 0.3, pointRadius: 5, pointBackgroundColor: '#1a1a1a', borderWidth: 2.5, order: 1 }
+    ] },
+    options: { responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(c) { return c.dataset.label + ': ' + Math.round(c.parsed.y).toLocaleString(); } } } },
+      scales: { y: { beginAtZero: true, ticks: { callback: function(v) { return Math.round(v / 1000) + 'k'; } }, grid: { color: 'rgba(0,0,0,0.05)' } }, x: { grid: { display: false } } }
+    }
+  });
+
+ var topPosts = [
+    ['Arkells trailer (combined uploads)', 38694], ['Arkells comment contest', 11854], ['Flatliners episode preview', 10950], ['Arkells 360 video', 8555],
+    ['Taggart on Torrens', 8132], ['Flatliners Fat Wreck', 8004], ['Taggart Bob Rock', 7995],
+    ['Trews episode 4 carousel', 7676], ['Reklaws full episode', 6973], ['Flatliners this Thursday', 6938]
+  ];
+  new Chart(document.getElementById('topChart'), {
+    type: 'bar',
+    data: { labels: topPosts.map(function(d) { return d[0]; }), datasets: [{
+      data: topPosts.map(function(d) { return d[1]; }), backgroundColor: palette.blue, borderRadius: 4, barThickness: 24
+    }] },
+    options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(c) { return Math.round(c.parsed.x).toLocaleString() + ' views'; } } } },
+      scales: { x: { beginAtZero: true, ticks: { callback: function(v) { return Math.round(v).toLocaleString(); } }, grid: { color: 'rgba(0,0,0,0.05)' } }, y: { ticks: { autoSkip: false, font: { size: 12 }, callback: tickWrap }, grid: { display: false } } }
+    }
+  });
+
+  var followsData = [['Trews stick contest',103],['Season 4 premiere',61],['Taggart contest',57],['Arkells comment contest',46],['Reklaws contest',40],['Dwayne Gretzky contest',39]];
+  new Chart(document.getElementById('followsChart'), {
+    type: 'bar',
+    data: { labels: followsData.map(function(d) { return d[0]; }), datasets: [{
+      data: followsData.map(function(d) { return d[1]; }), backgroundColor: palette.teal, borderRadius: 4, barThickness: 22
+    }] },
+    options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: { x: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.05)' } }, y: { ticks: { autoSkip: false, font: { size: 11 }, callback: tickWrap }, grid: { display: false } } }
+    }
+  });
+
+  var savesData = [['Bob Rock Taggart',33],['Fat Wreck Flatliners',18],['Trews drummer duties',15],['Flatliners episode',15],['Taggart 360 video',12],['Taggart early objectives',12]];
+  new Chart(document.getElementById('savesChart'), {
+    type: 'bar',
+    data: { labels: savesData.map(function(d) { return d[0]; }), datasets: [{
+      data: savesData.map(function(d) { return d[1]; }), backgroundColor: palette.amber, borderRadius: 4, barThickness: 22
+    }] },
+    options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: { x: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.05)' } }, y: { ticks: { autoSkip: false, font: { size: 11 }, callback: tickWrap }, grid: { display: false } } }
+    }
+  });
+
+  var crossGridData = [['Taggart (Limblifter)',9],['Trews',5],['Crimson Shadows',5],['Flatliners',4],['Dwayne Gretzky',2],['Arkells',2],['Sam Roberts',2],['Reklaws',1]];
+  new Chart(document.getElementById('crossgridChart'), {
+    type: 'bar',
+    data: { labels: crossGridData.map(function(d) { return d[0]; }), datasets: [{
+      data: crossGridData.map(function(d) { return d[1]; }),
+      backgroundColor: function(context) { return context.dataIndex === 0 ? palette.red : palette.amber; },
+      borderRadius: 4, barThickness: 24
+    }] },
+    options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(c) { return c.parsed.x + ' cross-grid posts'; } } } },
+      scales: { x: { beginAtZero: true, ticks: { stepSize: 1 }, grid: { color: 'rgba(0,0,0,0.05)' } }, y: { ticks: { autoSkip: false, font: { size: 12 }, callback: tickWrap }, grid: { display: false } } }
+    }
+  });
+
+  var typesData = [['Contest invite (boosted)',6200],['Episode trailer',5700],['Reels',5500],['360 promo',3300],['BTS / thank-you',2500],['Episode teaser',1500],['Contest winner',700]];
+  new Chart(document.getElementById('typesChart'), {
+    type: 'bar',
+    data: { labels: typesData.map(function(d) { return d[0]; }), datasets: [{
+      data: typesData.map(function(d) { return d[1]; }),
+      backgroundColor: function(context) { return context.dataIndex === 0 ? palette.red : palette.blue; },
+      borderRadius: 4, barThickness: 22
+    }] },
+    options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(c) { return Math.round(c.parsed.x).toLocaleString() + ' avg views'; } } } },
+      scales: { x: { beginAtZero: true, ticks: { callback: function(v) { return Math.round(v).toLocaleString(); } }, grid: { color: 'rgba(0,0,0,0.05)' } }, y: { ticks: { autoSkip: false, font: { size: 11 }, callback: tickWrap }, grid: { display: false } } }
+    }
+  });
+
+  var platformData = [['Instagram',250000,palette.purple],['YouTube',23391,palette.red],['TikTok',20000,palette.teal],['Facebook',5000,palette.blue]];
+  var platformTotal = platformData.reduce(function(a, b) { return a + b[1]; }, 0);
+  new Chart(document.getElementById('platformChart'), {
+    type: 'doughnut',
+    data: { labels: platformData.map(function(p) { return p[0]; }), datasets: [{
+      data: platformData.map(function(p) { return p[1]; }), backgroundColor: platformData.map(function(p) { return p[2]; }), borderWidth: 0
+    }] },
+    options: { responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(c) { return c.label + ': ' + Math.round(c.parsed).toLocaleString() + ' views'; } } } },
+      cutout: '62%'
+    }
+  });
+  var legendEl = document.getElementById('platformLegend');
+  platformData.forEach(function(p) {
+    var pct = Math.round((p[1] / platformTotal) * 100);
+    var item = document.createElement('span');
+    item.className = 'legend-item';
+    item.innerHTML = '<span class="legend-sw" style="background:' + p[2] + '"></span>' + p[0] + ' ' + pct + '%';
+    legendEl.appendChild(item);
+  });
+
+  new Chart(document.getElementById('igGrowthChart'), {
+    type: 'line',
+    data: { labels: monthLabels, datasets: [{
+      data: [625, 740, 850, 1100, 1400, 1481],
+      borderColor: palette.purple, backgroundColor: 'rgba(107,93,184,0.1)', fill: true, tension: 0.3, pointRadius: 4, pointBackgroundColor: palette.purple, borderWidth: 2.5
+    }] },
+    options: { responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(c) { return Math.round(c.parsed.y).toLocaleString() + ' followers'; } } } },
+      scales: { y: { beginAtZero: false, ticks: { callback: function(v) { return Math.round(v).toLocaleString(); } }, grid: { color: 'rgba(0,0,0,0.05)' } }, x: { grid: { display: false } } }
+    }
+  });
+
+  new Chart(document.getElementById('igChart'), {
+    type: 'bar',
+    data: { labels: monthLabels, datasets: [{
+      data: [30000, 30000, 32000, 81000, 65000, 13000], backgroundColor: palette.purple, borderRadius: 4
+    }] },
+    options: { responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(c) { return Math.round(c.parsed.y).toLocaleString() + ' views'; } } } },
+      scales: { y: { beginAtZero: true, ticks: { callback: function(v) { return Math.round(v / 1000) + 'k'; } }, grid: { color: 'rgba(0,0,0,0.05)' } }, x: { grid: { display: false } } }
+    }
+  });
+
+  new Chart(document.getElementById('ytGrowthChart'), {
+    type: 'line',
+    data: { labels: monthLabels, datasets: [{
+      data: [1761, 1776, 1786, 1866, 1901, 1918],
+      borderColor: palette.red, backgroundColor: 'rgba(199,93,60,0.1)', fill: true, tension: 0.3, pointRadius: 4, pointBackgroundColor: palette.red, borderWidth: 2.5
+    }] },
+    options: { responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(c) { return Math.round(c.parsed.y).toLocaleString() + ' subscribers'; } } } },
+      scales: { y: { beginAtZero: false, ticks: { callback: function(v) { return Math.round(v).toLocaleString(); } }, grid: { color: 'rgba(0,0,0,0.05)' } }, x: { grid: { display: false } } }
+    }
+  });
+
+  new Chart(document.getElementById('ytChart'), {
+    type: 'bar',
+    data: { labels: monthLabels, datasets: [{
+      data: [3568, 1927, 1932, 10070, 4115, 1974], backgroundColor: palette.red, borderRadius: 4
+    }] },
+    options: { responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(c) { return Math.round(c.parsed.y).toLocaleString() + ' engaged views'; } } } },
+      scales: { y: { beginAtZero: true, ticks: { callback: function(v) { return Math.round(v / 1000) + 'k'; } }, grid: { color: 'rgba(0,0,0,0.05)' } }, x: { grid: { display: false } } }
+    }
+  });
+
+  new Chart(document.getElementById('ttChart'), {
+    type: 'bar',
+    data: { labels: monthLabels, datasets: [{
+      data: [2037, 5540, 1144, 6412, 3500, 1500], backgroundColor: palette.teal, borderRadius: 4
+    }] },
+    options: { responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(c) { return Math.round(c.parsed.y).toLocaleString() + ' views'; } } } },
+      scales: { y: { beginAtZero: true, ticks: { callback: function(v) { return v >= 1000 ? Math.round(v / 1000) + 'k' : v; } }, grid: { color: 'rgba(0,0,0,0.05)' } }, x: { grid: { display: false } } }
+    }
+  });
+});
+</script>
+
+</body>
+</html>
