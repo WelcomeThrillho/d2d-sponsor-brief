@@ -1,0 +1,10 @@
+# Internal files live in this repo but must not be served (the site publishes the repo root).
+/references/*          /not-found  404!
+/references            /not-found  404!
+/CLAUDE.md             /not-found  404!
+/README.md             /not-found  404!
+/.gitignore            /not-found  404!
+/assets/IMG_5167.jpg   /not-found  404!
+/assets/IMG_5167.jpeg  /not-found  404!
+/assets/IMG_5290%202.jpg  /not-found  404!
+/assets/IMG_5290\ 2.jpg   /not-found  404!
