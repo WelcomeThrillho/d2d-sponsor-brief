@@ -3,9 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Drummer to Drummer partnership kit: a record year, partners already on board, and a first Waterloo Region season shooting November 28, 2026.">
+<meta name="description" content="Sit behind the drums with drummers from Canada’s iconic bands. Drummer to Drummer shoots Season 5 in Kitchener-Waterloo, Canada, and is looking for community partners.">
+<meta property="og:title" content="Drummer to Drummer · Canada’s drummers, Kitchener-Waterloo season">
+<meta property="og:description" content="Drummers from Billy Talent, Barenaked Ladies, Arkells, July Talk and more. Filmed in 360° in Kitchener-Waterloo, Canada. We’re looking for community partners.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://sponsor.drummertodrummer.com/assets/warehouse-cinematic.jpg">
 <meta name="robots" content="noindex">
-<title>Drummer to Drummer Partnerships</title>
+<title>Drummer to Drummer · Partnerships · Kitchener-Waterloo, Canada</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap">
 <style>
 :root{
@@ -179,100 +183,107 @@ footer .mono{font-size:11.5px}
 @media (prefers-reduced-motion:no-preference){.proof{transition:border-color .18s}.proof:hover{border-color:var(--rule-lit)}}
 :focus-visible{outline:2px solid var(--bronze);outline-offset:3px}
 section[id]{scroll-margin-top:0}
+/* ── Nov 13 restructure ── */
+.hero .bill{justify-content:flex-start;margin-top:34px;gap:2px 22px}
+.hero .act{padding:4px 0}
+.hero .t1 .band-n{font-size:clamp(28px,5.6vw,56px)}
+.hero .more{margin-top:16px;font-family:"DM Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+.hero .more a{color:var(--bronze);text-decoration:none;border-bottom:1px solid var(--bronze-deep)}
+.v360{position:relative}
+.v360 .hint{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;
+  background:linear-gradient(180deg,rgba(11,10,9,0) 40%,rgba(11,10,9,.55) 100%);border:0;width:100%;cursor:pointer;color:var(--ink);font:inherit;padding:0}
+.v360 .drag{display:flex;align-items:center;gap:14px;font-family:"DM Mono",monospace;font-size:13px;letter-spacing:.18em;text-transform:uppercase;
+  background:rgba(11,10,9,.62);border:1px solid var(--bronze-deep);border-radius:40px;padding:10px 20px;backdrop-filter:blur(4px)}
+.v360 .drag svg{width:22px;height:22px;flex:none}
+.v360 .arr{color:var(--bronze);font-size:18px;line-height:1}
+.v360 .go{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:12px;
+  font-family:"DM Mono",monospace;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
+.v360 .go i{width:46px;height:46px;border-radius:50%;background:var(--bronze);position:relative;flex:none;box-shadow:0 0 0 0 rgba(217,165,68,.55)}
+.v360 .go i::after{content:"";position:absolute;left:18px;top:14px;border-style:solid;border-width:9px 0 9px 14px;border-color:transparent transparent transparent var(--stage)}
+@media (prefers-reduced-motion:no-preference){
+  .v360 .hand{animation:sway 3.2s ease-in-out infinite}
+  .v360 .go i{animation:ping 2.4s ease-out infinite}
+}
+@keyframes sway{0%,100%{transform:translateX(-10px)}50%{transform:translateX(10px)}}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(217,165,68,.55)}70%,100%{box-shadow:0 0 0 16px rgba(217,165,68,0)}}
+.v360.live .hint{display:none}
+.logos{display:flex;flex-wrap:wrap;align-items:center;gap:26px 44px;margin-top:36px;padding:30px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.logos img{display:block;width:auto;opacity:.92}
+.logos .word{font-family:Anton,sans-serif;text-transform:uppercase;font-size:22px;line-height:1;letter-spacing:.02em}
+.logos .word small{display:block;font-family:"DM Mono",monospace;font-size:10px;letter-spacing:.16em;color:var(--bronze);margin-top:6px}
+.ask .disp.big{font-size:clamp(34px,6vw,66px);line-height:.96;max-width:16ch;margin:14px 0 24px}
+.foot{margin-top:28px;padding-top:20px;border-top:1px solid var(--rule);font-size:15px;color:var(--dim);max-width:62ch}
+.foot b{color:var(--ink);font-weight:600}
+.anchor{display:block;height:0}
+@media(max-width:600px){
+  .v360 .hint{justify-content:flex-start;padding-top:12%}
+  .v360 .drag{font-size:10.5px;letter-spacing:.12em;padding:7px 14px;gap:9px;white-space:nowrap}
+  .v360 .drag svg{width:17px;height:17px}
+  .v360 .go{bottom:10px;font-size:10.5px;gap:9px}
+  .v360 .go i{width:36px;height:36px}
+  .v360 .go i::after{left:14px;top:11px;border-width:7px 0 7px 11px}
+}
+@media print{.v360 .hint{display:none}}
 </style>
 </head>
 <body>
 <header class="hero"><div class="wrap">
-  <p class="eyebrow">Partnership kit &middot; November 2026</p>
+  <p class="eyebrow">Partnerships &middot; Kitchener-Waterloo, Canada</p>
   <h1 class="disp">Drummer to<span class="l2">Drummer</span></h1>
-  <p class="thesis">Get to know the unsung heroes <span style="white-space:nowrap">of the backbeat.</span><br>Featuring drummers from <span style="white-space:nowrap">Canada&rsquo;s best bands.</span></p>
-  <p class="hook"><b>A record year, partners on board, and an entire season shot in Kitchener-Waterloo.</b> We&rsquo;re looking for brands that can represent the region.</p>
+  <p class="thesis">Sit behind the drums with drummers from <span style="white-space:nowrap">Canada&rsquo;s iconic bands.</span></p>
+  <div class="bill">
+    <div class="act t1"><span class="band-n">Billy Talent</span></div>
+    <div class="act t1"><span class="band-n">Barenaked Ladies</span></div>
+    <div class="act t1"><span class="band-n">Arkells</span></div>
+    <div class="act t1"><span class="band-n">Sam Roberts Band</span></div>
+    <div class="act t1"><span class="band-n">July Talk</span></div>
+    <div class="act t1"><span class="band-n">Broken Social Scene</span></div>
+  </div>
+  <p class="more"><a href="#lineup">The full lineup</a></p>
 </div></header>
 
-<div class="band"><div class="wrap"><div class="stats">
-  <div class="stat"><p class="k">Instagram</p><p class="v num">+179%</p><p class="s">followers since January, now <em>2,064</em></p></div>
-  <div class="stat"><p class="k">Views</p><p class="v num">699K</p><p class="s">across platforms, Dec&ndash;Aug</p></div>
-  <div class="stat"><p class="k">Record month</p><p class="v num">91.7K</p><p class="s">Instagram views, August 2026</p></div>
-  <div class="stat"><p class="k">Season 5</p><p class="v num">10</p><p class="s">episodes in Kitchener, Nov 28</p></div>
-</div></div></div>
-
-<section id="trajectory"><div class="wrap">
-  <p class="eyebrow">The trajectory</p>
-  <h2 class="disp">The audience has nearly tripled this year.</h2>
-  <p class="lede">Nine months of biweekly releases, 13 episodes, and two step-changes in growth &mdash; both of them strategy rather than luck. March, when the show went to several reels per episode. August, when stronger guest cycles and release-night boosts produced the biggest month in its history.</p>
-
-  <div class="aud">
-    <div class="facts">
-      <div class="fact"><span class="fv num">+179%</span><span class="fl"><b>Instagram followers since January</b>From roughly 740 to 2,064, with the strongest single week of the year (+206) landing at the end of August.</span></div>
-      <div class="fact"><span class="fv num">3x</span><span class="fl"><b>March over February</b>Going from one supporting reel per episode to two to four tripled monthly views inside a month.</span></div>
-      <div class="fact"><span class="fv num">91,736</span><span class="fl"><b>Instagram views in August</b>The biggest month on record, on roughly half the spring posting cadence.</span></div>
-      <div class="fact"><span class="fv num">$0.61</span><span class="fl"><b>To earn a follower</b>Against a $0.50&ndash;$2.00 industry range, and the efficiency held while the audience tripled.</span></div>
-    </div>
-
-    <figure>
-      <div class="legend"><span><i style="background:#b8842a"></i>Instagram views by month</span></div>
-      <svg viewBox="0 0 470 250" width="100%" role="img" aria-label="Instagram views by month, December 2025 to August 2026. March 90,895 and August 91,736 are the two record months; July dipped to 29,666 during a production gap."><line x1="14" y1="215" x2="450" y2="215" stroke="#3a332b"/><rect x="14" y="108" width="36" height="107" rx="3" fill="#7a5a22"/><rect x="64" y="152" width="36" height="63" rx="3" fill="#7a5a22"/><rect x="114" y="153" width="36" height="62" rx="3" fill="#7a5a22"/><rect x="164" y="24" width="36" height="191" rx="3" fill="#b8842a"/><rect x="214" y="73" width="36" height="142" rx="3" fill="#b8842a"/><rect x="264" y="109" width="36" height="106" rx="3" fill="#7a5a22"/><rect x="314" y="112" width="36" height="103" rx="3" fill="#7a5a22"/><rect x="364" y="153" width="36" height="62" rx="3" fill="#7a5a22"/><rect x="414" y="23" width="36" height="192" rx="3" fill="#b8842a"/><g font-family="DM Mono, monospace" font-size="11" fill="#a1968a"><text x="32.0" y="238" text-anchor="middle">D</text><text x="82.0" y="238" text-anchor="middle">J</text><text x="132.0" y="238" text-anchor="middle">F</text><text x="182.0" y="238" text-anchor="middle">M</text><text x="232.0" y="238" text-anchor="middle">A</text><text x="282.0" y="238" text-anchor="middle">M</text><text x="332.0" y="238" text-anchor="middle">J</text><text x="382.0" y="238" text-anchor="middle">J</text><text x="432.0" y="238" text-anchor="middle">A</text></g><g font-family="DM Mono, monospace" font-size="11.5" fill="#f5efe4"><text x="182.0" y="16" text-anchor="middle" font-weight="500">90.9K</text><text x="432.0" y="15" text-anchor="middle" font-weight="500">91.7K</text></g></svg>
-      <figcaption>Instagram views by month, December 2025 to August 2026. The July dip is a three-week production gap, not an audience decline; August came straight back to a record.</figcaption>
-    </figure>
+<section id="360" class="panel" style="background-image:url('assets/drummer-blue.jpg')"><div class="wrap">
+  <span id="episode" class="anchor"></span><span id="reels" class="anchor"></span>
+  <p class="eyebrow">The double-drum session</p>
+  <p class="disp stack"><span>1 song.</span><span>2 drummers.</span><span>360 degrees.</span></p>
+  <p class="lede">Every episode ends with two drummers playing one of the guest&rsquo;s songs together, filmed in 360&deg;. <b>You sit right behind the drums and look anywhere in the room.</b></p>
+  <div class="vid v360" id="v360">
+    <iframe id="v360f" src="https://player.vimeo.com/video/1214318365?autoplay=1&amp;muted=1&amp;loop=1&amp;autopause=0&amp;controls=0&amp;title=0&amp;byline=0&amp;portrait=0&amp;dnt=1&amp;playsinline=1&amp;color=d9a544" title="Drummer to Drummer 360 double-drum session" allow="autoplay; fullscreen; picture-in-picture; accelerometer; gyroscope; xr-spatial-tracking" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <button type="button" class="hint" id="v360go" aria-label="Play the 360 session with sound and take control">
+      <span class="drag"><span class="arr" aria-hidden="true">&larr;</span><svg class="hand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 13V5.5a1.5 1.5 0 0 1 3 0V12m0-1.5v-2a1.5 1.5 0 0 1 3 0V12m0-1a1.5 1.5 0 0 1 3 0v1.5m0 0a1.5 1.5 0 0 1 3 0V16a6 6 0 0 1-6 6h-1.2a6 6 0 0 1-4.6-2.2L4.6 16.6a1.5 1.5 0 0 1 2.3-1.9L8 16"/></svg>Drag to look around<span class="arr" aria-hidden="true">&rarr;</span></span>
+      <span class="go"><i aria-hidden="true"></i>Tap to play with sound</span>
+    </button>
   </div>
-
-  <p class="quote disp">Both jumps came from a change in how the show is made and promoted, <span>so Season 5 starts from the top of the curve, not the bottom.</span></p>
+  <p class="cap">Arkells, Sam Roberts Band, PUP and more &middot; every episode on YouTube, Spotify and Apple Podcasts</p>
+  <div class="listen">
+    <a href="https://www.youtube.com/@drummertodrummer" target="_blank" rel="noopener">Watch on YouTube</a>
+    <a href="https://open.spotify.com/show/1iSTH4spskzIqOLMnTKQgl" target="_blank" rel="noopener">Listen on Spotify</a>
+    <a href="https://podcasts.apple.com/us/podcast/drummer-to-drummer/id1896805413" target="_blank" rel="noopener">Listen on Apple Podcasts</a>
+  </div>
 </div></section>
 
 <section id="partners"><div class="wrap">
-  <p class="eyebrow">Partners</p>
-  <h2 class="disp">Who is already in.</h2>
-  <p class="lede">Every item below is a deal that exists &mdash; not a projection of what a partner might expect.</p>
-
-  <div class="proofs">
-    <div class="proof lead">
-      <p class="tag">Presenting sponsor &middot; Season 5</p>
-      <h3>Rupert Street Recording presents the Waterloo season.</h3>
-      <p>The Kitchener studio hosts Season 5 on November 28 with <b>a cash sponsorship plus studio time, audio crew and gear</b>, agreed in October 2026. The presenting slot is taken; season-partner and local-partner slots sit alongside it.</p>
-    </div>
-    <div class="proof">
-      <img class="plogo" src="assets/logos/sabian.svg" alt="SABIAN" style="height:34px">
-      <p class="tag">Content collaborator</p>
-      <h3>SABIAN became a content collaborator.</h3>
-      <p>From a first pitch in June to a negotiated collaboration in August. The Wine Lips episode went out as a joint post on SABIAN&rsquo;s Instagram channel, <b>pushing the show to hundreds of thousands of drummers</b> through one of the biggest brands in the space.</p>
-    </div>
-    <div class="proof">
-      <img class="plogo" src="assets/logos/sennheiser.png" alt="Sennheiser" style="height:19px;margin:8px 0 25px">
-      <p class="tag">Official partner</p>
-      <h3>Sennheiser became a partner.</h3>
-      <p>Sennheiser came on as <b>an official partner of the show</b>, with their microphones on the Season 4 sessions. One of the most recognized names in audio chose to be associated with Drummer to Drummer by name.</p>
-    </div>
-    <div class="proof">
-      <img class="plogo" src="assets/logos/dc-music.png" alt="DC Music" style="height:34px">
-      <p class="tag">Sponsor</p>
-      <h3>DC Music became a sponsor.</h3>
-      <p>Toronto&rsquo;s preeminent rehearsal studio and sound stage <b>sponsored the show by covering our location fees</b>. A partner putting real cost behind the production, not just a logo on it.</p>
-    </div>
+  <p class="eyebrow">Who&rsquo;s already in</p>
+  <h2 class="disp">Our partners are names in sound and drumming.</h2>
+  <div class="logos">
+    <span class="word">Rupert Street Recording<small>Presents Season 5</small></span>
+    <img src="assets/logos/sabian.svg" alt="SABIAN" style="height:34px">
+    <img src="assets/logos/sennheiser.png" alt="Sennheiser" style="height:19px">
+    <img src="assets/logos/dc-music.png" alt="DC Music" style="height:34px">
   </div>
 </div></section>
 
-<section id="season"><div class="wrap">
-  <p class="eyebrow">Season 5 &middot; Waterloo Region</p>
-  <h2 class="disp">A Toronto show brings its first season to Kitchener.</h2>
-  <p class="lede">Drummer to Drummer has filmed in Toronto and Nova Scotia. On November 28th it shoots ten episodes at Rupert Street Recording, with drummers from July Talk, Billy Talent, Thunder Queens and more. <b>We want brands that represent the region and its values.</b></p>
-
-  <div class="fmt"><div class="n">01</div><div>
-    <h3>Season partner</h3>
-    <p>Your name alongside Rupert Street&rsquo;s on every Waterloo episode: a six-second sponsor spot at the top of each one, a voiced mention, your logo on the release reels, a tag on every post in the cycle, and the option to carry the credit on the episodes already in post, so the partnership is visible before the season airs.</p>
-  </div></div>
-  <div class="fmt"><div class="n">02</div><div>
-    <h3>Local partner</h3>
-    <p>Product, hospitality or prizing for the shoot and the giveaways, with a tag on the Waterloo reels and behind-the-scenes content from the studio and the city for your own channels.</p>
-  </div></div>
-  <div class="fmt"><div class="n">03</div><div>
-    <h3>Who we are looking for</h3>
-    <p>Companies with a Waterloo Region story &mdash; the employers, makers and institutions the audience already associates with the place. Tech, finance, education, hospitality. <b>If people here would nod when they saw your name on the episode, you are who we mean.</b></p>
-  </div></div>
+<section id="season" class="ask"><div class="wrap">
+  <span id="ways" class="anchor"></span>
+  <p class="eyebrow">Season 5 &middot; Kitchener-Waterloo, Canada</p>
+  <p class="disp big">We&rsquo;re looking for community partners.</p>
+  <p class="lede">On November 28 we shoot ten episodes at Rupert Street Recording, with drummers from Billy Talent, July Talk, Barenaked Ladies and more. <b>We want Waterloo Region companies to be part of it.</b> Tell us what you have in mind and we&rsquo;ll build it with you.</p>
+  <p class="foot" id="trajectory"><span id="audience" class="anchor"></span><span id="contest" class="anchor"></span><b>We&rsquo;re just getting started.</b> The audience nearly tripled this year, and every episode lands on the bands&rsquo; own feeds as well as ours. Get in early.</p>
 </div></section>
 
 <section id="lineup" class="lineup"><div class="wrap">
   <p class="eyebrow">The lineup</p>
-  <h2 class="disp">Sit behind the kit with:</h2>
+  <h2 class="disp">Sit behind the drums with:</h2>
   <div class="rule-row"><span>Coming up</span></div>
   <div class="bill">
     <div class="act t1"><span class="band-n">July Talk</span></div>
@@ -313,151 +324,21 @@ section[id]{scroll-margin-top:0}
     <div class="act t4"><span class="band-n">The Meligrove Band</span><span class="drm">Darcy Rego</span></div>
     <div class="act t4"><span class="band-n">Crimson Shadows</span><span class="drm">Cory Hofing</span></div>
   </div>
-  <div class="rule-row"><span>And the reach that follows them</span></div>
-  <p class="lede" style="margin:26px auto 0;text-align:left;max-width:60ch">Every episode puts our content in front of the guest&rsquo;s following as well as our own. The Arkells trailer reached <b>38,694 views</b> across coordinated uploads. Band-official accounts including <b>@arkellsmusic, @thetrews and @meligroveband</b> now republish or co-sign directly. A partner&rsquo;s credit travels with it: when a band reposts an episode, the partner&rsquo;s name lands on the band&rsquo;s own grid, in front of an audience no media buy reaches.</p>
-</div></section>
-
-<section id="360" class="panel" style="background-image:url('assets/drummer-blue.jpg')"><div class="wrap">
-  <p class="eyebrow">The double-drum session</p>
-  <p class="disp stack"><span>1 song.</span><span>2 drummers.</span><span>360 degrees.</span></p>
-  <p class="lede">Every episode includes the two drummers playing one of the guest&rsquo;s songs together, filmed in 360&deg; so the viewer can look anywhere in the room. <b>Drag the video to look around.</b></p>
-  <div class="vid"><iframe src="https://player.vimeo.com/video/1214318365?title=0&amp;byline=0&amp;portrait=0&amp;dnt=1&amp;playsinline=1&amp;color=d9a544" title="Drummer to Drummer 360 double-drum session" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; accelerometer; gyroscope; xr-spatial-tracking" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-  <p class="cap">The double-drum session &middot; filmed in 360&deg;</p>
-</div></section>
-
-<section id="episode" class="panel" style="background-image:url('assets/tim-oxford.jpg')"><div class="wrap">
-  <p class="eyebrow">The full episode</p>
-  <h2 class="disp">Full episodes on YouTube, Spotify and Apple Podcasts.</h2>
-  <p class="lede">The conversation, then the jam. Long-form video on YouTube and audio wherever people listen to podcasts. <b>A partner credit in the episode goes everywhere the episode goes.</b></p>
-  <div class="vid"><iframe src="https://www.youtube.com/embed/LNEfkw6dShc?rel=0&amp;modestbranding=1&amp;playsinline=1&amp;enablejsapi=1" title="Zack Mykula of PUP, full episode" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-  <p class="cap">Zack Mykula of PUP &middot; August 2026</p>
-  <div class="listen">
-    <a href="https://www.youtube.com/@drummertodrummer" target="_blank" rel="noopener">Watch on YouTube</a>
-    <a href="https://open.spotify.com/show/1iSTH4spskzIqOLMnTKQgl" target="_blank" rel="noopener">Listen on Spotify</a>
-    <a href="https://podcasts.apple.com/us/podcast/drummer-to-drummer/id1896805413" target="_blank" rel="noopener">Listen on Apple Podcasts</a>
-  </div>
-</div></section>
-
-<section id="reels" class="panel" style="background-image:url('assets/drummer-green.jpg')"><div class="wrap">
-  <p class="eyebrow">Micro-content</p>
-  <h2 class="disp">One episode. Two weeks of content. Every platform.</h2>
-  <p class="lede">Each episode is cut into two to four short clips that run on Instagram, TikTok, YouTube Shorts and Facebook. That multi-platform engine is behind the 699K views, and it is why <b>a partner&rsquo;s name keeps showing up long after release night</b>. The Tim Oxford clip below reached 24.7K views on Instagram alone.</p>
-  <div class="shorts">
-    <figure class="short"><button type="button" class="vid v916 facade" data-vimeo="1243829025" aria-label="Play: Tim Oxford of Arkells"><img src="assets/shorts/6RbNW4lQwac.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></button><figcaption><b>Tim Oxford</b> Arkells</figcaption></figure>
-    <figure class="short"><button type="button" class="vid v916 facade" data-vimeo="1243829044" aria-label="Play: Zack Mykula of PUP"><img src="assets/shorts/hiTVm6gZZ3I.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></button><figcaption><b>Zack Mykula</b> PUP</figcaption></figure>
-    <figure class="short"><button type="button" class="vid v916 facade" data-vimeo="1243829084" aria-label="Play: Jeremy Taggart of Limblifter, ex-Our Lady Peace"><img src="assets/shorts/0HfMxepC4Gs.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></button><figcaption><b>Jeremy Taggart</b> Limblifter, ex-Our Lady Peace</figcaption></figure>
-    <figure class="short"><button type="button" class="vid v916 facade" data-vimeo="1243829099" aria-label="Play: Aurora Evans of Wine Lips"><img src="assets/shorts/IMlIXX9bvjI.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></button><figcaption><b>Aurora Evans</b> Wine Lips</figcaption></figure>
-  </div>
-</div></section>
-
-<section id="contest" class="panel" style="background-image:url('assets/drummer-close.jpg')"><div class="wrap">
-  <p class="eyebrow">The contest</p>
-  <h2 class="disp">Where the ad spend goes.</h2>
-  <div class="split">
-    <div>
-      <p class="lede">Every episode cycle runs a giveaway: signed sticks and setlists from the guest, the winner drawn on camera and announced in the next episode. <b>Three of every four ad dollars we spend sit behind the contest reels</b>, so a partner on the contest shows up in paid and organic reach in the same post.</p>
-      <div class="facts" style="margin-top:30px">
-        <div class="fact"><span class="fv num">114</span><span class="fl"><b>New followers from one contest post</b>The PUP giveaway in August, at $0.52 per follower.</span></div>
-        <div class="fact"><span class="fv num">10x</span><span class="fl"><b>Follows per post versus regular posting</b>About 47 per boosted contest reel against 4.6 for everything else, December to May.</span></div>
-        <div class="fact"><span class="fv num">~50%</span><span class="fl"><b>Of follower growth, December to May</b>Came from the boosted contest reels alone.</span></div>
-      </div>
-    </div>
-    <figure class="short"><button type="button" class="vid v916 facade" data-vimeo="1243829133" aria-label="Play: Arkells giveaway reel"><img src="assets/shorts/PJG0OxZcIOA.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></button><figcaption><b>Arkells giveaway</b> signed sticks and setlist</figcaption></figure>
-  </div>
-</div></section>
-
-<section id="audience"><div class="wrap">
-  <p class="eyebrow">Who is watching</p>
-  <h2 class="disp">A concentrated audience, not a crowd.</h2>
-  <p class="lede">The demographic, for the media planner in the room. Most programming reaches everyone and hopes your customer is somewhere in it. <b>This one reaches one audience, all the way through.</b></p>
-
-  <div class="aud">
-    <div class="facts">
-      <div class="fact"><span class="fv num">82%</span><span class="fl"><b>Men</b>Against a 46% Canadian Meta baseline &mdash; an over-index of 36 points.</span></div>
-      <div class="fact"><span class="fv num">85%</span><span class="fl"><b>Aged 25&ndash;54</b>Prime earning years, peaking in the 35&ndash;44 bracket.</span></div>
-      <div class="fact"><span class="fv num">65%</span><span class="fl"><b>Canadian</b>With a further 23% in the United States, and Toronto the single largest city.</span></div>
-      <div class="fact"><span class="fv num">97.6%</span><span class="fl"><b>Positive sentiment</b>Measured across YouTube comments. An audience that argues about ghost notes, not about anything a brand would need to distance itself from.</span></div>
-    </div>
-
-    <figure>
-      <div class="legend"><span><i style="background:#b8842a"></i>Men</span><span><i style="background:#1f9d80"></i>Women</span></div>
-      <svg viewBox="0 0 470 250" width="100%" role="img" aria-label="Instagram audience by age and gender. Men peak at 34.1% in the 35 to 44 bracket; women peak at 7.6% in the same bracket.">
-        <g font-family="DM Mono, monospace" font-size="11" fill="#a1968a">
-          <text x="0" y="26">18&ndash;24</text><text x="0" y="64">25&ndash;34</text><text x="0" y="102">35&ndash;44</text>
-          <text x="0" y="140">45&ndash;54</text><text x="0" y="178">55&ndash;64</text><text x="0" y="216">65+</text>
-        </g>
-        <!-- scale: 8px per 1% from x=58 -->
-        <g fill="#b8842a">
-          <rect x="58" y="12"  width="24"  height="17" rx="3"/>
-          <rect x="58" y="50"  width="124" height="17" rx="3"/>
-          <rect x="58" y="88"  width="273" height="17" rx="3"/>
-          <rect x="58" y="126" width="165" height="17" rx="3"/>
-          <rect x="58" y="164" width="49"  height="17" rx="3"/>
-          <rect x="58" y="202" width="18"  height="17" rx="3"/>
-        </g>
-        <g fill="#1f9d80">
-          <rect x="86"  y="12"  width="6"  height="17" rx="2"/>
-          <rect x="184" y="50"  width="18" height="17" rx="3"/>
-          <rect x="333" y="88"  width="61" height="17" rx="3"/>
-          <rect x="225" y="126" width="38" height="17" rx="3"/>
-          <rect x="109" y="164" width="16" height="17" rx="3"/>
-          <rect x="78"  y="202" width="8"  height="17" rx="2"/>
-        </g>
-        <g font-family="DM Mono, monospace" font-size="11.5" fill="#f5efe4">
-          <text x="402" y="101" font-weight="500">34.1%</text>
-          <text x="271" y="139">20.6%</text>
-          <text x="210" y="63">15.5%</text>
-        </g>
-      </svg>
-      <figcaption>Instagram followers by age and gender, September 2026. Men aged 35&ndash;44 alone are a third of the entire audience.</figcaption>
-    </figure>
-  </div>
-
-  <p class="quote disp">This is not a general music audience. It is <span>a loyal, concentrated one, at the age most brands pay a premium to reach.</span></p>
-</div></section>
-
-<section id="ways"><div class="wrap">
-  <p class="eyebrow">Working together</p>
-  <h2 class="disp">Five ways a partner shows up.</h2>
-  <p class="lede">These are formats the show already produces every cycle &mdash; a partner steps into them rather than commissioning something untested. None of them assumes the partner makes drums.</p>
-
-  <div class="fmt"><div class="n">01</div><div>
-    <h3>The sponsor spot</h3>
-    <p>A six-second spot between the show open and the episode itself, professionally shot by our crew during the season&rsquo;s production, the way we made Sennheiser&rsquo;s. <b>It runs at the top of every episode in the season</b>, everywhere the episode goes.</p>
-  </div></div>
-  <div class="fmt"><div class="n">02</div><div>
-    <h3>The double-drum session</h3>
-    <p>Two kits, two drummers, one song, filmed in 360&deg; so the viewer can look anywhere in the room. <b>Nothing else in music media looks quite like this</b>, and everything in the room is on camera from every angle.</p>
-  </div></div>
-  <div class="fmt"><div class="n">03</div><div>
-    <h3>Your story, told the way we tell theirs</h3>
-    <p>The highest-saved format on the channel is a guest breaking down how a part actually works. The same treatment applied to a partner &mdash; the people, the craft, why it is done that way &mdash; is <b>the most natural place for a brand to start</b>. Every company has someone in the back hitting things.</p>
-  </div></div>
-  <div class="fmt"><div class="n">04</div><div>
-    <h3>Contest prizing</h3>
-    <p>Every cycle runs a giveaway, and it is consistently our strongest follower-conversion mechanic, at up to <b>114 new followers from a single post</b>. The prize does not have to be gear: a partner-supplied prize or experience takes that entire spike, with the partner&rsquo;s name on the entry.</p>
-  </div></div>
-  <div class="fmt"><div class="n">05</div><div>
-    <h3>Release-week amplification</h3>
-    <p>Every episode gets a paid push on release week, already running and already efficient. Partner-integrated episodes inherit that machinery rather than starting from zero.</p>
-  </div></div>
 </div></section>
 
 <section id="contact" class="close"><div class="wrap">
   <p class="eyebrow">Next</p>
-  <p class="disp">Let&rsquo;s talk before<br>November 28.</p>
-  <p class="lede" style="margin-top:24px">Integration works best when it is planned in before the shoot rather than added afterwards. The season-partner conversation is open now, and the Waterloo episodes release January to March, so there is time to do it properly.</p>
+  <p class="disp">Send Jon a note.</p>
+  <p class="lede" style="margin-top:24px">A short email is all it takes. We&rsquo;ll find what works for you before the shoot on November 28.</p>
   <div class="contact">
-    <div class="full"><p class="k">Producers</p><p class="v">Adam Nimmo &middot; Jon Lucas &middot; Nathan Stretch</p></div>
-    <div><p class="k">Email</p><p class="v"><a href="mailto:hello@drummertodrummer.com">hello@drummertodrummer.com</a></p></div>
+    <div><p class="k">Jon Lucas &middot; Producer</p><p class="v"><a href="mailto:hello@drummertodrummer.com">hello@drummertodrummer.com</a></p></div>
     <div><p class="k">Instagram</p><p class="v"><a href="https://www.instagram.com/drummertodrummer/" target="_blank" rel="noopener">@drummertodrummer</a></p></div>
     <div><p class="k">YouTube</p><p class="v"><a href="https://www.youtube.com/@drummertodrummer" target="_blank" rel="noopener">@drummertodrummer</a></p></div>
-    <div><p class="k">LinkedIn</p><p class="v"><a href="https://www.linkedin.com/company/drummer-to-drummer/" target="_blank" rel="noopener">Drummer to Drummer</a></p></div>
   </div>
 </div></section>
 
 <footer><div class="wrap">
-  <p class="mono">Drummer to Drummer &middot; Partnership kit &middot; November 2026. Figures cover 1 December 2025 &ndash; 31 August 2026 and are drawn from Meta, YouTube and TikTok platform analytics; follower counts are live as of 1 September 2026.</p>
+  <p class="mono">Drummer to Drummer &middot; Kitchener-Waterloo, Canada &middot; Partnerships &middot; November 2026</p>
 </div></footer>
 <script>
 /* one video at a time: when any player starts, pause every other one */
@@ -495,6 +376,28 @@ document.querySelectorAll('.facade').forEach(function(b){b.addEventListener('cli
   f.referrerPolicy='strict-origin-when-cross-origin'; f.allowFullscreen=true;
   pauseOthers(null); var d=document.createElement('div'); d.className=b.className.replace(' facade',''); d.appendChild(f); b.replaceWith(d); watch(f);
 });});
+</script>
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script>
+/* 360: autoplay muted, slow auto-pan until the viewer takes over; play/pause on scroll */
+(function(){
+  var box=document.getElementById('v360'), f=document.getElementById('v360f'), go=document.getElementById('v360go');
+  if(!box||!f) return;
+  var P=window.Vimeo&&Vimeo.Player?new Vimeo.Player(f):null, yaw=0, t=null, live=false;
+  var still=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function pan(){ if(!P||live||still) return; yaw=(yaw+0.6)%360; P.setCameraProps({yaw:yaw,pitch:0}).catch(function(){ clearInterval(t); t=null; }); }
+  function start(){ if(!P) return; P.play().catch(function(){}); if(!t&&!live) t=setInterval(pan,60); }
+  function stop(){ if(t){ clearInterval(t); t=null; } if(P&&!live) P.pause().catch(function(){}); }
+  if('IntersectionObserver' in window){ new IntersectionObserver(function(es){ es.forEach(function(e){ e.isIntersecting?start():stop(); }); },{threshold:.35}).observe(box); } else start();
+  go.addEventListener('click',function(){
+    live=true; if(t){ clearInterval(t); t=null; }
+    box.classList.add('live');
+    /* reload with sound and controls; the click is the gesture that allows audio */
+    f.src='https://player.vimeo.com/video/1214318365?autoplay=1&title=0&byline=0&portrait=0&dnt=1&playsinline=1&color=d9a544';
+    pauseOthers(f.contentWindow);
+  });
+})();
 </script>
 </body>
 </html>
